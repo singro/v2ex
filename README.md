@@ -9,8 +9,8 @@
 
   * [下拉刷新](https://github.com/singro/SCPullRefresh)
     * 一个方便全局统一和自定义刷新和加载动画的组件
-  * [Navigation Bar](https://github.com/singro/SCNavigation)
-    * 用简单的 UIView、UIButton 以及 UILabel 实现的自定义Navigation Bar， 通过 Pan 手势来完成类似 iOS7 的手势返回效果 。
+  * [Navigation](https://github.com/singro/SCNavigation)
+    * 用简单的 UIView、UIButton 以及 UILabel 实现的自定义 Navigation， 通过 Pan 手势来完成类似 iOS7 的手势返回效果 。
   * [微博](https://github.com/singro/SCWeiboManager)
     * 对微博官方 SDK 的简单封装，更加易用，配置更简单。
 
