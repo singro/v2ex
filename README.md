@@ -3,7 +3,7 @@
 https://itunes.apple.com/us/app/v2ex-chuang-yi-gong-zuo-zhe/id898181535?ls=1&mt=8
 
 #####开源计划
-* 暂时没有完全开源计划，目前开源部分组件，随时随地欢迎大家 fork 或提出各种方面修改意见。
+暂时没有完全开源计划，目前开源部分组件，随时随地欢迎大家 fork 或提出各种方面修改意见。
   * 下拉刷新 (https://github.com/singro/SCPullRefresh)
     * 一个方便全局统一和自定义刷新和加载动画的组件
   * Navigation Bar (https://github.com/singro/SCNavigation)
