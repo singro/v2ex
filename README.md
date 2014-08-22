@@ -39,3 +39,8 @@ V2EX for iOS
 * 话题内容过长时微信分享失败 [1.0.0]
 * 连续回复时，第二次回复失败 [1.0.0]
 * 某几个帖子点开 Crash [1.0.0]
+
+
+####捐赠
+支付宝（singroapp#gmail.com）：
+![donate](http://i.v2ex.co/2O0eZEc9l.png)
