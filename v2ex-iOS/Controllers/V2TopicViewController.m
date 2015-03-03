@@ -1127,7 +1127,7 @@ typedef NS_ENUM(NSInteger, V2ImagePickerSourceType) {
 - (void)openWithWeb {
     
     V2WebViewController *webVC = [[V2WebViewController alloc] init];
-    NSString *urlString = [NSString stringWithFormat:@"http://v2ex.com/t/%@", self.model.topicId];
+    NSString *urlString = [NSString stringWithFormat:@"https://v2ex.com/t/%@", self.model.topicId];
     webVC.url = [NSURL URLWithString:urlString];
     [self.navigationController pushViewController:webVC animated:YES];
 
@@ -1171,7 +1171,7 @@ typedef NS_ENUM(NSInteger, V2ImagePickerSourceType) {
 - (void)shareToTwitter {
     
     SLComposeViewController *composeViewController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-    NSString *shareString = [NSString stringWithFormat:@"#V2EX %@ http://www.v2ex.com/t/%@ ", self.model.topicTitle, self.model.topicId];
+    NSString *shareString = [NSString stringWithFormat:@"#V2EX %@ https://www.v2ex.com/t/%@ ", self.model.topicTitle, self.model.topicId];
     [composeViewController setInitialText:shareString];
     
     composeViewController.completionHandler = ^(SLComposeViewControllerResult result){
@@ -1203,7 +1203,7 @@ typedef NS_ENUM(NSInteger, V2ImagePickerSourceType) {
     
     @weakify(self);
     
-    NSString *shareWeboString = [NSString stringWithFormat:@"#V2EX# %@ http://www.v2ex.com/t/%@", self.model.topicTitle, self.model.topicId];
+    NSString *shareWeboString = [NSString stringWithFormat:@"#V2EX# %@ https://www.v2ex.com/t/%@", self.model.topicTitle, self.model.topicId];
     
     [[SCWeiboManager manager] sendWeiboWithText:shareWeboString Success:^(NSDictionary *responseDict) {
         @strongify(self);
@@ -1246,7 +1246,7 @@ typedef NS_ENUM(NSInteger, V2ImagePickerSourceType) {
         }
         [[SCWeixinManager manager] shareWithWXScene:scene
                                               Title:self.model.topicTitle
-                                               link:[NSString stringWithFormat:@"http://www.v2ex.com/t/%@", self.model.topicId]
+                                               link:[NSString stringWithFormat:@"https://www.v2ex.com/t/%@", self.model.topicId]
                                         description:shareContent
                                               image:avatarImage];
     }];
