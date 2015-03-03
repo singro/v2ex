@@ -6,9 +6,15 @@ V2EX for iOS
 
 [下载地址](https://itunes.apple.com/us/app/v2ex-chuang-yi-gong-zuo-zhe/id898181535?ls=1&mt=8)
 
-####开源
+####截图
+![ScreenShoot 1](http://i.v2ex.co/EwnuC7uf.png)
 
-暂时没有完全开源计划，目前开源部分组件，随时随地欢迎大家 fork 或提出各种方面意见。
+####运行
+```
+pod install
+```
+
+####部分独立组件
 
   * [SCPullRefresh](https://github.com/singro/SCPullRefresh)  
     ```
@@ -40,6 +46,8 @@ V2EX for iOS
 * 连续回复时，第二次回复失败 [1.0.0]
 * 某几个帖子点开 Crash [1.0.0]
 
+####LICENSE
+The MIT License.
 
 ####捐赠
 支付宝（singroapp#gmail.com）：
