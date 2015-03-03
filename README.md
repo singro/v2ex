@@ -56,4 +56,5 @@ MIT
 
 ####捐赠
 支付宝（singroapp#gmail.com）：
-![donate](http://i.v2ex.co/2O0eZEc9l.png)
+
+![donate](http://i.v2ex.co/2O0eZEc9b.png)
