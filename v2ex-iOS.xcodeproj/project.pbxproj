@@ -45,11 +45,6 @@
 		2933869718D67B6B00FEC28E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2933869618D67B6B00FEC28E /* main.m */; };
 		2933869B18D67B6C00FEC28E /* V2AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2933869A18D67B6C00FEC28E /* V2AppDelegate.m */; };
 		2933869D18D67B6C00FEC28E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2933869C18D67B6C00FEC28E /* Images.xcassets */; };
-		293386A418D67B6C00FEC28E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 293386A318D67B6C00FEC28E /* XCTest.framework */; };
-		293386A518D67B6C00FEC28E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2933868A18D67B6B00FEC28E /* Foundation.framework */; };
-		293386A618D67B6C00FEC28E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2933868E18D67B6B00FEC28E /* UIKit.framework */; };
-		293386AE18D67B6C00FEC28E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 293386AC18D67B6C00FEC28E /* InfoPlist.strings */; };
-		293386B018D67B6C00FEC28E /* v2ex_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 293386AF18D67B6C00FEC28E /* v2ex_iOSTests.m */; };
 		293386C418D67FC500FEC28E /* SCNavigationPopAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 293386BF18D67FC500FEC28E /* SCNavigationPopAnimation.m */; };
 		293386C518D67FC500FEC28E /* SCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 293386C118D67FC500FEC28E /* SCNavigationController.m */; };
 		294216C21937A46200E9A91D /* V2WeiboViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 294216C11937A46200E9A91D /* V2WeiboViewController.m */; };
@@ -143,16 +138,6 @@
 		C5BF11E006564992BA7F1B46 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F82C9E568AED44198657ED64 /* libPods.a */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		293386A718D67B6C00FEC28E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2933867F18D67B6B00FEC28E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2933868618D67B6B00FEC28E;
-			remoteInfo = "v2ex-iOS";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		290526AB1A9B00E90041635E /* V2ActionCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2ActionCellView.h; sourceTree = "<group>"; };
 		290526AC1A9B00E90041635E /* V2ActionCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2ActionCellView.m; sourceTree = "<group>"; };
@@ -227,11 +212,7 @@
 		2933869918D67B6C00FEC28E /* V2AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = V2AppDelegate.h; sourceTree = "<group>"; };
 		2933869A18D67B6C00FEC28E /* V2AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = V2AppDelegate.m; sourceTree = "<group>"; };
 		2933869C18D67B6C00FEC28E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		293386A218D67B6C00FEC28E /* v2ex-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "v2ex-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		293386A318D67B6C00FEC28E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		293386AB18D67B6C00FEC28E /* v2ex-iOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "v2ex-iOSTests-Info.plist"; sourceTree = "<group>"; };
-		293386AD18D67B6C00FEC28E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		293386AF18D67B6C00FEC28E /* v2ex_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = v2ex_iOSTests.m; sourceTree = "<group>"; };
 		293386BE18D67FC500FEC28E /* SCNavigationPopAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCNavigationPopAnimation.h; sourceTree = "<group>"; };
 		293386BF18D67FC500FEC28E /* SCNavigationPopAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCNavigationPopAnimation.m; sourceTree = "<group>"; };
 		293386C018D67FC500FEC28E /* SCNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCNavigationController.h; sourceTree = "<group>"; };
@@ -431,16 +412,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2933869F18D67B6C00FEC28E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				293386A418D67B6C00FEC28E /* XCTest.framework in Frameworks */,
-				293386A618D67B6C00FEC28E /* UIKit.framework in Frameworks */,
-				293386A518D67B6C00FEC28E /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -620,7 +591,6 @@
 			isa = PBXGroup;
 			children = (
 				2933869018D67B6B00FEC28E /* v2ex-iOS */,
-				293386A918D67B6C00FEC28E /* v2ex-iOSTests */,
 				2933868918D67B6B00FEC28E /* Frameworks */,
 				2933868818D67B6B00FEC28E /* Products */,
 				C52687476624EE1E6F9FDEA4 /* Pods */,
@@ -631,7 +601,6 @@
 			isa = PBXGroup;
 			children = (
 				2933868718D67B6B00FEC28E /* v2ex-iOS.app */,
-				293386A218D67B6C00FEC28E /* v2ex-iOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -678,24 +647,6 @@
 				299CEBCC1AA53313003B547B /* V2AppKeys.h */,
 				2933869918D67B6C00FEC28E /* V2AppDelegate.h */,
 				2933869A18D67B6C00FEC28E /* V2AppDelegate.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		293386A918D67B6C00FEC28E /* v2ex-iOSTests */ = {
-			isa = PBXGroup;
-			children = (
-				293386AF18D67B6C00FEC28E /* v2ex_iOSTests.m */,
-				293386AA18D67B6C00FEC28E /* Supporting Files */,
-			);
-			path = "v2ex-iOSTests";
-			sourceTree = "<group>";
-		};
-		293386AA18D67B6C00FEC28E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				293386AB18D67B6C00FEC28E /* v2ex-iOSTests-Info.plist */,
-				293386AC18D67B6C00FEC28E /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1057,24 +1008,6 @@
 			productReference = 2933868718D67B6B00FEC28E /* v2ex-iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		293386A118D67B6C00FEC28E /* v2ex-iOSTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 293386B618D67B6C00FEC28E /* Build configuration list for PBXNativeTarget "v2ex-iOSTests" */;
-			buildPhases = (
-				2933869E18D67B6C00FEC28E /* Sources */,
-				2933869F18D67B6C00FEC28E /* Frameworks */,
-				293386A018D67B6C00FEC28E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				293386A818D67B6C00FEC28E /* PBXTargetDependency */,
-			);
-			name = "v2ex-iOSTests";
-			productName = "v2ex-iOSTests";
-			productReference = 293386A218D67B6C00FEC28E /* v2ex-iOSTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1087,9 +1020,6 @@
 				TargetAttributes = {
 					2933868618D67B6B00FEC28E = {
 						DevelopmentTeam = 8KZ3G3A2FQ;
-					};
-					293386A118D67B6C00FEC28E = {
-						TestTargetID = 2933868618D67B6B00FEC28E;
 					};
 				};
 			};
@@ -1106,7 +1036,6 @@
 			projectRoot = "";
 			targets = (
 				2933868618D67B6B00FEC28E /* v2ex-iOS */,
-				293386A118D67B6C00FEC28E /* v2ex-iOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1125,14 +1054,6 @@
 				2956F279191F607B00A62102 /* NodesList.plist in Resources */,
 				2933869D18D67B6C00FEC28E /* Images.xcassets in Resources */,
 				2987FFDB194D8ADB00794894 /* IDMPBLocalizations.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		293386A018D67B6C00FEC28E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				293386AE18D67B6C00FEC28E /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1288,37 +1209,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2933869E18D67B6C00FEC28E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				293386B018D67B6C00FEC28E /* v2ex_iOSTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		293386A818D67B6C00FEC28E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2933868618D67B6B00FEC28E /* v2ex-iOS */;
-			targetProxy = 293386A718D67B6C00FEC28E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2933869318D67B6B00FEC28E /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2933869418D67B6B00FEC28E /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		293386AC18D67B6C00FEC28E /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				293386AD18D67B6C00FEC28E /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1463,46 +1360,6 @@
 			};
 			name = Release;
 		};
-		293386B718D67B6C00FEC28E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/v2ex-iOS.app/v2ex-iOS";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "v2ex-iOS/v2ex-iOS-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "v2ex-iOSTests/v2ex-iOSTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		293386B818D67B6C00FEC28E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/v2ex-iOS.app/v2ex-iOS";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "v2ex-iOS/v2ex-iOS-Prefix.pch";
-				INFOPLIST_FILE = "v2ex-iOSTests/v2ex-iOSTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1520,15 +1377,6 @@
 			buildConfigurations = (
 				293386B418D67B6C00FEC28E /* Debug */,
 				293386B518D67B6C00FEC28E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		293386B618D67B6C00FEC28E /* Build configuration list for PBXNativeTarget "v2ex-iOSTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				293386B718D67B6C00FEC28E /* Debug */,
-				293386B818D67B6C00FEC28E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
