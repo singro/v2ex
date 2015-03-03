@@ -1,0 +1,98 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import <AFNetworking.h>
+    #import "SDWebImageManager.h"
+    #import "UIImageView+WebCache.h"
+    #import <BlocksKit.h>
+    #import <BlocksKit+UIKit.h>
+    #import <FrameAccessor.h>
+//    #import <ReactiveCocoa.h>
+    #import "NSDictionary+NotNullKey.h"
+    #import "EXTScope.h"
+    #import "UIImage+Tint.h"
+
+    #import "SCNavigation.h"
+    #import "SCActionSheet.h"
+
+    #import "V2DataManager.h"
+    #import "V2NotificationManager.h"
+    #import "V2SettingManager.h"
+    #import "V2CheckInManager.h"
+    #import "SCWeiboManager.h"
+
+    #import "V2Helper.h"
+
+#endif
+
+#define TEST
+
+#ifdef TEST
+
+#define V2Log(...) NSLog(@"%@", [NSString stringWithFormat:__VA_ARGS__]);
+
+#else
+
+#define V2Log(...)
+
+#endif
+
+#define RGB(c,a)    [UIColor colorWithRed:((c>>16)&0xFF)/256.0  green:((c>>8)&0xFF)/256.0   blue:((c)&0xFF)/256.0   alpha:a]
+
+#define kSetting                   [V2SettingManager manager]
+
+#define kNavigationBarTintColor    kSetting.navigationBarTintColor
+#define kNavigationBarColor        kSetting.navigationBarColor
+#define kNavigationBarLineColor    kSetting.navigationBarLineColor
+
+#define kBackgroundColorWhite      kSetting.backgroundColorWhite
+#define kBackgroundColorWhiteDark  kSetting.backgroundColorWhiteDark
+
+#define kLineColorBlackDark        kSetting.lineColorBlackDark
+#define kLineColorBlackLight       kSetting.lineColorBlackLight
+
+#define kFontColorBlackDark        kSetting.fontColorBlackDark
+#define kFontColorBlackMid         kSetting.fontColorBlackMid
+#define kFontColorBlackLight       kSetting.fontColorBlackLight
+#define kFontColorBlackBlue        kSetting.fontColorBlackBlue
+
+#define kColorBlue                 kSetting.colorBlue
+#define kCellHighlightedColor      kSetting.cellHighlightedColor
+#define kMenuCellHighlightedColor  kSetting.menuCellHighlightedColor
+
+#define kCurrentTheme              kSetting.theme
+
+
+#define kScreenHeight ([UIScreen mainScreen].bounds.size.height)
+#define kScreenWidth ([UIScreen mainScreen].bounds.size.width)
+
+#define AppDelegate ((V2AppDelegate *)[UIApplication sharedApplication].delegate)
+
+static NSString * const kShowMenuNotification = @"ShowMenuNotificaion";
+static NSString * const kStatusBarTappedNotification = @"StatusBarTappedNotification";
+
+static NSString * const kShowLoginVCNotification = @"ShowLoginVCNotification";
+static NSString * const kLoginSuccessNotification = @"LoginSuccessNotification";
+static NSString * const kLogoutSuccessNotification = @"LogoutSuccessNotification";
+
+static NSString * const kThemeDidChangeNotification = @"ThemeDidChangeNotification";
+
+static NSString * const kUpdateCheckInBadgeNotification = @"UpdateCheckInBadgeNotification";
+static NSString * const kUpdateNotificationBadgeNotification = @"UpdateNotificationBadgeNotification";
+
+static NSString * const kIgnoreTopicSuccessNotification = @"IgnoreTopicSuccessNotification";
+
+
