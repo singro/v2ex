@@ -93,43 +93,6 @@ static CGFloat const kMenuWidth = 240.0;
     self.edgesForExtendedLayout = UIRectEdgeAll;
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    // Test
-    
-//    [[V2DataManager manager] UserLoginWithUsername:@"hoogle" password:@"Alexander" success:^(NSString *message) {
-//        NSLog(@"登录成功");
-//    } failure:^(NSError *error) {
-//        if (error.code == V2ErrorTypeLoginFailure) {
-//            NSLog(@"用户名或密码错误");
-//        } else {
-//            NSLog(@"检查网络");
-//        }
-//    }];
-    
-//    [[V2DataManager manager] getFeedURLSuccess:^(NSURL *feedURL) {
-//        ;
-//    } failure:^(NSError *error) {
-//        ;
-//    }];
-    
-//    [[V2DataManager manager] getTopicListWithType:V2HotNodesTypeTech Success:^(V2TopicList *list) {
-//        ;
-//    } failure:^(NSError *error) {
-//        ;
-//    }];
-    
-//    [[V2DataManager manager] getCheckInURLSuccess:^(NSURL *URL) {
-//        NSLog(@"url: %@", URL.absoluteString);
-//    } failure:^(NSError *error) {
-//        NSLog(@"check in failure.");
-//    }];
-
-//    [[V2DataManager manager] getCheckInCountSuccess:^(NSInteger count) {
-//        NSLog(@"count:  %d", count);
-//    } failure:^(NSError *error) {
-//        NSLog(@"get checkin count failure.");
-//    }];
-    
-    // end test
     
 }
 
