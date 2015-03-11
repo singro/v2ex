@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/singro/v2ex.svg?branch=master)](https://travis-ci.org/singro/v2ex)
+
 ####关于
 V2EX for iOS
 
