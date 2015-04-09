@@ -340,27 +340,37 @@
     
     self.isMenuShowing = YES;
     
+    UIWindow *window = [[UIApplication sharedApplication].windows lastObject];
+    CGRect addBarF = [self.menuContainView convertRect:self.addBarItem.view.frame fromView:window];
+    self.menuView.frame = (CGRect){CGRectGetMidX(addBarF) - 72, CGRectGetMaxY(addBarF), 130, 118};
+    
     if (animated) {
-        self.menuView.origin = (CGPoint){220, 20};
+        self.menuView.origin = (CGPoint){CGRectGetMidX(addBarF) - 72, CGRectGetMaxY(addBarF) - 44};
+//        self.menuView.origin = (CGPoint){220, 20};
         self.menuView.transform = CGAffineTransformMakeScale(0.3, 0.3);
         
         [UIView animateWithDuration:0.3 animations:^{
             self.menuView.alpha = 1.0;
             self.menuView.transform = CGAffineTransformIdentity;
-            self.menuView.frame = (CGRect){200, 64, 130, 118};
+            self.menuView.frame = (CGRect){CGRectGetMidX(addBarF) - 92, CGRectGetMaxY(addBarF), 130, 118};
+//            self.menuView.frame = (CGRect){200, 64, 130, 118};
         } completion:^(BOOL finished) {
             self.menuContainView.userInteractionEnabled = YES;
         }];
     } else {
         self.menuView.alpha = 1.0;
         self.menuView.transform = CGAffineTransformIdentity;
-        self.menuView.frame = (CGRect){200, 64, 130, 118};
+        self.menuView.frame = (CGRect){CGRectGetMidX(addBarF) - 72, CGRectGetMaxY(addBarF), 130, 118};
+//        self.menuView.frame = (CGRect){200, 64, 130, 118};
         self.menuContainView.userInteractionEnabled = YES;
     }
     
 }
 
 - (void)hideMenuAnimated:(BOOL)animated {
+    
+    UIWindow *window = [[UIApplication sharedApplication].windows lastObject];
+    CGRect addBarF = [self.menuContainView convertRect:self.addBarItem.view.frame fromView:window];
     
     if (animated) {
         [UIView animateWithDuration:0.2 animations:^{
@@ -372,11 +382,13 @@
         [UIView animateWithDuration:0.3 animations:^{
             
             self.menuView.transform = CGAffineTransformMakeScale(0.3, 0.3);
-            self.menuView.origin = (CGPoint){260, 64};
+            self.menuView.origin = (CGPoint){CGRectGetMidX(addBarF) - 72 + 40, CGRectGetMaxY(addBarF)};
+//            self.menuView.origin = (CGPoint){260, 64};
             
         } completion:^(BOOL finished) {
             self.menuView.transform = CGAffineTransformIdentity;
-            self.menuView.frame = (CGRect){200, 64, 130, 118};
+            self.menuView.frame = (CGRect){CGRectGetMidX(addBarF) - 72, CGRectGetMaxY(addBarF), 130, 118};
+//            self.menuView.frame = (CGRect){200, 64, 130, 118};
             self.isMenuShowing = NO;
         }];
     } else {
