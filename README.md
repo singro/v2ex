@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/singro/v2ex.svg?branch=master)](https://travis-ci.org/singro/v2ex)
+
 ####关于
 V2EX for iOS
 
@@ -13,7 +15,7 @@ https://itunes.apple.com/us/app/v2ex-chuang-yi-gong-zuo-zhe/id898181535?ls=1&mt=
 ```
 pod install
 ```
-若出现 `ld: library not found for -lPods-AFNetworking` 类似的， 设置 `Pods` 的 `Build Active Architecture Only` 为 `NO`
+若出现 `ld: library not found for -lPods-AFNetworking` 类似的， 设置 `Project` -> `Pods` 的 `Build Active Architecture Only` 为 `NO`
 
 ####部分独立组件
 
