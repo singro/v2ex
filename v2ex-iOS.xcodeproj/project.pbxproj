@@ -108,6 +108,8 @@
 		29964F6518D9F2CA0039F31C /* V2TopicBodyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29964F6418D9F2CA0039F31C /* V2TopicBodyCell.m */; };
 		29964F6818D9F3410039F31C /* V2TopicInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29964F6718D9F3410039F31C /* V2TopicInfoCell.m */; };
 		29964F6B18DA01880039F31C /* V2TopicReplyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29964F6A18DA01880039F31C /* V2TopicReplyCell.m */; };
+		299CEBCA1AA531EC003B547B /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299CEBC81AA531EC003B547B /* Crashlytics.framework */; };
+		299CEBCB1AA531EC003B547B /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299CEBC91AA531EC003B547B /* Fabric.framework */; };
 		29A281351956955D00B905FF /* UIImage+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A281341956955D00B905FF /* UIImage+Tint.m */; };
 		29AFBD8D18FA91EA00C0ED68 /* V2NotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AFBD8C18FA91EA00C0ED68 /* V2NotificationCell.m */; };
 		29B0850A1967FD70006A7C02 /* V2SettingCheckInCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B085091967FD70006A7C02 /* V2SettingCheckInCell.m */; };
@@ -346,6 +348,8 @@
 		29964F6718D9F3410039F31C /* V2TopicInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2TopicInfoCell.m; sourceTree = "<group>"; };
 		29964F6918DA01880039F31C /* V2TopicReplyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2TopicReplyCell.h; sourceTree = "<group>"; };
 		29964F6A18DA01880039F31C /* V2TopicReplyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2TopicReplyCell.m; sourceTree = "<group>"; };
+		299CEBC81AA531EC003B547B /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = "v2ex-iOS/Frameworks/Crashlytics.framework"; sourceTree = "<group>"; };
+		299CEBC91AA531EC003B547B /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = "v2ex-iOS/Frameworks/Fabric.framework"; sourceTree = "<group>"; };
 		299CEBCC1AA53313003B547B /* V2AppKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2AppKeys.h; sourceTree = "<group>"; };
 		29A281331956955D00B905FF /* UIImage+Tint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tint.h"; sourceTree = "<group>"; };
 		29A281341956955D00B905FF /* UIImage+Tint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tint.m"; sourceTree = "<group>"; };
@@ -425,8 +429,10 @@
 				29CB5FCD18F186F000357D5B /* libxml2.dylib in Frameworks */,
 				2948C8AA194340C5000C8835 /* libWeiboSDK.a in Frameworks */,
 				2933868D18D67B6B00FEC28E /* CoreGraphics.framework in Frameworks */,
+				299CEBCB1AA531EC003B547B /* Fabric.framework in Frameworks */,
 				2933868F18D67B6B00FEC28E /* UIKit.framework in Frameworks */,
 				2933868B18D67B6B00FEC28E /* Foundation.framework in Frameworks */,
+				299CEBCA1AA531EC003B547B /* Crashlytics.framework in Frameworks */,
 				C5BF11E006564992BA7F1B46 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -639,6 +645,8 @@
 		2933868918D67B6B00FEC28E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				299CEBC81AA531EC003B547B /* Crashlytics.framework */,
+				299CEBC91AA531EC003B547B /* Fabric.framework */,
 				29DC02441A9B2103004E541B /* libc++.dylib */,
 				29DC02421A9B2029004E541B /* SystemConfiguration.framework */,
 				29DC02401A9B2020004E541B /* libz.dylib */,
@@ -1047,6 +1055,7 @@
 				2933868418D67B6B00FEC28E /* Frameworks */,
 				2933868518D67B6B00FEC28E /* Resources */,
 				577326F7FB8E4260974994BC /* Copy Pods Resources */,
+				29DC02461A9C33C7004E541B /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -1139,6 +1148,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		29DC02461A9C33C7004E541B /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./v2ex-iOS/Frameworks/Fabric.framework/run fe65000a4e34e3445bf0f3fb32461992ba3aa129 972f06f5099a0594e339998377195c232dca342bba1b2e3310fd517fde05bae3\n";
+		};
 		30B1C5CAFE33475AAA78B1A1 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
