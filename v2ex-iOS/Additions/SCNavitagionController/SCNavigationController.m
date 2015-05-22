@@ -20,12 +20,8 @@
 
 @property (nonatomic, strong) UIPanGestureRecognizer *panRecognizer;
 @property (nonatomic, strong) UIPercentDrivenInteractiveTransition *interactivePopTransition;
-//@property (nonatomic, strong) UIScreenEdgePanGestureRecognizer *edgePanRecognizer;
-//@property (nonatomic, strong) SCNavigationPopAnimation *popAnimation;
 
 @property (nonatomic, assign) UIViewController *lastViewController;
-
-@property (nonatomic, assign) BOOL isTransiting;
 
 @end
 
@@ -59,8 +55,6 @@
 {
     [super viewDidLoad];
     
-    self.isTransiting = NO;
-    
 //    self.navigationBar.barStyle = UIBarStyleBlack;
 //    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     self.navigationBarHidden = YES;
@@ -85,11 +79,6 @@
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
     
-
-    if (!self.isTransiting) {
-        self.interactivePopGestureRecognizer.enabled = NO;
-    }
-    
     [[NSNotificationCenter defaultCenter] postNotificationName:kRootViewControllerCancelDelegateNotification object:nil];
     [self configureNavigationBarForViewController:viewController];
 
@@ -99,11 +88,6 @@
 
 - (UIViewController *)popViewControllerAnimated:(BOOL)animated {
     
-    if (self.isTransiting) {
-        self.isTransiting = NO;
-        return nil;
-    }
-    
     return [super popViewControllerAnimated:animated];
     
 }
@@ -112,8 +96,6 @@
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
     
-    self.isTransiting = YES;
-
 }
 
 - (void)navigationController:(UINavigationController *)navigationController
@@ -121,8 +103,6 @@
                     animated:(BOOL)animate
 {
 
-    self.isTransiting = NO;
-    
     [viewController.view bringSubviewToFront:viewController.sc_navigationBar];
     
     if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
