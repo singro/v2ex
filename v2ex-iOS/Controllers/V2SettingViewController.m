@@ -374,7 +374,7 @@ typedef NS_ENUM(NSInteger, V2SettingSection) {
         
         if (indexPath.row == 1) {
             
-            URL = [NSURL URLWithString:@"http://v2ex.com/about"];
+            URL = [NSURL URLWithString:@"https://v2ex.com/about"];
             
         }
         
