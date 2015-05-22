@@ -123,7 +123,7 @@
                         stringModel.attributedString = subString;
                         
                         NSMutableArray *quotes = [[NSMutableArray alloc] init];
-                        for (int i = lastImageQuoteIndex; i < idx; i ++) {
+                        for (NSInteger i = lastImageQuoteIndex; i < idx; i ++) {
                             SCQuote *otherQuote = self.quoteArray[i];
                             otherQuote.range = (NSMakeRange(otherQuote.range.location - lastStringIndex - stringOffset, otherQuote.range.length));
                             [quotes addObject:self.quoteArray[i]];
@@ -164,7 +164,7 @@
                 stringModel.attributedString = subString;
 
                 NSMutableArray *quotes = [[NSMutableArray alloc] init];
-                for (int i = lastImageQuoteIndex; i < self.quoteArray.count; i ++) {
+                for (NSInteger i = lastImageQuoteIndex; i < self.quoteArray.count; i ++) {
                     SCQuote *otherQuote = self.quoteArray[i];
                     otherQuote.range = (NSMakeRange(otherQuote.range.location - lastStringIndex - stringOffset, otherQuote.range.length));
                     [quotes addObject:self.quoteArray[i]];

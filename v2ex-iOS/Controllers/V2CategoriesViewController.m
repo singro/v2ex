@@ -13,8 +13,8 @@
 #import "V2TopicListCell.h"
 #import "V2SubMenuSectionView.h"
 
-#define keyFromCategoriesType(type) [NSString stringWithFormat:@"categoriesKey%d", type]
-#define keyFromFavoriteType(type) [NSString stringWithFormat:@"categoriesKey%d", type]
+#define keyFromCategoriesType(type) [NSString stringWithFormat:@"categoriesKey%zd", type]
+#define keyFromFavoriteType(type) [NSString stringWithFormat:@"categoriesKey%zd", type]
 
 @interface V2CategoriesViewController () <UITableViewDataSource, UITableViewDelegate>
 

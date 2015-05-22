@@ -14,8 +14,8 @@
 #import "SCWeiboManager.h"
 #import "SCWeixinManager.h"
 
-//#import <Fabric/Fabric.h>
-//#import <Crashlytics/Crashlytics.h>
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 
 @implementation V2AppDelegate
 
@@ -46,7 +46,7 @@
         
     [self.window makeKeyAndVisible];
     
-//    [Fabric with:@[CrashlyticsKit]];
+    [Fabric with:@[CrashlyticsKit]];
 
     return YES;
 }

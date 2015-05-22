@@ -59,7 +59,7 @@
         self.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    self.checkInCountLabel.text = [NSString stringWithFormat:@"%d天%@", [V2CheckInManager manager].checkInCount, isCheckInString];
+    self.checkInCountLabel.text = [NSString stringWithFormat:@"%ld天%@", (long)[V2CheckInManager manager].checkInCount, isCheckInString];
 
 }
 

@@ -581,7 +581,7 @@ typedef NS_ENUM(NSInteger, V2ImagePickerSourceType) {
             
             // update State Count
             NSInteger replyCount = [self.model.topicReplyCount integerValue] + 1;
-            self.model.topicReplyCount = [NSString stringWithFormat:@"%d", replyCount];
+            self.model.topicReplyCount = [NSString stringWithFormat:@"%ld", (long)replyCount];
             [[V2TopicStateManager manager] saveStateForTopicModel:self.model];
 
             [self beginLoadMore];

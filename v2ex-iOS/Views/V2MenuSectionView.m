@@ -198,7 +198,7 @@ static CGFloat const kAvatarHeight = 70.0f;
     self.avatarImageView.y = 30 - (scrollView.contentInsetTop - offsetY) / 1.7;
     self.avatarButton.frame = self.avatarImageView.frame;
 
-    self.divideImageView.y = self.avatarImageView.y + kAvatarHeight + (offsetY - (self.avatarImageView.y + kAvatarHeight)) / 2.0 + fabsf(offsetY - self.tableView.contentInsetTop)/self.tableView.contentInsetTop * 8.0 + 10;
+    self.divideImageView.y = self.avatarImageView.y + kAvatarHeight + (offsetY - (self.avatarImageView.y + kAvatarHeight)) / 2.0 + fabs(offsetY - self.tableView.contentInsetTop)/self.tableView.contentInsetTop * 8.0 + 10;
     
     
 }

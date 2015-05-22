@@ -79,6 +79,7 @@
 		2954756818DF49C800B85492 /* UIView+REFrosted.m in Sources */ = {isa = PBXBuildFile; fileRef = 2954756618DF49C800B85492 /* UIView+REFrosted.m */; };
 		2956F279191F607B00A62102 /* NodesList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2956F278191F607B00A62102 /* NodesList.plist */; };
 		295DF33F190D3348007B9326 /* V2NodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295DF33E190D3348007B9326 /* V2NodeViewController.m */; };
+		295E3BF31B0F741A00F38049 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295E3BF21B0F741A00F38049 /* Crashlytics.framework */; };
 		2968EACB195C1C020000E8BD /* AnimatedGIFImageSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 2968EACA195C1C020000E8BD /* AnimatedGIFImageSerialization.m */; };
 		2968EACE195CAA7E0000E8BD /* V2SettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2968EACD195CAA7E0000E8BD /* V2SettingCell.m */; };
 		297005F318DDD1A600F824E9 /* V2TopicStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 297005F218DDD1A600F824E9 /* V2TopicStateManager.m */; };
@@ -108,7 +109,6 @@
 		29964F6518D9F2CA0039F31C /* V2TopicBodyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29964F6418D9F2CA0039F31C /* V2TopicBodyCell.m */; };
 		29964F6818D9F3410039F31C /* V2TopicInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29964F6718D9F3410039F31C /* V2TopicInfoCell.m */; };
 		29964F6B18DA01880039F31C /* V2TopicReplyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29964F6A18DA01880039F31C /* V2TopicReplyCell.m */; };
-		299CEBCA1AA531EC003B547B /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299CEBC81AA531EC003B547B /* Crashlytics.framework */; };
 		299CEBCB1AA531EC003B547B /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299CEBC91AA531EC003B547B /* Fabric.framework */; };
 		29A281351956955D00B905FF /* UIImage+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A281341956955D00B905FF /* UIImage+Tint.m */; };
 		29AFBD8D18FA91EA00C0ED68 /* V2NotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AFBD8C18FA91EA00C0ED68 /* V2NotificationCell.m */; };
@@ -291,6 +291,7 @@
 		2956F278191F607B00A62102 /* NodesList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NodesList.plist; sourceTree = "<group>"; };
 		295DF33D190D3348007B9326 /* V2NodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2NodeViewController.h; sourceTree = "<group>"; };
 		295DF33E190D3348007B9326 /* V2NodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2NodeViewController.m; sourceTree = "<group>"; };
+		295E3BF21B0F741A00F38049 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = "v2ex-iOS/Frameworks/Crashlytics.framework"; sourceTree = "<group>"; };
 		2968EAC9195C1C020000E8BD /* AnimatedGIFImageSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedGIFImageSerialization.h; sourceTree = "<group>"; };
 		2968EACA195C1C020000E8BD /* AnimatedGIFImageSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatedGIFImageSerialization.m; sourceTree = "<group>"; };
 		2968EACC195CAA7E0000E8BD /* V2SettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2SettingCell.h; sourceTree = "<group>"; };
@@ -348,7 +349,6 @@
 		29964F6718D9F3410039F31C /* V2TopicInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2TopicInfoCell.m; sourceTree = "<group>"; };
 		29964F6918DA01880039F31C /* V2TopicReplyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2TopicReplyCell.h; sourceTree = "<group>"; };
 		29964F6A18DA01880039F31C /* V2TopicReplyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2TopicReplyCell.m; sourceTree = "<group>"; };
-		299CEBC81AA531EC003B547B /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = "v2ex-iOS/Frameworks/Crashlytics.framework"; sourceTree = "<group>"; };
 		299CEBC91AA531EC003B547B /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = "v2ex-iOS/Frameworks/Fabric.framework"; sourceTree = "<group>"; };
 		299CEBCC1AA53313003B547B /* V2AppKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2AppKeys.h; sourceTree = "<group>"; };
 		29A281331956955D00B905FF /* UIImage+Tint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tint.h"; sourceTree = "<group>"; };
@@ -423,6 +423,7 @@
 			files = (
 				29DC02451A9B2103004E541B /* libc++.dylib in Frameworks */,
 				29DC02431A9B2029004E541B /* SystemConfiguration.framework in Frameworks */,
+				295E3BF31B0F741A00F38049 /* Crashlytics.framework in Frameworks */,
 				29DC02411A9B2020004E541B /* libz.dylib in Frameworks */,
 				29DC023F1A9B2010004E541B /* libsqlite3.0.dylib in Frameworks */,
 				298BDAAA1993FFBF00EF74D7 /* libWeChatSDK.a in Frameworks */,
@@ -432,7 +433,6 @@
 				299CEBCB1AA531EC003B547B /* Fabric.framework in Frameworks */,
 				2933868F18D67B6B00FEC28E /* UIKit.framework in Frameworks */,
 				2933868B18D67B6B00FEC28E /* Foundation.framework in Frameworks */,
-				299CEBCA1AA531EC003B547B /* Crashlytics.framework in Frameworks */,
 				C5BF11E006564992BA7F1B46 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -645,7 +645,7 @@
 		2933868918D67B6B00FEC28E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				299CEBC81AA531EC003B547B /* Crashlytics.framework */,
+				295E3BF21B0F741A00F38049 /* Crashlytics.framework */,
 				299CEBC91AA531EC003B547B /* Fabric.framework */,
 				29DC02441A9B2103004E541B /* libc++.dylib */,
 				29DC02421A9B2029004E541B /* SystemConfiguration.framework */,
@@ -1091,7 +1091,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = V2;
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = Singro;
 				TargetAttributes = {
 					2933868618D67B6B00FEC28E = {
@@ -1160,7 +1160,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./v2ex-iOS/Frameworks/Fabric.framework/run fe65000a4e34e3445bf0f3fb32461992ba3aa129 972f06f5099a0594e339998377195c232dca342bba1b2e3310fd517fde05bae3\n";
+			shellScript = "./Fabric.framework/run b0526b31de85ed2d2ae91519dd55e989a367cd6e 1b98115b54b9e17d0b486d8be037add7d1f1cf5cc480007fc6b34c1885e2997a\n";
 		};
 		30B1C5CAFE33475AAA78B1A1 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
