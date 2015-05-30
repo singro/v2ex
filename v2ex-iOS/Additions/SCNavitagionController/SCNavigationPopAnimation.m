@@ -193,7 +193,7 @@ static const CGFloat kToBackgroundInitAlpha = 0.08;
 }
 
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext {
-    return 0.3;
+    return 0.2;
 }
 
 @end

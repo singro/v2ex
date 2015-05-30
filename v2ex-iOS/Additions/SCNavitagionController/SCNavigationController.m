@@ -191,7 +191,8 @@
         [self.interactivePopTransition updateInteractiveTransition:progress];
     }
     else if (recognizer.state == UIGestureRecognizerStateEnded || recognizer.state == UIGestureRecognizerStateCancelled) {
-        if (progress > 0.3) {
+        CGFloat velocityX = [recognizer velocityInView:self.view].x;
+        if (progress > 0.3 || velocityX > 300) {
             self.interactivePopTransition.completionSpeed = 0.4;
             [self.interactivePopTransition finishInteractiveTransition];
         }
