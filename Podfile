@@ -12,7 +12,7 @@ pod 'RegexKitLite', '~> 4.0'
 pod 'MBProgressHUD', '~> 0.8'
 
 post_install do |installer_representation|
-    installer_representation.project.targets.each do |target|
+    installer_representation.pods_project.targets.each do |target|
         target.build_configurations.each do |config|
             config.build_settings['ARCHS'] = 'armv7 arm64'
         end
