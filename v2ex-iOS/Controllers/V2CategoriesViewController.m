@@ -396,7 +396,7 @@
             [self.currentTask cancel];
         }
         
-        if (self.isFavorite) {
+        if (self.isFavorite && self.favoriteType != V2HotNodesTypeNodes) {
             type = self.favoriteType;
             NSInteger page = 1;
             
@@ -435,19 +435,32 @@
             }];
             
         } else {
-            type = self.categoriesType;
+            
+            if (self.isFavorite) {
+                type = V2HotNodesTypeNodes;
+            } else {
+                type = self.categoriesType;
+            }
             
             self.currentTask = [[V2DataManager manager] getTopicListWithType:type Success:^(V2TopicList *list) {
                 @strongify(self);
                 
                 self.topicList = list;
                 [self.topicListDict setObject:list forKey:keyFromCategoriesType(type)];
-                [self endRefresh];
-                
+                if (isLoadMore) {
+                    [self endLoadMore];
+                } else {
+                    [self endRefresh];
+                }
+
                 
             } failure:^(NSError *error) {
                 @strongify(self);
-                [self endRefresh];
+                if (isLoadMore) {
+                    [self endLoadMore];
+                } else {
+                    [self endRefresh];
+                }
                 
             }];
 
