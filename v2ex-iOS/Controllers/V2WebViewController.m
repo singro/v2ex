@@ -105,7 +105,7 @@
 }
 
 - (void)dealloc {
-    [self.webView loadHTMLString:nil baseURL:nil];
+    [self.webView stopLoading];
     [self.webView removeFromSuperview];
     self.webView = nil;
 }

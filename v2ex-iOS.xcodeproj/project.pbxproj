@@ -265,6 +265,7 @@
 		294B66B41962EE5400F74D44 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		294D83F5196FCE9A0086901E /* V2SettingWeiboCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2SettingWeiboCell.h; sourceTree = "<group>"; };
 		294D83F6196FCE9A0086901E /* V2SettingWeiboCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2SettingWeiboCell.m; sourceTree = "<group>"; };
+		294F14E81BA305B60002B44F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		2954756318DF49C800B85492 /* UIImage+REFrosted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+REFrosted.h"; sourceTree = "<group>"; };
 		2954756418DF49C800B85492 /* UIImage+REFrosted.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+REFrosted.m"; sourceTree = "<group>"; };
 		2954756518DF49C800B85492 /* UIView+REFrosted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+REFrosted.h"; sourceTree = "<group>"; };
@@ -1038,6 +1039,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hans",
 			);
 			mainGroup = 2933867E18D67B6B00FEC28E;
 			productRefGroup = 2933868818D67B6B00FEC28E /* Products */;
@@ -1239,6 +1241,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2933869418D67B6B00FEC28E /* en */,
+				294F14E81BA305B60002B44F /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1264,6 +1267,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xingrong Chen (S8A223NWX3)";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1303,6 +1307,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

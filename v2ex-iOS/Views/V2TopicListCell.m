@@ -80,54 +80,19 @@ static CGFloat const kBottomFontSize        = 12.0f;
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    self.titleLabel.textColor               = kFontColorBlackDark;
-    self.timeLabel.textColor                = kFontColorBlackLight;
-    self.nameLabel.textColor                = kFontColorBlackBlue;
-    self.nodeLabel.textColor                = kFontColorBlackLight;
-    self.topLineView.backgroundColor        = kLineColorBlackDark;
-    self.borderLineView.backgroundColor     = kLineColorBlackDark;
 
     self.topLineView.frame      = CGRectMake(0, 0, kScreenWidth, 0.5);
     self.topLineView.hidden     = !self.isTop;
     
-//    self.replyCountLabel.frame  = CGRectMake(1, 1, 11, 9);
-
     self.avatarImageView.frame  = (CGRect){kScreenWidth - 10 - kAvatarHeight, 13, kAvatarHeight, kAvatarHeight};
     self.titleLabel.frame       = CGRectMake(10, 15, kTitleLabelWidth, self.titleHeight);
 
     self.nodeLabel.origin       = CGPointMake(kScreenWidth - 10 - self.nodeLabel.width, self.height - 27);
     self.nameLabel.origin       = CGPointMake(self.nodeLabel.x - self.nameLabel.width - 3, self.height - 27);
     self.timeLabel.origin       = CGPointMake(10, self.height - 27);
-    
-//    self.avatarImageView.x = 10;
-//    self.titleLabel.x = self.avatarImageView.x + self.avatarImageView.width + 8;
-//    self.nodeLabel.x = self.titleLabel.x;
-//    self.nameLabel.x = self.nodeLabel.x + self.nodeLabel.width + 8;
-//    self.timeLabel.x = 310 - self.timeLabel.width;
 
     self.borderLineView.frame   = CGRectMake(0, self.frame.size.height-0.5, kScreenWidth, 0.5);
     
-    switch (self.model.state) {
-        case V2TopicStateReadWithNewReply:
-            self.stateLabel.backgroundColor = [UIColor colorWithRed:1.000 green:0.581 blue:0.312 alpha:0.800];
-            break;
-        case V2TopicStateReadWithReply:
-            self.stateLabel.backgroundColor = [UIColor colorWithWhite:0.000 alpha:0.040];
-            break;
-        case V2TopicStateReadWithoutReply:
-            self.stateLabel.backgroundColor = [UIColor colorWithWhite:0.000 alpha:0.040];
-            break;
-        case V2TopicStateUnreadWithReply:
-            self.stateLabel.backgroundColor = [self stateColorWithReplyCount:[self.model.topicReplyCount integerValue]];
-            break;
-        case V2TopicStateUnreadWithoutReply:
-            self.stateLabel.backgroundColor = [UIColor colorWithRed:0.318 green:0.782 blue:1.000 alpha:0.300];
-            break;
-            
-        default:
-            break;
-    }
-
 }
 
 #pragma mark - Configure Views
@@ -179,8 +144,8 @@ static CGFloat const kBottomFontSize        = 12.0f;
     self.nameLabel.backgroundColor          = [UIColor clearColor];
     self.nameLabel.font                     = [UIFont boldSystemFontOfSize:kBottomFontSize];
     self.nameLabel.textAlignment            = NSTextAlignmentRight;
-    self.nameLabel.layer.cornerRadius       = 3.0;
-    self.nameLabel.clipsToBounds            = YES;
+//    self.nameLabel.layer.cornerRadius       = 3.0;
+//    self.nameLabel.clipsToBounds            = YES;
     [self addSubview:self.nameLabel];
     
     self.nodeLabel                          = [[UILabel alloc] init];
@@ -189,8 +154,8 @@ static CGFloat const kBottomFontSize        = 12.0f;
     self.nodeLabel.textAlignment            = NSTextAlignmentCenter;
     self.nodeLabel.lineBreakMode            = NSLineBreakByTruncatingTail;
     self.nodeLabel.backgroundColor          = [UIColor colorWithWhite:0.000 alpha:0.040];
-    self.nodeLabel.layer.cornerRadius       = 3.0;
-    self.nodeLabel.clipsToBounds            = YES;
+//    self.nodeLabel.layer.cornerRadius       = 3.0;
+//    self.nodeLabel.clipsToBounds            = YES;
     [self addSubview:self.nodeLabel];
     
     self.topLineView                        = [[UIView alloc] init];
@@ -201,6 +166,13 @@ static CGFloat const kBottomFontSize        = 12.0f;
     
     self.timeLabel.alpha = 1.0;
     
+    self.titleLabel.textColor               = kFontColorBlackDark;
+    self.timeLabel.textColor                = kFontColorBlackLight;
+    self.nameLabel.textColor                = kFontColorBlackBlue;
+    self.nodeLabel.textColor                = kFontColorBlackLight;
+    self.topLineView.backgroundColor        = kLineColorBlackDark;
+    self.borderLineView.backgroundColor     = kLineColorBlackDark;
+
 }
 
 #pragma mark - Data Methods
@@ -223,9 +195,30 @@ static CGFloat const kBottomFontSize        = 12.0f;
     [self.nodeLabel sizeToFit];
     self.nodeLabel.width      += 4;
 
-    self.titleHeight          = [V2Helper getTextHeightWithText:model.topicTitle Font:[UIFont systemFontOfSize:kTitleFontSize] Width:kTitleLabelWidth] + 1;
+    self.titleHeight          = ceil(model.titleHeight);
 
     self.avatarImageView.alpha = kSetting.imageViewAlphaForCurrentTheme;
+
+    switch (self.model.state) {
+        case V2TopicStateReadWithNewReply:
+            self.stateLabel.backgroundColor = [UIColor colorWithRed:1.000 green:0.581 blue:0.312 alpha:0.800];
+            break;
+        case V2TopicStateReadWithReply:
+            self.stateLabel.backgroundColor = [UIColor colorWithWhite:0.000 alpha:0.040];
+            break;
+        case V2TopicStateReadWithoutReply:
+            self.stateLabel.backgroundColor = [UIColor colorWithWhite:0.000 alpha:0.040];
+            break;
+        case V2TopicStateUnreadWithReply:
+            self.stateLabel.backgroundColor = [self stateColorWithReplyCount:[self.model.topicReplyCount integerValue]];
+            break;
+        case V2TopicStateUnreadWithoutReply:
+            self.stateLabel.backgroundColor = [UIColor colorWithRed:0.318 green:0.782 blue:1.000 alpha:0.300];
+            break;
+            
+        default:
+            break;
+    }
 
 }
 
@@ -291,6 +284,8 @@ static CGFloat const kBottomFontSize        = 12.0f;
     NSInteger bottomHeight = (NSInteger)[V2Helper getTextHeightWithText:model.topicNode.nodeName Font:[UIFont systemFontOfSize:kBottomFontSize] Width:CGFLOAT_MAX] + 1;
     
     CGFloat cellHeight = 8 + 13 * 2 + titleHeight + bottomHeight;
+    model.cellHeight = cellHeight;
+    model.titleHeight = titleHeight;
     
     return cellHeight;
 }

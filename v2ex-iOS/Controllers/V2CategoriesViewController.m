@@ -497,10 +497,6 @@
     
     _topicList = topicList;
     
-//    [self.tableView beginUpdates];
-//    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
-//    [self.tableView endUpdates];
-    
     [self.tableView reloadData];
 
 }
@@ -627,6 +623,7 @@
     V2TopicListCell *cell = (V2TopicListCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (!cell) {
         cell = [[V2TopicListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        NSLog(@"create");
     }
     
     return [self configureTopicCellWithCell:cell IndexPath:indexPath];

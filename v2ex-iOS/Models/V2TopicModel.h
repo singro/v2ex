@@ -54,6 +54,7 @@ typedef NS_ENUM (NSInteger, V2ContentType) {
 
 @property (nonatomic, assign) V2TopicState  state;
 @property (nonatomic, assign) CGFloat cellHeight;
+@property (nonatomic, assign) CGFloat titleHeight;
 
 @end
 
