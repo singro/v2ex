@@ -70,6 +70,7 @@
 		294B66C11962EE5400F74D44 /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B66B21962EE5400F74D44 /* UIImage+WebP.m */; };
 		294B66C21962EE5400F74D44 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B66B41962EE5400F74D44 /* UIImageView+WebCache.m */; };
 		294D83F7196FCE9A0086901E /* V2SettingWeiboCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 294D83F6196FCE9A0086901E /* V2SettingWeiboCell.m */; };
+		294F15131BA318070002B44F /* UIImage+Cache..m in Sources */ = {isa = PBXBuildFile; fileRef = 294F15121BA318070002B44F /* UIImage+Cache..m */; settings = {ASSET_TAGS = (); }; };
 		2954756718DF49C800B85492 /* UIImage+REFrosted.m in Sources */ = {isa = PBXBuildFile; fileRef = 2954756418DF49C800B85492 /* UIImage+REFrosted.m */; };
 		2954756818DF49C800B85492 /* UIView+REFrosted.m in Sources */ = {isa = PBXBuildFile; fileRef = 2954756618DF49C800B85492 /* UIView+REFrosted.m */; };
 		2956F279191F607B00A62102 /* NodesList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2956F278191F607B00A62102 /* NodesList.plist */; };
@@ -266,6 +267,8 @@
 		294D83F5196FCE9A0086901E /* V2SettingWeiboCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2SettingWeiboCell.h; sourceTree = "<group>"; };
 		294D83F6196FCE9A0086901E /* V2SettingWeiboCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2SettingWeiboCell.m; sourceTree = "<group>"; };
 		294F14E81BA305B60002B44F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		294F15111BA318070002B44F /* UIImage+Cache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Cache.h"; sourceTree = "<group>"; };
+		294F15121BA318070002B44F /* UIImage+Cache..m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Cache..m"; sourceTree = "<group>"; };
 		2954756318DF49C800B85492 /* UIImage+REFrosted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+REFrosted.h"; sourceTree = "<group>"; };
 		2954756418DF49C800B85492 /* UIImage+REFrosted.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+REFrosted.m"; sourceTree = "<group>"; };
 		2954756518DF49C800B85492 /* UIView+REFrosted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+REFrosted.h"; sourceTree = "<group>"; };
@@ -875,6 +878,8 @@
 			children = (
 				29A281331956955D00B905FF /* UIImage+Tint.h */,
 				29A281341956955D00B905FF /* UIImage+Tint.m */,
+				294F15111BA318070002B44F /* UIImage+Cache.h */,
+				294F15121BA318070002B44F /* UIImage+Cache..m */,
 				2979373218D915EE0058DD8C /* V2Helper.h */,
 				2979373318D915EE0058DD8C /* V2Helper.m */,
 			);
@@ -1174,6 +1179,7 @@
 				2911B83F18EF867C004C757B /* V2NotificationManager.m in Sources */,
 				29B28A27191FFB3800642DC6 /* V2MemberTopicsViewController.m in Sources */,
 				2911B83C18EF171A004C757B /* V2NotificationViewController.m in Sources */,
+				294F15131BA318070002B44F /* UIImage+Cache..m in Sources */,
 				2927F09E18D7463200242167 /* V2BaseModel.m in Sources */,
 				294B66BB1962EE5400F74D44 /* SDWebImageDownloaderOperation.m in Sources */,
 				29CDF9D11931988900C6B952 /* SCBarButtonItem.m in Sources */,

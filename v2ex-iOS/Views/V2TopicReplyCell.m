@@ -15,6 +15,7 @@
 
 #import "TTTAttributedLabel.h"
 #import "SCQuote.h"
+#import "UIImage+Cache.h"
 
 #import "V2AppDelegate.h"
 #import "V2RootViewController.h"
@@ -69,8 +70,8 @@ static CGFloat const kContentFontSize = 15.0f;
 
         self.avatarImageView                    = [[UIImageView alloc] init];
         self.avatarImageView.contentMode        = UIViewContentModeScaleAspectFill;
-        self.avatarImageView.layer.cornerRadius = 3;//kAvatarHeight/2.0;
-        self.avatarImageView.clipsToBounds      = YES;
+//        self.avatarImageView.layer.cornerRadius = 3;//kAvatarHeight/2.0;
+//        self.avatarImageView.clipsToBounds      = YES;
         [self addSubview:self.avatarImageView];
 
         self.avatarButton                       = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -203,7 +204,21 @@ static CGFloat const kContentFontSize = 15.0f;
 - (void)setModel:(V2ReplyModel *)model {
     _model = model;
     
-    [self.avatarImageView setImageWithURL:[NSURL URLWithString:model.replyCreator.memberAvatarNormal] placeholderImage:[UIImage imageNamed:@"default_avatar"]];
+    @weakify(self);
+    [self.avatarImageView setImageWithURL:[NSURL URLWithString:model.replyCreator.memberAvatarNormal] placeholderImage:[UIImage imageNamed:@"default_avatar"] options:0 completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+        @strongify(self);
+        if (!image.cached) {
+            
+            UIImage *cornerRadiusImage = [image imageWithCornerRadius:3];
+            cornerRadiusImage.cached = YES;
+            
+            [[SDWebImageManager sharedManager].imageCache storeImage:cornerRadiusImage
+                                                              forKey:model.replyCreator.memberAvatarNormal];
+            self.avatarImageView.image = cornerRadiusImage;
+        }
+        
+    }];
+
 
     self.nameLabel.text    = model.replyCreator.memberName;
 

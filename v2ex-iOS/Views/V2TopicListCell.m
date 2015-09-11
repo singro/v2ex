@@ -9,10 +9,7 @@
 #import "V2TopicListCell.h"
 
 #import "TTTAttributedLabel.h"
-
-@interface UIImage (Cached)
-@property (nonatomic, assign) BOOL cached;
-@end
+#import "UIImage+Cache.h"
 
 static CGFloat const kAvatarHeight          = 26.0f;
 static CGFloat const kTitleFontSize         = 17.0f;
@@ -188,20 +185,14 @@ static CGFloat const kBottomFontSize        = 12.0f;
     @weakify(self);
     [self.avatarImageView setImageWithURL:[NSURL URLWithString:model.topicCreator.memberAvatarNormal] placeholderImage:[UIImage imageNamed:@"default_avatar"] options:0 completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
         @strongify(self);
-        
         if (!image.cached) {
-            UIGraphicsBeginImageContextWithOptions(image.size, NO, image.scale);
-            const CGRect RECT = CGRectMake(0, 0, image.size.width, image.size.height);
-            [[UIBezierPath bezierPathWithRoundedRect:RECT cornerRadius:3] addClip];
-            [image drawInRect:RECT];
             
-            UIImage* imageNew = UIGraphicsGetImageFromCurrentImageContext();
-            
-            UIGraphicsEndImageContext();
-            
-            [[SDWebImageManager sharedManager].imageCache storeImage:imageNew forKey:model.topicCreator.memberAvatarNormal];
-            imageNew.cached = YES;
-            self.avatarImageView.image = imageNew;
+            UIImage *cornerRadiusImage = [image imageWithCornerRadius:3];
+            cornerRadiusImage.cached = YES;
+
+            [[SDWebImageManager sharedManager].imageCache storeImage:cornerRadiusImage
+                                                              forKey:model.topicCreator.memberAvatarNormal];
+            self.avatarImageView.image = cornerRadiusImage;
         }
 
     }];
@@ -345,19 +336,5 @@ static CGFloat const kBottomFontSize        = 12.0f;
 //    }
 //
 //}
-
-@end
-
-@implementation UIImage (Cached)
-
-@dynamic cached;
-
-- (BOOL)cached {
-    return [objc_getAssociatedObject(self, @selector(cached)) boolValue];
-}
-
-- (void)setCached:(BOOL)cached {
-    objc_setAssociatedObject(self, @selector(cached), @(cached), OBJC_ASSOCIATION_ASSIGN);
-}
 
 @end
