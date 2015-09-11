@@ -623,7 +623,6 @@
     V2TopicListCell *cell = (V2TopicListCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (!cell) {
         cell = [[V2TopicListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        NSLog(@"create");
     }
     
     return [self configureTopicCellWithCell:cell IndexPath:indexPath];
