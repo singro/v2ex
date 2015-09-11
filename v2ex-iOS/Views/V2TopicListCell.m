@@ -214,7 +214,12 @@ static CGFloat const kBottomFontSize        = 12.0f;
     self.titleHeight          = ceil(model.titleHeight);
 
     self.avatarImageView.alpha = kSetting.imageViewAlphaForCurrentTheme;
+    
+    [self updateStatus];
 
+}
+
+- (void)updateStatus {
     switch (self.model.state) {
         case V2TopicStateReadWithNewReply:
             self.stateLabel.backgroundColor = [UIColor colorWithRed:1.000 green:0.581 blue:0.312 alpha:0.800];
@@ -235,7 +240,6 @@ static CGFloat const kBottomFontSize        = 12.0f;
         default:
             break;
     }
-
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

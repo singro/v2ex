@@ -77,7 +77,13 @@ static CGFloat const kRefreshHeight = 44.0f;
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [self.tableView deselectRowAtIndexPath:self.tableView.indexPathForSelectedRow animated:YES];
+    if (nil != self.tableView.indexPathForSelectedRow) {
+        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:self.tableView.indexPathForSelectedRow];
+        if ([cell respondsToSelector:@selector(updateStatus)]) {
+            [cell performSelector:@selector(updateStatus)];
+        }
+        [self.tableView deselectRowAtIndexPath:self.tableView.indexPathForSelectedRow animated:YES];
+    }
 
 }
 

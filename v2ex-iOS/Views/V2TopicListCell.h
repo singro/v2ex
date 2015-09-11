@@ -14,6 +14,8 @@
 
 @property (nonatomic, assign) BOOL         isTop;
 
+- (void)updateStatus;
+
 + (CGFloat)getCellHeightWithTopicModel:(V2TopicModel *)model;
 + (CGFloat)heightWithTopicModel:(V2TopicModel *)model;
 
