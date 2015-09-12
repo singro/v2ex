@@ -478,7 +478,7 @@
 		29B0850C196910B3006A7C02 /* V2CheckInManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2CheckInManager.m; sourceTree = "<group>"; };
 		29B28A25191FFB3800642DC6 /* V2MemberTopicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2MemberTopicsViewController.h; sourceTree = "<group>"; };
 		29B28A26191FFB3800642DC6 /* V2MemberTopicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2MemberTopicsViewController.m; sourceTree = "<group>"; };
-		29C0BE401BA3A89E007B110C /* v2ex-iOS(Crashlytics).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "v2ex-iOS(Crashlytics).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		29C0BE401BA3A89E007B110C /* v2ex-iOS-Crashlytics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "v2ex-iOS-Crashlytics.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C0BE411BA3A89E007B110C /* v2ex-iOS copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "v2ex-iOS copy-Info.plist"; path = "/Users/Singro/Desktop/git/v2ex/v2ex-iOS copy-Info.plist"; sourceTree = "<absolute>"; };
 		29CB5FC218F100A000357D5B /* V2UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2UserModel.h; sourceTree = "<group>"; };
 		29CB5FC318F100A000357D5B /* V2UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2UserModel.m; sourceTree = "<group>"; };
@@ -766,7 +766,7 @@
 			isa = PBXGroup;
 			children = (
 				2933868718D67B6B00FEC28E /* v2ex-iOS.app */,
-				29C0BE401BA3A89E007B110C /* v2ex-iOS(Crashlytics).app */,
+				29C0BE401BA3A89E007B110C /* v2ex-iOS-Crashlytics.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1178,9 +1178,9 @@
 			productReference = 2933868718D67B6B00FEC28E /* v2ex-iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		29C0BDB21BA3A89E007B110C /* v2ex-iOS(Crashlytics) */ = {
+		29C0BDB21BA3A89E007B110C /* v2ex-iOS-Crashlytics */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 29C0BE3D1BA3A89E007B110C /* Build configuration list for PBXNativeTarget "v2ex-iOS(Crashlytics)" */;
+			buildConfigurationList = 29C0BE3D1BA3A89E007B110C /* Build configuration list for PBXNativeTarget "v2ex-iOS-Crashlytics" */;
 			buildPhases = (
 				29C0BDB31BA3A89E007B110C /* Check Pods Manifest.lock */,
 				29C0BDB41BA3A89E007B110C /* Sources */,
@@ -1193,9 +1193,9 @@
 			);
 			dependencies = (
 			);
-			name = "v2ex-iOS(Crashlytics)";
+			name = "v2ex-iOS-Crashlytics";
 			productName = "v2ex-iOS";
-			productReference = 29C0BE401BA3A89E007B110C /* v2ex-iOS(Crashlytics).app */;
+			productReference = 29C0BE401BA3A89E007B110C /* v2ex-iOS-Crashlytics.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1230,7 +1230,7 @@
 			projectRoot = "";
 			targets = (
 				2933868618D67B6B00FEC28E /* v2ex-iOS */,
-				29C0BDB21BA3A89E007B110C /* v2ex-iOS(Crashlytics) */,
+				29C0BDB21BA3A89E007B110C /* v2ex-iOS-Crashlytics */,
 			);
 		};
 /* End PBXProject section */
@@ -1825,7 +1825,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		29C0BE3D1BA3A89E007B110C /* Build configuration list for PBXNativeTarget "v2ex-iOS(Crashlytics)" */ = {
+		29C0BE3D1BA3A89E007B110C /* Build configuration list for PBXNativeTarget "v2ex-iOS-Crashlytics" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				29C0BE3E1BA3A89E007B110C /* Debug */,
