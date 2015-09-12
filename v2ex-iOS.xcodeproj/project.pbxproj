@@ -111,6 +111,138 @@
 		29B0850A1967FD70006A7C02 /* V2SettingCheckInCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B085091967FD70006A7C02 /* V2SettingCheckInCell.m */; };
 		29B0850D196910B3006A7C02 /* V2CheckInManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B0850C196910B3006A7C02 /* V2CheckInManager.m */; };
 		29B28A27191FFB3800642DC6 /* V2MemberTopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B28A26191FFB3800642DC6 /* V2MemberTopicsViewController.m */; };
+		29C0BDB51BA3A89E007B110C /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B66A31962EE5400F74D44 /* SDWebImageDownloader.m */; };
+		29C0BDB61BA3A89E007B110C /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B66A11962EE5400F74D44 /* SDWebImageDecoder.m */; };
+		29C0BDB71BA3A89E007B110C /* V2NotificationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2911B84118EF8706004C757B /* V2NotificationModel.m */; };
+		29C0BDB81BA3A89E007B110C /* SCImageUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FA5371991F6FC00E42B34 /* SCImageUploader.m */; };
+		29C0BDB91BA3A89E007B110C /* V2ActionItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 290526AE1A9B00EA0041635E /* V2ActionItemView.m */; };
+		29C0BDBA1BA3A89E007B110C /* SCNavigationPushAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CDF9C01931768700C6B952 /* SCNavigationPushAnimation.m */; };
+		29C0BDBB1BA3A89E007B110C /* IDMPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2987FFCD194D8ADB00794894 /* IDMPhotoBrowser.m */; };
+		29C0BDBC1BA3A89E007B110C /* HTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CB5FC918F186B700357D5B /* HTMLParser.m */; };
+		29C0BDBD1BA3A89E007B110C /* V2SettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2968EACD195CAA7E0000E8BD /* V2SettingCell.m */; };
+		29C0BDBE1BA3A89E007B110C /* V2TopicInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29964F6718D9F3410039F31C /* V2TopicInfoCell.m */; };
+		29C0BDBF1BA3A89E007B110C /* SCActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 29290A8E19339D82002D2950 /* SCActionSheet.m */; };
+		29C0BDC01BA3A89E007B110C /* V2CheckInManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B0850C196910B3006A7C02 /* V2CheckInManager.m */; };
+		29C0BDC11BA3A89E007B110C /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B669D1962EE5400F74D44 /* SDImageCache.m */; };
+		29C0BDC21BA3A89E007B110C /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B66B21962EE5400F74D44 /* UIImage+WebP.m */; };
+		29C0BDC31BA3A89E007B110C /* V2NotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AFBD8C18FA91EA00C0ED68 /* V2NotificationCell.m */; };
+		29C0BDC41BA3A89E007B110C /* SCMetionTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 298EAF2618DF2CA1008082AA /* SCMetionTextView.m */; };
+		29C0BDC51BA3A89E007B110C /* V2MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2927F0B218D7D13000242167 /* V2MenuView.m */; };
+		29C0BDC61BA3A89E007B110C /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B66A71962EE5400F74D44 /* SDWebImageManager.m */; };
+		29C0BDC71BA3A89E007B110C /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B669B1962EE5400F74D44 /* NSData+ImageContentType.m */; };
+		29C0BDC81BA3A89E007B110C /* V2NodesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2927F0B818D7D69D00242167 /* V2NodesViewController.m */; };
+		29C0BDC91BA3A89E007B110C /* IDMCaptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2987FFC6194D8ADB00794894 /* IDMCaptionView.m */; };
+		29C0BDCA1BA3A89E007B110C /* IDMTapDetectingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2987FFD0194D8ADB00794894 /* IDMTapDetectingImageView.m */; };
+		29C0BDCB1BA3A89E007B110C /* V2ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CB5FD218F1E85000357D5B /* V2ProfileViewController.m */; };
+		29C0BDCC1BA3A89E007B110C /* V2MemberReplyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 291221AE192286E20021CB13 /* V2MemberReplyModel.m */; };
+		29C0BDCD1BA3A89E007B110C /* V2MemberRepliesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 291221B119228AC20021CB13 /* V2MemberRepliesViewController.m */; };
+		29C0BDCE1BA3A89E007B110C /* V2SubMenuSectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E5FA1A18F6E7DE008B5275 /* V2SubMenuSectionCell.m */; };
+		29C0BDCF1BA3A89E007B110C /* V2AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2933869A18D67B6C00FEC28E /* V2AppDelegate.m */; };
+		29C0BDD01BA3A89E007B110C /* V2FavoriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CB5FD518F1E88400357D5B /* V2FavoriteViewController.m */; };
+		29C0BDD11BA3A89E007B110C /* V2UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CB5FC318F100A000357D5B /* V2UserModel.m */; };
+		29C0BDD21BA3A89E007B110C /* V2DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2927F09518D741F700242167 /* V2DataManager.m */; };
+		29C0BDD31BA3A89E007B110C /* SCActionSheetButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 29290A9119339DF2002D2950 /* SCActionSheetButton.m */; };
+		29C0BDD41BA3A89E007B110C /* SCAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2911B83418EEAABC004C757B /* SCAnimationView.m */; };
+		29C0BDD51BA3A89E007B110C /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B66AE1962EE5400F74D44 /* UIImage+GIF.m */; };
+		29C0BDD61BA3A89E007B110C /* V2TopicCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2918C6E5191255D200F8441C /* V2TopicCreateViewController.m */; };
+		29C0BDD71BA3A89E007B110C /* V2LatestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2927F0B518D7D15500242167 /* V2LatestViewController.m */; };
+		29C0BDD81BA3A89E007B110C /* SCNavigationPopAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 293386BF18D67FC500FEC28E /* SCNavigationPopAnimation.m */; };
+		29C0BDD91BA3A89E007B110C /* V2WeiboViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 294216C11937A46200E9A91D /* V2WeiboViewController.m */; };
+		29C0BDDA1BA3A89E007B110C /* UIImage+REFrosted.m in Sources */ = {isa = PBXBuildFile; fileRef = 2954756418DF49C800B85492 /* UIImage+REFrosted.m */; };
+		29C0BDDB1BA3A89E007B110C /* NSDictionary+NotNullKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 2927F0A118D7470800242167 /* NSDictionary+NotNullKey.m */; };
+		29C0BDDC1BA3A89E007B110C /* V2ProfileBioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29DBB2FC1915C497006C354F /* V2ProfileBioCell.m */; };
+		29C0BDDD1BA3A89E007B110C /* V2NodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295DF33E190D3348007B9326 /* V2NodeViewController.m */; };
+		29C0BDDE1BA3A89E007B110C /* V2RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2927F0AF18D7D0EB00242167 /* V2RootViewController.m */; };
+		29C0BDDF1BA3A89E007B110C /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B66AC1962EE5400F74D44 /* UIButton+WebCache.m */; };
+		29C0BDE01BA3A89E007B110C /* V2MemberReplyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 291221B419228CCE0021CB13 /* V2MemberReplyCell.m */; };
+		29C0BDE11BA3A89E007B110C /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2987FFD8194D8ADB00794894 /* SVProgressHUD.m */; };
+		29C0BDE21BA3A89E007B110C /* V2NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 294A34471957AA4A00C353F7 /* V2NavigationBar.m */; };
+		29C0BDE31BA3A89E007B110C /* DACircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2987FFC3194D8ADB00794894 /* DACircularProgressView.m */; };
+		29C0BDE41BA3A89E007B110C /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B66AA1962EE5400F74D44 /* SDWebImagePrefetcher.m */; };
+		29C0BDE51BA3A89E007B110C /* IDMTapDetectingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2987FFD2194D8ADB00794894 /* IDMTapDetectingView.m */; };
+		29C0BDE61BA3A89E007B110C /* V2NotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2911B83E18EF867C004C757B /* V2NotificationManager.m */; };
+		29C0BDE71BA3A89E007B110C /* V2MemberTopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B28A26191FFB3800642DC6 /* V2MemberTopicsViewController.m */; };
+		29C0BDE81BA3A89E007B110C /* V2NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2911B83B18EF171A004C757B /* V2NotificationViewController.m */; };
+		29C0BDE91BA3A89E007B110C /* UIImage+Cache..m in Sources */ = {isa = PBXBuildFile; fileRef = 294F15121BA318070002B44F /* UIImage+Cache..m */; settings = {ASSET_TAGS = (); }; };
+		29C0BDEA1BA3A89E007B110C /* V2BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2927F09D18D7463200242167 /* V2BaseModel.m */; };
+		29C0BDEB1BA3A89E007B110C /* SDWebImageDownloaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B66A51962EE5400F74D44 /* SDWebImageDownloaderOperation.m */; };
+		29C0BDEC1BA3A89E007B110C /* SCBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CDF9D01931988900C6B952 /* SCBarButtonItem.m */; };
+		29C0BDED1BA3A89E007B110C /* V2WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29F2593D198B8B0A0053FC84 /* V2WebViewController.m */; };
+		29C0BDEE1BA3A89E007B110C /* UIView+REFrosted.m in Sources */ = {isa = PBXBuildFile; fileRef = 2954756618DF49C800B85492 /* UIView+REFrosted.m */; };
+		29C0BDEF1BA3A89E007B110C /* IDMZoomingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2987FFD4194D8ADB00794894 /* IDMZoomingScrollView.m */; };
+		29C0BDF01BA3A89E007B110C /* V2SettingCheckInCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B085091967FD70006A7C02 /* V2SettingCheckInCell.m */; };
+		29C0BDF11BA3A89E007B110C /* V2TopicBodyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29964F6418D9F2CA0039F31C /* V2TopicBodyCell.m */; };
+		29C0BDF21BA3A89E007B110C /* SCPullRefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2911B83818EEABC0004C757B /* SCPullRefreshViewController.m */; };
+		29C0BDF31BA3A89E007B110C /* V2NodesViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E374B0191B67B300704F9B /* V2NodesViewCell.m */; };
+		29C0BDF41BA3A89E007B110C /* V2ReplyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2927F0AA18D75B2F00242167 /* V2ReplyModel.m */; };
+		29C0BDF51BA3A89E007B110C /* IDMPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 2987FFCA194D8ADB00794894 /* IDMPhoto.m */; };
+		29C0BDF61BA3A89E007B110C /* V2CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CB5FCF18F1B82200357D5B /* V2CategoriesViewController.m */; };
+		29C0BDF71BA3A89E007B110C /* UIImage+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A281341956955D00B905FF /* UIImage+Tint.m */; };
+		29C0BDF81BA3A89E007B110C /* V2TopicToolBarItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 298EAF2218DEDFF3008082AA /* V2TopicToolBarItemView.m */; };
+		29C0BDF91BA3A89E007B110C /* V2NodeMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 29739A87190DF7AD00464A0E /* V2NodeMenuView.m */; };
+		29C0BDFA1BA3A89E007B110C /* AnimatedGIFImageSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 2968EACA195C1C020000E8BD /* AnimatedGIFImageSerialization.m */; };
+		29C0BDFB1BA3A89E007B110C /* V2MenuSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 29334D9218E7738A0081D3B2 /* V2MenuSectionView.m */; };
+		29C0BDFC1BA3A89E007B110C /* SCNavigationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CDF9CD1931986300C6B952 /* SCNavigationItem.m */; };
+		29C0BDFD1BA3A89E007B110C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2933869618D67B6B00FEC28E /* main.m */; };
+		29C0BDFE1BA3A89E007B110C /* V2Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2979373318D915EE0058DD8C /* V2Helper.m */; };
+		29C0BDFF1BA3A89E007B110C /* SCWeixinManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 298BDAAD1993FFF300EF74D7 /* SCWeixinManager.m */; };
+		29C0BE001BA3A89E007B110C /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EC2BA518D8740F00F6E966 /* EXTScope.m */; };
+		29C0BE011BA3A89E007B110C /* V2MemberModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2927F0A718D7523000242167 /* V2MemberModel.m */; };
+		29C0BE021BA3A89E007B110C /* V2SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2927F0BE18D7D6EC00242167 /* V2SettingViewController.m */; };
+		29C0BE031BA3A89E007B110C /* V2TopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2927F0A418D7512900242167 /* V2TopicModel.m */; };
+		29C0BE041BA3A89E007B110C /* V2TopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E0C7CF18D89D2F00AFB36E /* V2TopicViewController.m */; };
+		29C0BE051BA3A89E007B110C /* V2SubMenuSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E5FA1718F6E7B8008B5275 /* V2SubMenuSectionView.m */; };
+		29C0BE061BA3A89E007B110C /* WBRequest+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 2948C8B019434103000C8835 /* WBRequest+Block.m */; };
+		29C0BE071BA3A89E007B110C /* SDWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B669F1962EE5400F74D44 /* SDWebImageCompat.m */; };
+		29C0BE081BA3A89E007B110C /* SCViewController+NaviBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CDF9C71931773600C6B952 /* SCViewController+NaviBar.m */; };
+		29C0BE091BA3A89E007B110C /* V2TopicToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 298EAF1C18DEB2E9008082AA /* V2TopicToolBarView.m */; };
+		29C0BE0A1BA3A89E007B110C /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 2948C8A4194340C5000C8835 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		29C0BE0B1BA3A89E007B110C /* V2MemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29739A84190DE2AF00464A0E /* V2MemberViewController.m */; };
+		29C0BE0C1BA3A89E007B110C /* V2TopicTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29964F6118D9F2B90039F31C /* V2TopicTitleCell.m */; };
+		29C0BE0D1BA3A89E007B110C /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B66B01962EE5400F74D44 /* UIImage+MultiFormat.m */; };
+		29C0BE0E1BA3A89E007B110C /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B66B41962EE5400F74D44 /* UIImageView+WebCache.m */; };
+		29C0BE0F1BA3A89E007B110C /* NSString+SCMention.m in Sources */ = {isa = PBXBuildFile; fileRef = 2978FD1519438C330015816F /* NSString+SCMention.m */; };
+		29C0BE101BA3A89E007B110C /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 291BD03D18D90BFA00EF70BD /* TTTAttributedLabel.m */; };
+		29C0BE111BA3A89E007B110C /* V2ActionCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 290526AC1A9B00E90041635E /* V2ActionCellView.m */; };
+		29C0BE121BA3A89E007B110C /* BlockImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 292FA53B19920BE100E42B34 /* BlockImagePickerController.m */; };
+		29C0BE131BA3A89E007B110C /* V2LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CB5FD818F2003E00357D5B /* V2LoginViewController.m */; };
+		29C0BE141BA3A89E007B110C /* V2TopicStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 297005F218DDD1A600F824E9 /* V2TopicStateManager.m */; };
+		29C0BE151BA3A89E007B110C /* SCQuote.m in Sources */ = {isa = PBXBuildFile; fileRef = 298EAF2818DF2CA1008082AA /* SCQuote.m */; };
+		29C0BE161BA3A89E007B110C /* V2TopicListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EC2BA918D883F300F6E966 /* V2TopicListCell.m */; };
+		29C0BE171BA3A89E007B110C /* V2MenuSectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29334D9518E773CF0081D3B2 /* V2MenuSectionCell.m */; };
+		29C0BE181BA3A89E007B110C /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B66991962EE5400F74D44 /* MKAnnotationView+WebCache.m */; };
+		29C0BE191BA3A89E007B110C /* SCWeiboManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2948C8AE19434103000C8835 /* SCWeiboManager.m */; };
+		29C0BE1A1BA3A89E007B110C /* CAAnimation+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 2911B83218EEAABC004C757B /* CAAnimation+Blocks.m */; };
+		29C0BE1B1BA3A89E007B110C /* HTMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CB5FC718F186B700357D5B /* HTMLNode.m */; };
+		29C0BE1C1BA3A89E007B110C /* V2ProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29DBB2F919154DDD006C354F /* V2ProfileCell.m */; };
+		29C0BE1D1BA3A89E007B110C /* V2SettingSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 294A344419579D2A00C353F7 /* V2SettingSwitchCell.m */; };
+		29C0BE1E1BA3A89E007B110C /* V2SettingWeiboCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 294D83F6196FCE9A0086901E /* V2SettingWeiboCell.m */; };
+		29C0BE1F1BA3A89E007B110C /* SCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 293386C118D67FC500FEC28E /* SCNavigationController.m */; };
+		29C0BE201BA3A89E007B110C /* V2TopicReplyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29964F6A18DA01880039F31C /* V2TopicReplyCell.m */; };
+		29C0BE211BA3A89E007B110C /* V2SettingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E5FA1418F6DD7B008B5275 /* V2SettingManager.m */; };
+		29C0BE221BA3A89E007B110C /* V2NodeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2927F09A18D7455300242167 /* V2NodeModel.m */; };
+		29C0BE241BA3A89E007B110C /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 29DC02441A9B2103004E541B /* libc++.dylib */; };
+		29C0BE251BA3A89E007B110C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29DC02421A9B2029004E541B /* SystemConfiguration.framework */; };
+		29C0BE261BA3A89E007B110C /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295E3BF21B0F741A00F38049 /* Crashlytics.framework */; };
+		29C0BE271BA3A89E007B110C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 29DC02401A9B2020004E541B /* libz.dylib */; };
+		29C0BE281BA3A89E007B110C /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 29DC023E1A9B2010004E541B /* libsqlite3.0.dylib */; };
+		29C0BE291BA3A89E007B110C /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 298BDAA71993FFBF00EF74D7 /* libWeChatSDK.a */; };
+		29C0BE2A1BA3A89E007B110C /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CB5FCC18F186F000357D5B /* libxml2.dylib */; };
+		29C0BE2B1BA3A89E007B110C /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2948C8A6194340C5000C8835 /* libWeiboSDK.a */; };
+		29C0BE2C1BA3A89E007B110C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2933868C18D67B6B00FEC28E /* CoreGraphics.framework */; };
+		29C0BE2D1BA3A89E007B110C /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299CEBC91AA531EC003B547B /* Fabric.framework */; };
+		29C0BE2E1BA3A89E007B110C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2933868E18D67B6B00FEC28E /* UIKit.framework */; };
+		29C0BE2F1BA3A89E007B110C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2933868A18D67B6B00FEC28E /* Foundation.framework */; };
+		29C0BE301BA3A89E007B110C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F82C9E568AED44198657ED64 /* libPods.a */; };
+		29C0BE321BA3A89E007B110C /* Hahu.png in Resources */ = {isa = PBXBuildFile; fileRef = 2991EA8E18D6CA2F00563CD8 /* Hahu.png */; };
+		29C0BE331BA3A89E007B110C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2933869318D67B6B00FEC28E /* InfoPlist.strings */; };
+		29C0BE341BA3A89E007B110C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 29D06B90199B77310009B886 /* icon.png */; };
+		29C0BE351BA3A89E007B110C /* IDMPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2987FFCB194D8ADB00794894 /* IDMPhotoBrowser.bundle */; };
+		29C0BE361BA3A89E007B110C /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2987FFD6194D8ADB00794894 /* SVProgressHUD.bundle */; };
+		29C0BE371BA3A89E007B110C /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2948C8A7194340C5000C8835 /* WeiboSDK.bundle */; };
+		29C0BE381BA3A89E007B110C /* NodesList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2956F278191F607B00A62102 /* NodesList.plist */; };
+		29C0BE391BA3A89E007B110C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2933869C18D67B6C00FEC28E /* Images.xcassets */; };
+		29C0BE3A1BA3A89E007B110C /* IDMPBLocalizations.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2987FFC8194D8ADB00794894 /* IDMPBLocalizations.bundle */; };
 		29CB5FC418F100A000357D5B /* V2UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CB5FC318F100A000357D5B /* V2UserModel.m */; };
 		29CB5FCA18F186B700357D5B /* HTMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CB5FC718F186B700357D5B /* HTMLNode.m */; };
 		29CB5FCB18F186B700357D5B /* HTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CB5FC918F186B700357D5B /* HTMLParser.m */; };
@@ -346,6 +478,8 @@
 		29B0850C196910B3006A7C02 /* V2CheckInManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2CheckInManager.m; sourceTree = "<group>"; };
 		29B28A25191FFB3800642DC6 /* V2MemberTopicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2MemberTopicsViewController.h; sourceTree = "<group>"; };
 		29B28A26191FFB3800642DC6 /* V2MemberTopicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2MemberTopicsViewController.m; sourceTree = "<group>"; };
+		29C0BE401BA3A89E007B110C /* v2ex-iOS(Crashlytics).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "v2ex-iOS(Crashlytics).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		29C0BE411BA3A89E007B110C /* v2ex-iOS copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "v2ex-iOS copy-Info.plist"; path = "/Users/Singro/Desktop/git/v2ex/v2ex-iOS copy-Info.plist"; sourceTree = "<absolute>"; };
 		29CB5FC218F100A000357D5B /* V2UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2UserModel.h; sourceTree = "<group>"; };
 		29CB5FC318F100A000357D5B /* V2UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2UserModel.m; sourceTree = "<group>"; };
 		29CB5FC618F186B700357D5B /* HTMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLNode.h; sourceTree = "<group>"; };
@@ -419,6 +553,26 @@
 				2933868F18D67B6B00FEC28E /* UIKit.framework in Frameworks */,
 				2933868B18D67B6B00FEC28E /* Foundation.framework in Frameworks */,
 				C5BF11E006564992BA7F1B46 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29C0BE231BA3A89E007B110C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29C0BE241BA3A89E007B110C /* libc++.dylib in Frameworks */,
+				29C0BE251BA3A89E007B110C /* SystemConfiguration.framework in Frameworks */,
+				29C0BE261BA3A89E007B110C /* Crashlytics.framework in Frameworks */,
+				29C0BE271BA3A89E007B110C /* libz.dylib in Frameworks */,
+				29C0BE281BA3A89E007B110C /* libsqlite3.0.dylib in Frameworks */,
+				29C0BE291BA3A89E007B110C /* libWeChatSDK.a in Frameworks */,
+				29C0BE2A1BA3A89E007B110C /* libxml2.dylib in Frameworks */,
+				29C0BE2B1BA3A89E007B110C /* libWeiboSDK.a in Frameworks */,
+				29C0BE2C1BA3A89E007B110C /* CoreGraphics.framework in Frameworks */,
+				29C0BE2D1BA3A89E007B110C /* Fabric.framework in Frameworks */,
+				29C0BE2E1BA3A89E007B110C /* UIKit.framework in Frameworks */,
+				29C0BE2F1BA3A89E007B110C /* Foundation.framework in Frameworks */,
+				29C0BE301BA3A89E007B110C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,6 +758,7 @@
 				2933868918D67B6B00FEC28E /* Frameworks */,
 				2933868818D67B6B00FEC28E /* Products */,
 				C52687476624EE1E6F9FDEA4 /* Pods */,
+				29C0BE411BA3A89E007B110C /* v2ex-iOS copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -611,6 +766,7 @@
 			isa = PBXGroup;
 			children = (
 				2933868718D67B6B00FEC28E /* v2ex-iOS.app */,
+				29C0BE401BA3A89E007B110C /* v2ex-iOS(Crashlytics).app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1012,7 +1168,6 @@
 				2933868418D67B6B00FEC28E /* Frameworks */,
 				2933868518D67B6B00FEC28E /* Resources */,
 				577326F7FB8E4260974994BC /* Copy Pods Resources */,
-				29DC02461A9C33C7004E541B /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -1021,6 +1176,26 @@
 			name = "v2ex-iOS";
 			productName = "v2ex-iOS";
 			productReference = 2933868718D67B6B00FEC28E /* v2ex-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		29C0BDB21BA3A89E007B110C /* v2ex-iOS(Crashlytics) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29C0BE3D1BA3A89E007B110C /* Build configuration list for PBXNativeTarget "v2ex-iOS(Crashlytics)" */;
+			buildPhases = (
+				29C0BDB31BA3A89E007B110C /* Check Pods Manifest.lock */,
+				29C0BDB41BA3A89E007B110C /* Sources */,
+				29C0BE231BA3A89E007B110C /* Frameworks */,
+				29C0BE311BA3A89E007B110C /* Resources */,
+				29C0BE3B1BA3A89E007B110C /* Copy Pods Resources */,
+				29C0BE3C1BA3A89E007B110C /* Run Script */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "v2ex-iOS(Crashlytics)";
+			productName = "v2ex-iOS";
+			productReference = 29C0BE401BA3A89E007B110C /* v2ex-iOS(Crashlytics).app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1034,6 +1209,9 @@
 				ORGANIZATIONNAME = Singro;
 				TargetAttributes = {
 					2933868618D67B6B00FEC28E = {
+						DevelopmentTeam = 8KZ3G3A2FQ;
+					};
+					29C0BDB21BA3A89E007B110C = {
 						DevelopmentTeam = 8KZ3G3A2FQ;
 					};
 				};
@@ -1052,6 +1230,7 @@
 			projectRoot = "";
 			targets = (
 				2933868618D67B6B00FEC28E /* v2ex-iOS */,
+				29C0BDB21BA3A89E007B110C /* v2ex-iOS(Crashlytics) */,
 			);
 		};
 /* End PBXProject section */
@@ -1073,10 +1252,56 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		29C0BE311BA3A89E007B110C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29C0BE321BA3A89E007B110C /* Hahu.png in Resources */,
+				29C0BE331BA3A89E007B110C /* InfoPlist.strings in Resources */,
+				29C0BE341BA3A89E007B110C /* icon.png in Resources */,
+				29C0BE351BA3A89E007B110C /* IDMPhotoBrowser.bundle in Resources */,
+				29C0BE361BA3A89E007B110C /* SVProgressHUD.bundle in Resources */,
+				29C0BE371BA3A89E007B110C /* WeiboSDK.bundle in Resources */,
+				29C0BE381BA3A89E007B110C /* NodesList.plist in Resources */,
+				29C0BE391BA3A89E007B110C /* Images.xcassets in Resources */,
+				29C0BE3A1BA3A89E007B110C /* IDMPBLocalizations.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		29DC02461A9C33C7004E541B /* Run Script */ = {
+		29C0BDB31BA3A89E007B110C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		29C0BE3B1BA3A89E007B110C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		29C0BE3C1BA3A89E007B110C /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1240,6 +1465,123 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		29C0BDB41BA3A89E007B110C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29C0BDB51BA3A89E007B110C /* SDWebImageDownloader.m in Sources */,
+				29C0BDB61BA3A89E007B110C /* SDWebImageDecoder.m in Sources */,
+				29C0BDB71BA3A89E007B110C /* V2NotificationModel.m in Sources */,
+				29C0BDB81BA3A89E007B110C /* SCImageUploader.m in Sources */,
+				29C0BDB91BA3A89E007B110C /* V2ActionItemView.m in Sources */,
+				29C0BDBA1BA3A89E007B110C /* SCNavigationPushAnimation.m in Sources */,
+				29C0BDBB1BA3A89E007B110C /* IDMPhotoBrowser.m in Sources */,
+				29C0BDBC1BA3A89E007B110C /* HTMLParser.m in Sources */,
+				29C0BDBD1BA3A89E007B110C /* V2SettingCell.m in Sources */,
+				29C0BDBE1BA3A89E007B110C /* V2TopicInfoCell.m in Sources */,
+				29C0BDBF1BA3A89E007B110C /* SCActionSheet.m in Sources */,
+				29C0BDC01BA3A89E007B110C /* V2CheckInManager.m in Sources */,
+				29C0BDC11BA3A89E007B110C /* SDImageCache.m in Sources */,
+				29C0BDC21BA3A89E007B110C /* UIImage+WebP.m in Sources */,
+				29C0BDC31BA3A89E007B110C /* V2NotificationCell.m in Sources */,
+				29C0BDC41BA3A89E007B110C /* SCMetionTextView.m in Sources */,
+				29C0BDC51BA3A89E007B110C /* V2MenuView.m in Sources */,
+				29C0BDC61BA3A89E007B110C /* SDWebImageManager.m in Sources */,
+				29C0BDC71BA3A89E007B110C /* NSData+ImageContentType.m in Sources */,
+				29C0BDC81BA3A89E007B110C /* V2NodesViewController.m in Sources */,
+				29C0BDC91BA3A89E007B110C /* IDMCaptionView.m in Sources */,
+				29C0BDCA1BA3A89E007B110C /* IDMTapDetectingImageView.m in Sources */,
+				29C0BDCB1BA3A89E007B110C /* V2ProfileViewController.m in Sources */,
+				29C0BDCC1BA3A89E007B110C /* V2MemberReplyModel.m in Sources */,
+				29C0BDCD1BA3A89E007B110C /* V2MemberRepliesViewController.m in Sources */,
+				29C0BDCE1BA3A89E007B110C /* V2SubMenuSectionCell.m in Sources */,
+				29C0BDCF1BA3A89E007B110C /* V2AppDelegate.m in Sources */,
+				29C0BDD01BA3A89E007B110C /* V2FavoriteViewController.m in Sources */,
+				29C0BDD11BA3A89E007B110C /* V2UserModel.m in Sources */,
+				29C0BDD21BA3A89E007B110C /* V2DataManager.m in Sources */,
+				29C0BDD31BA3A89E007B110C /* SCActionSheetButton.m in Sources */,
+				29C0BDD41BA3A89E007B110C /* SCAnimationView.m in Sources */,
+				29C0BDD51BA3A89E007B110C /* UIImage+GIF.m in Sources */,
+				29C0BDD61BA3A89E007B110C /* V2TopicCreateViewController.m in Sources */,
+				29C0BDD71BA3A89E007B110C /* V2LatestViewController.m in Sources */,
+				29C0BDD81BA3A89E007B110C /* SCNavigationPopAnimation.m in Sources */,
+				29C0BDD91BA3A89E007B110C /* V2WeiboViewController.m in Sources */,
+				29C0BDDA1BA3A89E007B110C /* UIImage+REFrosted.m in Sources */,
+				29C0BDDB1BA3A89E007B110C /* NSDictionary+NotNullKey.m in Sources */,
+				29C0BDDC1BA3A89E007B110C /* V2ProfileBioCell.m in Sources */,
+				29C0BDDD1BA3A89E007B110C /* V2NodeViewController.m in Sources */,
+				29C0BDDE1BA3A89E007B110C /* V2RootViewController.m in Sources */,
+				29C0BDDF1BA3A89E007B110C /* UIButton+WebCache.m in Sources */,
+				29C0BDE01BA3A89E007B110C /* V2MemberReplyCell.m in Sources */,
+				29C0BDE11BA3A89E007B110C /* SVProgressHUD.m in Sources */,
+				29C0BDE21BA3A89E007B110C /* V2NavigationBar.m in Sources */,
+				29C0BDE31BA3A89E007B110C /* DACircularProgressView.m in Sources */,
+				29C0BDE41BA3A89E007B110C /* SDWebImagePrefetcher.m in Sources */,
+				29C0BDE51BA3A89E007B110C /* IDMTapDetectingView.m in Sources */,
+				29C0BDE61BA3A89E007B110C /* V2NotificationManager.m in Sources */,
+				29C0BDE71BA3A89E007B110C /* V2MemberTopicsViewController.m in Sources */,
+				29C0BDE81BA3A89E007B110C /* V2NotificationViewController.m in Sources */,
+				29C0BDE91BA3A89E007B110C /* UIImage+Cache..m in Sources */,
+				29C0BDEA1BA3A89E007B110C /* V2BaseModel.m in Sources */,
+				29C0BDEB1BA3A89E007B110C /* SDWebImageDownloaderOperation.m in Sources */,
+				29C0BDEC1BA3A89E007B110C /* SCBarButtonItem.m in Sources */,
+				29C0BDED1BA3A89E007B110C /* V2WebViewController.m in Sources */,
+				29C0BDEE1BA3A89E007B110C /* UIView+REFrosted.m in Sources */,
+				29C0BDEF1BA3A89E007B110C /* IDMZoomingScrollView.m in Sources */,
+				29C0BDF01BA3A89E007B110C /* V2SettingCheckInCell.m in Sources */,
+				29C0BDF11BA3A89E007B110C /* V2TopicBodyCell.m in Sources */,
+				29C0BDF21BA3A89E007B110C /* SCPullRefreshViewController.m in Sources */,
+				29C0BDF31BA3A89E007B110C /* V2NodesViewCell.m in Sources */,
+				29C0BDF41BA3A89E007B110C /* V2ReplyModel.m in Sources */,
+				29C0BDF51BA3A89E007B110C /* IDMPhoto.m in Sources */,
+				29C0BDF61BA3A89E007B110C /* V2CategoriesViewController.m in Sources */,
+				29C0BDF71BA3A89E007B110C /* UIImage+Tint.m in Sources */,
+				29C0BDF81BA3A89E007B110C /* V2TopicToolBarItemView.m in Sources */,
+				29C0BDF91BA3A89E007B110C /* V2NodeMenuView.m in Sources */,
+				29C0BDFA1BA3A89E007B110C /* AnimatedGIFImageSerialization.m in Sources */,
+				29C0BDFB1BA3A89E007B110C /* V2MenuSectionView.m in Sources */,
+				29C0BDFC1BA3A89E007B110C /* SCNavigationItem.m in Sources */,
+				29C0BDFD1BA3A89E007B110C /* main.m in Sources */,
+				29C0BDFE1BA3A89E007B110C /* V2Helper.m in Sources */,
+				29C0BDFF1BA3A89E007B110C /* SCWeixinManager.m in Sources */,
+				29C0BE001BA3A89E007B110C /* EXTScope.m in Sources */,
+				29C0BE011BA3A89E007B110C /* V2MemberModel.m in Sources */,
+				29C0BE021BA3A89E007B110C /* V2SettingViewController.m in Sources */,
+				29C0BE031BA3A89E007B110C /* V2TopicModel.m in Sources */,
+				29C0BE041BA3A89E007B110C /* V2TopicViewController.m in Sources */,
+				29C0BE051BA3A89E007B110C /* V2SubMenuSectionView.m in Sources */,
+				29C0BE061BA3A89E007B110C /* WBRequest+Block.m in Sources */,
+				29C0BE071BA3A89E007B110C /* SDWebImageCompat.m in Sources */,
+				29C0BE081BA3A89E007B110C /* SCViewController+NaviBar.m in Sources */,
+				29C0BE091BA3A89E007B110C /* V2TopicToolBarView.m in Sources */,
+				29C0BE0A1BA3A89E007B110C /* JSONKit.m in Sources */,
+				29C0BE0B1BA3A89E007B110C /* V2MemberViewController.m in Sources */,
+				29C0BE0C1BA3A89E007B110C /* V2TopicTitleCell.m in Sources */,
+				29C0BE0D1BA3A89E007B110C /* UIImage+MultiFormat.m in Sources */,
+				29C0BE0E1BA3A89E007B110C /* UIImageView+WebCache.m in Sources */,
+				29C0BE0F1BA3A89E007B110C /* NSString+SCMention.m in Sources */,
+				29C0BE101BA3A89E007B110C /* TTTAttributedLabel.m in Sources */,
+				29C0BE111BA3A89E007B110C /* V2ActionCellView.m in Sources */,
+				29C0BE121BA3A89E007B110C /* BlockImagePickerController.m in Sources */,
+				29C0BE131BA3A89E007B110C /* V2LoginViewController.m in Sources */,
+				29C0BE141BA3A89E007B110C /* V2TopicStateManager.m in Sources */,
+				29C0BE151BA3A89E007B110C /* SCQuote.m in Sources */,
+				29C0BE161BA3A89E007B110C /* V2TopicListCell.m in Sources */,
+				29C0BE171BA3A89E007B110C /* V2MenuSectionCell.m in Sources */,
+				29C0BE181BA3A89E007B110C /* MKAnnotationView+WebCache.m in Sources */,
+				29C0BE191BA3A89E007B110C /* SCWeiboManager.m in Sources */,
+				29C0BE1A1BA3A89E007B110C /* CAAnimation+Blocks.m in Sources */,
+				29C0BE1B1BA3A89E007B110C /* HTMLNode.m in Sources */,
+				29C0BE1C1BA3A89E007B110C /* V2ProfileCell.m in Sources */,
+				29C0BE1D1BA3A89E007B110C /* V2SettingSwitchCell.m in Sources */,
+				29C0BE1E1BA3A89E007B110C /* V2SettingWeiboCell.m in Sources */,
+				29C0BE1F1BA3A89E007B110C /* SCNavigationController.m in Sources */,
+				29C0BE201BA3A89E007B110C /* V2TopicReplyCell.m in Sources */,
+				29C0BE211BA3A89E007B110C /* V2SettingManager.m in Sources */,
+				29C0BE221BA3A89E007B110C /* V2NodeModel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -1339,6 +1681,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xingrong Chen (S8A223NWX3)";
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1371,6 +1714,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1379,6 +1723,72 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "v2ex-iOS/v2ex-iOS-Prefix.pch";
 				INFOPLIST_FILE = "v2ex-iOS/v2ex-iOS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/v2ex-iOS/Additions/libWeiboSDK",
+					"$(PROJECT_DIR)/v2ex-iOS/Additions/libWeixinSDK",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "79341f7b-b5d3-4650-9930-b1d407c8a6aa";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "${SDK_DIR}/usr/include/libxml2";
+				VALID_ARCHS = "armv7 arm64";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		29C0BE3E1BA3A89E007B110C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B00458753F8F3F5F6DF15A87 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xingrong Chen (S8A223NWX3)";
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/v2ex-iOS/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "v2ex-iOS/v2ex-iOS-Prefix.pch";
+				INFOPLIST_FILE = "v2ex-iOS copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/v2ex-iOS/Additions/libWeiboSDK",
+					"$(PROJECT_DIR)/v2ex-iOS/Additions/libWeixinSDK",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7853719e-7d97-4121-b7c2-5ec685fc66e3";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "${SDK_DIR}/usr/include/libxml2";
+				VALID_ARCHS = "armv7 arm64";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		29C0BE3F1BA3A89E007B110C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A192AB4669A20ED7E832C760 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/v2ex-iOS/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "v2ex-iOS/v2ex-iOS-Prefix.pch";
+				INFOPLIST_FILE = "v2ex-iOS copy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1411,6 +1821,15 @@
 			buildConfigurations = (
 				293386B418D67B6C00FEC28E /* Debug */,
 				293386B518D67B6C00FEC28E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29C0BE3D1BA3A89E007B110C /* Build configuration list for PBXNativeTarget "v2ex-iOS(Crashlytics)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29C0BE3E1BA3A89E007B110C /* Debug */,
+				29C0BE3F1BA3A89E007B110C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
