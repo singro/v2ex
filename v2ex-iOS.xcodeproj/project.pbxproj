@@ -479,7 +479,6 @@
 		29B28A25191FFB3800642DC6 /* V2MemberTopicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2MemberTopicsViewController.h; sourceTree = "<group>"; };
 		29B28A26191FFB3800642DC6 /* V2MemberTopicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2MemberTopicsViewController.m; sourceTree = "<group>"; };
 		29C0BE401BA3A89E007B110C /* v2ex-iOS-Crashlytics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "v2ex-iOS-Crashlytics.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		29C0BE411BA3A89E007B110C /* v2ex-iOS copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "v2ex-iOS copy-Info.plist"; path = "/Users/Singro/Desktop/git/v2ex/v2ex-iOS copy-Info.plist"; sourceTree = "<absolute>"; };
 		29CB5FC218F100A000357D5B /* V2UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2UserModel.h; sourceTree = "<group>"; };
 		29CB5FC318F100A000357D5B /* V2UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2UserModel.m; sourceTree = "<group>"; };
 		29CB5FC618F186B700357D5B /* HTMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLNode.h; sourceTree = "<group>"; };
@@ -758,7 +757,6 @@
 				2933868918D67B6B00FEC28E /* Frameworks */,
 				2933868818D67B6B00FEC28E /* Products */,
 				C52687476624EE1E6F9FDEA4 /* Pods */,
-				29C0BE411BA3A89E007B110C /* v2ex-iOS copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1755,7 +1753,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "v2ex-iOS/v2ex-iOS-Prefix.pch";
-				INFOPLIST_FILE = "v2ex-iOS copy-Info.plist";
+				INFOPLIST_FILE = "v2ex-iOS-Crashlytics-info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1788,7 +1786,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "v2ex-iOS/v2ex-iOS-Prefix.pch";
-				INFOPLIST_FILE = "v2ex-iOS copy-Info.plist";
+				INFOPLIST_FILE = "v2ex-iOS-Crashlytics-info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
