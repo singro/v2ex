@@ -336,7 +336,7 @@
 		29334D9218E7738A0081D3B2 /* V2MenuSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2MenuSectionView.m; sourceTree = "<group>"; };
 		29334D9418E773CF0081D3B2 /* V2MenuSectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2MenuSectionCell.h; sourceTree = "<group>"; };
 		29334D9518E773CF0081D3B2 /* V2MenuSectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2MenuSectionCell.m; sourceTree = "<group>"; };
-		2933868718D67B6B00FEC28E /* v2ex-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "v2ex-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2933868718D67B6B00FEC28E /* v2ex-dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "v2ex-dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2933868A18D67B6B00FEC28E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2933868C18D67B6B00FEC28E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2933868E18D67B6B00FEC28E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -478,7 +478,7 @@
 		29B0850C196910B3006A7C02 /* V2CheckInManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2CheckInManager.m; sourceTree = "<group>"; };
 		29B28A25191FFB3800642DC6 /* V2MemberTopicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2MemberTopicsViewController.h; sourceTree = "<group>"; };
 		29B28A26191FFB3800642DC6 /* V2MemberTopicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2MemberTopicsViewController.m; sourceTree = "<group>"; };
-		29C0BE401BA3A89E007B110C /* v2ex-iOS-Crashlytics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "v2ex-iOS-Crashlytics.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		29C0BE401BA3A89E007B110C /* v2ex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = v2ex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29CB5FC218F100A000357D5B /* V2UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2UserModel.h; sourceTree = "<group>"; };
 		29CB5FC318F100A000357D5B /* V2UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2UserModel.m; sourceTree = "<group>"; };
 		29CB5FC618F186B700357D5B /* HTMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLNode.h; sourceTree = "<group>"; };
@@ -763,8 +763,8 @@
 		2933868818D67B6B00FEC28E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2933868718D67B6B00FEC28E /* v2ex-iOS.app */,
-				29C0BE401BA3A89E007B110C /* v2ex-iOS-Crashlytics.app */,
+				2933868718D67B6B00FEC28E /* v2ex-dev.app */,
+				29C0BE401BA3A89E007B110C /* v2ex.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1157,9 +1157,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2933868618D67B6B00FEC28E /* v2ex-iOS */ = {
+		2933868618D67B6B00FEC28E /* v2ex-dev */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 293386B318D67B6C00FEC28E /* Build configuration list for PBXNativeTarget "v2ex-iOS" */;
+			buildConfigurationList = 293386B318D67B6C00FEC28E /* Build configuration list for PBXNativeTarget "v2ex-dev" */;
 			buildPhases = (
 				30B1C5CAFE33475AAA78B1A1 /* Check Pods Manifest.lock */,
 				2933868318D67B6B00FEC28E /* Sources */,
@@ -1171,14 +1171,14 @@
 			);
 			dependencies = (
 			);
-			name = "v2ex-iOS";
+			name = "v2ex-dev";
 			productName = "v2ex-iOS";
-			productReference = 2933868718D67B6B00FEC28E /* v2ex-iOS.app */;
+			productReference = 2933868718D67B6B00FEC28E /* v2ex-dev.app */;
 			productType = "com.apple.product-type.application";
 		};
-		29C0BDB21BA3A89E007B110C /* v2ex-iOS-Crashlytics */ = {
+		29C0BDB21BA3A89E007B110C /* v2ex */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 29C0BE3D1BA3A89E007B110C /* Build configuration list for PBXNativeTarget "v2ex-iOS-Crashlytics" */;
+			buildConfigurationList = 29C0BE3D1BA3A89E007B110C /* Build configuration list for PBXNativeTarget "v2ex" */;
 			buildPhases = (
 				29C0BDB31BA3A89E007B110C /* Check Pods Manifest.lock */,
 				29C0BDB41BA3A89E007B110C /* Sources */,
@@ -1191,9 +1191,9 @@
 			);
 			dependencies = (
 			);
-			name = "v2ex-iOS-Crashlytics";
+			name = v2ex;
 			productName = "v2ex-iOS";
-			productReference = 29C0BE401BA3A89E007B110C /* v2ex-iOS-Crashlytics.app */;
+			productReference = 29C0BE401BA3A89E007B110C /* v2ex.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1227,8 +1227,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2933868618D67B6B00FEC28E /* v2ex-iOS */,
-				29C0BDB21BA3A89E007B110C /* v2ex-iOS-Crashlytics */,
+				2933868618D67B6B00FEC28E /* v2ex-dev */,
+				29C0BDB21BA3A89E007B110C /* v2ex */,
 			);
 		};
 /* End PBXProject section */
@@ -1753,7 +1753,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "v2ex-iOS/v2ex-iOS-Prefix.pch";
-				INFOPLIST_FILE = "v2ex-iOS-Crashlytics-info.plist";
+				INFOPLIST_FILE = "v2ex-iOS/v2ex-iOS-Crashlytics-info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1762,6 +1762,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "7853719e-7d97-4121-b7c2-5ec685fc66e3";
+				SDKROOT = iphoneos9.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "${SDK_DIR}/usr/include/libxml2";
 				VALID_ARCHS = "armv7 arm64";
@@ -1786,7 +1787,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "v2ex-iOS/v2ex-iOS-Prefix.pch";
-				INFOPLIST_FILE = "v2ex-iOS-Crashlytics-info.plist";
+				INFOPLIST_FILE = "v2ex-iOS/v2ex-iOS-Crashlytics-info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1795,6 +1796,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "79341f7b-b5d3-4650-9930-b1d407c8a6aa";
+				SDKROOT = iphoneos9.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "${SDK_DIR}/usr/include/libxml2";
 				VALID_ARCHS = "armv7 arm64";
@@ -1814,7 +1816,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		293386B318D67B6C00FEC28E /* Build configuration list for PBXNativeTarget "v2ex-iOS" */ = {
+		293386B318D67B6C00FEC28E /* Build configuration list for PBXNativeTarget "v2ex-dev" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				293386B418D67B6C00FEC28E /* Debug */,
@@ -1823,7 +1825,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		29C0BE3D1BA3A89E007B110C /* Build configuration list for PBXNativeTarget "v2ex-iOS-Crashlytics" */ = {
+		29C0BE3D1BA3A89E007B110C /* Build configuration list for PBXNativeTarget "v2ex" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				29C0BE3E1BA3A89E007B110C /* Debug */,
