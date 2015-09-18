@@ -17,6 +17,7 @@
 @property (nonatomic, assign) CGPoint locationChanged;
 
 @property (nonatomic, assign, getter = isCreate) BOOL create;
+@property (nonatomic, readonly) BOOL isShowing;
 
 @property (nonatomic, strong) UIImage *blurredBackgroundImage;
 

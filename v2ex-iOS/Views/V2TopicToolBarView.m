@@ -34,7 +34,7 @@ CGFloat const kCircleHeight     = 28.0;
 
 @property (nonatomic, copy) NSString *contentString;
 
-@property (nonatomic, assign) BOOL isShowing;
+@property (nonatomic, assign, readwrite) BOOL isShowing;
 
 @end
 
@@ -357,7 +357,8 @@ CGFloat const kCircleHeight     = 28.0;
 - (void)showReplyViewWithQuotes:(NSArray *)quotes animated:(BOOL)animated {
     
     self.userInteractionEnabled = YES;
-    
+    self.isShowing = YES;
+
     if (quotes.count) {
         for (SCQuote *quote in quotes) {
             [self.textView addQuote:quote];

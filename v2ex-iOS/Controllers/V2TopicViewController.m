@@ -270,8 +270,11 @@ typedef NS_ENUM(NSInteger, V2ImagePickerSourceType) {
     self.leftBarItem = [[SCBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navi_back"] style:SCBarButtonItemStylePlain handler:^(id sender) {
         @strongify(self);
         
-//        [self.navigationController popViewControllerAnimated:YES];
-        [self.toolBarView popToolBar];
+        if (self.toolBarView.isShowing) {
+            [self.toolBarView popToolBar];
+        } else {
+            [self.navigationController popViewControllerAnimated:YES];
+        }
         
     }];
     

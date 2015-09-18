@@ -170,6 +170,9 @@
 
 - (void)handlePanRecognizer:(UIPanGestureRecognizer*)recognizer {
     
+    if (!self.enableInnerInactiveGesture) {
+        return;
+    }
     
     static CGFloat startLocationX = 0;
     
