@@ -34,6 +34,8 @@
 
 - (void)clearTextView;
 
+- (void)popToolBar;
+
 @end
 
 static NSString *const kShowReplyTextViewNotification = @"kShowReplyTextViewNotification";
