@@ -425,6 +425,9 @@ CGFloat const kCircleHeight     = 28.0;
     self.textView.text = @"";
 }
 
+- (void)popToolBar {
+    [self hideToolBar];
+}
 
 #pragma mark - Animation Action
 
