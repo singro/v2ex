@@ -179,11 +179,6 @@
             }
             
             self.myNodesArray = list;
-            NSMutableArray *nodesArray = [NSMutableArray arrayWithObject:list];;
-            NSArray *nodes = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"NodesList" ofType:@"plist"]];
-            [nodesArray addObjectsFromArray:nodes];
-            self.nodesArray = nodesArray;
-
             [self endRefresh];
             
         } failure:^(NSError *error) {
