@@ -10,10 +10,14 @@
 
 #import "V2NodeViewController.h"
 
+#import <objc/runtime.h>
+
 static CGFloat const kFontSize     = 16;
 static CGFloat const kButtonInsert = 10;
 //static CGFloat const kButtonSpace  = 5;
 static CGFloat const kButtonHeight = 28;
+
+static void const *kButtonAssociatedModelKey = @"kButtonAssociatedModelKey";
 
 @interface V2NodesViewCell ()
 
@@ -34,6 +38,8 @@ static CGFloat const kButtonHeight = 28;
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
+        self.backgroundColor = kBackgroundColorWhite;
+        
         self.clipsToBounds = YES;
         self.selectionStyle = UITableViewCellSelectionStyleNone;
 
@@ -47,22 +53,29 @@ static CGFloat const kButtonHeight = 28;
 //        [self addSubview:self.topBorderLineView];
         
         self.bottomBorderLineView                 = [UIView new];
-        [self addSubview:self.bottomBorderLineView];
+        self.bottomBorderLineView.backgroundColor = kLineColorBlackDark;
+        [self.contentView addSubview:self.bottomBorderLineView];
 
     }
     return self;
+}
+
+- (void)prepareForReuse{
+    self.nodesArray = nil;
+    for (UIButton *button in self.buttonArray) {
+        button.hidden = YES;
+        button.selected = NO;
+        [button setTitle:nil forState:UIControlStateNormal];
+        if (button.superview) {
+            [button removeFromSuperview];
+        }
+    }
 }
 
 #pragma mark - Layout
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    
-    [self layoutButtons];
-
-    self.backgroundColor = kBackgroundColorWhite;
-    self.bottomBorderLineView.backgroundColor = kLineColorBlackDark;
-
 //    self.topBorderLineView.frame = (CGRect){0, 0, 320, 0.5};
     self.bottomBorderLineView.frame = (CGRect){0, CGRectGetHeight(self.frame) - 0.5, kScreenWidth, 0.5};
 
@@ -72,11 +85,6 @@ static CGFloat const kButtonHeight = 28;
     
     CGFloat originX = 10;
     CGFloat originY = 10;
-    
-    for (UIButton *button in self.buttonArray) {
-        button.hidden = YES;
-        button.selected = NO;
-    }
     
     for (int i = 0; i < self.nodesArray.count; i ++) {
         UIButton *button = self.buttonArray[i];
@@ -90,6 +98,9 @@ static CGFloat const kButtonHeight = 28;
             originY = button.y;
         }
         button.hidden = NO;
+        if (!button.superview) {
+            [self.contentView addSubview:button];
+        }
     }
     
 }
@@ -99,47 +110,32 @@ static CGFloat const kButtonHeight = 28;
 - (void)setNodesArray:(NSArray *)nodesArray {
     _nodesArray = nodesArray;
     
+    if (_nodesArray == nil) {
+        return;
+    }
+    
     for (int i = 0; i < self.nodesArray.count; i ++) {
         UIButton *button;
         if (i < self.buttonArray.count) {
             button = self.buttonArray[i];
         } else {
             button = [self createButton];
+
             [self.buttonArray addObject:button];
         }
         
         NSString *nodeTitle = [self.nodesArray[i] objectForSafeKey:@"name"];
         NSString *nodeName = [self.nodesArray[i] objectForSafeKey:@"title"];
+
         V2NodeModel *model = [[V2NodeModel alloc] init];
         model.nodeTitle = nodeTitle;
         model.nodeName = nodeName;
-
-        [self configureButton:button WithTitle:nodeTitle];
-        [button bk_removeEventHandlersForControlEvents:UIControlEventTouchUpInside];
-        @weakify(self);
-        [button bk_addEventHandler:^(UIButton *sender) {
-            @strongify(self);
-            
-            sender.selected = YES;
-            [sender setBackgroundColor:kColorBlue];
-            V2NodeViewController *nodeVC = [[V2NodeViewController alloc] init];
-            nodeVC.model = model;
-            [self.navi pushViewController:nodeVC animated:YES];
-            [self bk_performBlock:^(id obj) {
-                sender.selected = NO;
-                [sender setBackgroundColor:[UIColor clearColor]];
-            } afterDelay:1.0];
-            
-        } forControlEvents:UIControlEventTouchUpInside];
+        objc_setAssociatedObject(button, kButtonAssociatedModelKey, model, OBJC_ASSOCIATION_RETAIN);
         
-        [button bk_addEventHandler:^(id sender) {
-            [sender setBackgroundColor:kColorBlue];
-        } forControlEvents:UIControlEventTouchDown];
-        [button bk_addEventHandler:^(id sender) {
-            [sender setBackgroundColor:[UIColor clearColor]];
-        } forControlEvents:UIControlEventTouchCancel|UIControlEventTouchUpOutside|UIControlEventTouchDragOutside];
+        [self configureButton:button WithTitle:nodeTitle];
     }
-    
+    [self layoutButtons];
+
 }
 
 #pragma mark - Configure Button
@@ -158,7 +154,31 @@ static CGFloat const kButtonHeight = 28;
     nodeButton.clipsToBounds = YES;
     nodeButton.layer.cornerRadius = 4.0f;
     
-    [self addSubview:nodeButton];
+    @weakify(self);
+    [nodeButton bk_addEventHandler:^(UIButton *sender) {
+        @strongify(self);
+        
+        sender.selected = YES;
+        [sender setBackgroundColor:kColorBlue];
+        V2NodeViewController *nodeVC = [[V2NodeViewController alloc] init];
+        nodeVC.model = ({
+            V2NodeModel *model = objc_getAssociatedObject(sender, kButtonAssociatedModelKey);
+            model;
+        });
+        [self.navi pushViewController:nodeVC animated:YES];
+        [self bk_performBlock:^(id obj) {
+            sender.selected = NO;
+            [sender setBackgroundColor:[UIColor clearColor]];
+        } afterDelay:1.0];
+        
+    } forControlEvents:UIControlEventTouchUpInside];
+    
+    [nodeButton bk_addEventHandler:^(id sender) {
+        [sender setBackgroundColor:kColorBlue];
+    } forControlEvents:UIControlEventTouchDown];
+    [nodeButton bk_addEventHandler:^(id sender) {
+        [sender setBackgroundColor:[UIColor clearColor]];
+    } forControlEvents:UIControlEventTouchCancel|UIControlEventTouchUpOutside|UIControlEventTouchDragOutside];
     
     return nodeButton;
 }
