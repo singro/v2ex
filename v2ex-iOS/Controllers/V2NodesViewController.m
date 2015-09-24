@@ -42,7 +42,9 @@
         NSMutableArray *nodesArray = [NSMutableArray arrayWithObject:self.myNodesArray];;
         NSArray *nodes = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"NodesList" ofType:@"plist"]];
         [nodesArray addObjectsFromArray:nodes];
-        self.nodesArray = nodesArray;
+        
+        
+        self.nodesArray = [self itemsWithDictArray:nodesArray];
 
     }
     return self;
@@ -115,6 +117,30 @@
     [self.tableView beginUpdates];
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     [self.tableView endUpdates];
+}
+
+#pragma mark - Data
+
+- (NSArray *)itemsWithDictArray:(NSArray *)nodesArray {
+    
+    NSMutableArray *items = [NSMutableArray new];
+    
+    for (NSArray *sectionDictList in nodesArray) {
+        NSMutableArray *setionItems = [NSMutableArray new];
+        for (NSDictionary *dataDict in sectionDictList) {
+            NSString *nodeTitle = dataDict[@"name"];
+            NSString *nodeName = dataDict[@"title"];
+            
+            V2NodeModel *model = [[V2NodeModel alloc] init];
+            model.nodeTitle = nodeTitle;
+            model.nodeName = nodeName;
+            
+            [setionItems addObject:model];
+        }
+        [items addObject:setionItems];
+    }
+    
+    return items;
 }
 
 #pragma mark - Configure Views & blocks

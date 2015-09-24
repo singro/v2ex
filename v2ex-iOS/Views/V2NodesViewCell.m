@@ -12,12 +12,18 @@
 
 #import <objc/runtime.h>
 
+@interface UIButton (V2NodeModel)
+
+@property (nonatomic, strong) V2NodeModel *model;
+
+@end
+
 static CGFloat const kFontSize     = 16;
 static CGFloat const kButtonInsert = 10;
 //static CGFloat const kButtonSpace  = 5;
 static CGFloat const kButtonHeight = 28;
 
-static void const *kButtonAssociatedModelKey = @"kButtonAssociatedModelKey";
+static NSMutableDictionary *frameCacheDict;
 
 @interface V2NodesViewCell ()
 
@@ -33,6 +39,12 @@ static void const *kButtonAssociatedModelKey = @"kButtonAssociatedModelKey";
 
 @implementation V2NodesViewCell
 
++ (void)load {
+    if (nil == frameCacheDict) {
+        frameCacheDict = [NSMutableDictionary new];
+    }
+}
+
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -42,6 +54,7 @@ static void const *kButtonAssociatedModelKey = @"kButtonAssociatedModelKey";
         
         self.clipsToBounds = YES;
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
 
         self.buttonArray = [[NSMutableArray alloc] init];
         
@@ -88,15 +101,24 @@ static void const *kButtonAssociatedModelKey = @"kButtonAssociatedModelKey";
     
     for (int i = 0; i < self.nodesArray.count; i ++) {
         UIButton *button = self.buttonArray[i];
-        if (button.width + 10 + originX < kScreenWidth) {
-            button.origin = (CGPoint){originX, originY};
-            originX = button.x + 10 + button.width;
-            originY = button.y;
+        
+        id frameCacheObject = frameCacheDict[keyForObject(button.model)];
+        if (frameCacheObject) {
+            button.frame = [frameCacheObject CGRectValue];
         } else {
-            button.origin = (CGPoint){10, originY + 5 + kButtonHeight};
-            originX = button.x + 10 + button.width;
-            originY = button.y;
+            if (button.width + 10 + originX < kScreenWidth) {
+                button.origin = (CGPoint){originX, originY};
+                originX = button.x + 10 + button.width;
+                originY = button.y;
+            } else {
+                button.origin = (CGPoint){10, originY + 5 + kButtonHeight};
+                originX = button.x + 10 + button.width;
+                originY = button.y;
+            }
+            frameCacheDict[keyForObject(button.model)] = [NSValue valueWithCGRect:button.frame];
         }
+
+        
         button.hidden = NO;
         if (!button.superview) {
             [self.contentView addSubview:button];
@@ -124,15 +146,10 @@ static void const *kButtonAssociatedModelKey = @"kButtonAssociatedModelKey";
             [self.buttonArray addObject:button];
         }
         
-        NSString *nodeTitle = [self.nodesArray[i] objectForSafeKey:@"name"];
-        NSString *nodeName = [self.nodesArray[i] objectForSafeKey:@"title"];
-
-        V2NodeModel *model = [[V2NodeModel alloc] init];
-        model.nodeTitle = nodeTitle;
-        model.nodeName = nodeName;
-        objc_setAssociatedObject(button, kButtonAssociatedModelKey, model, OBJC_ASSOCIATION_RETAIN);
+        V2NodeModel *model = self.nodesArray[i];
+        button.model = model;
         
-        [self configureButton:button WithTitle:nodeTitle];
+        [self configureButton:button withModel:model];
     }
     [self layoutButtons];
 
@@ -151,8 +168,8 @@ static void const *kButtonAssociatedModelKey = @"kButtonAssociatedModelKey";
 //    [nodeButton setBackgroundImage:self.imageNormal forState:UIControlStateNormal];
 //    [nodeButton setBackgroundImage:self.imageHighlighted forState:UIControlStateHighlighted];
 //    [nodeButton setBackgroundImage:self.imageHighlighted forState:UIControlStateSelected];
-    nodeButton.clipsToBounds = YES;
-    nodeButton.layer.cornerRadius = 4.0f;
+//    nodeButton.clipsToBounds = YES;
+//    nodeButton.layer.cornerRadius = 4.0f;
     
     @weakify(self);
     [nodeButton bk_addEventHandler:^(UIButton *sender) {
@@ -161,10 +178,8 @@ static void const *kButtonAssociatedModelKey = @"kButtonAssociatedModelKey";
         sender.selected = YES;
         [sender setBackgroundColor:kColorBlue];
         V2NodeViewController *nodeVC = [[V2NodeViewController alloc] init];
-        nodeVC.model = ({
-            V2NodeModel *model = objc_getAssociatedObject(sender, kButtonAssociatedModelKey);
-            model;
-        });
+        nodeVC.model = sender.model;
+        
         [self.navi pushViewController:nodeVC animated:YES];
         [self bk_performBlock:^(id obj) {
             sender.selected = NO;
@@ -183,13 +198,14 @@ static void const *kButtonAssociatedModelKey = @"kButtonAssociatedModelKey";
     return nodeButton;
 }
 
-- (UIButton *)configureButton:(UIButton *)button WithTitle:(NSString *)title {
+- (UIButton *)configureButton:(UIButton *)button withModel:(V2NodeModel *)model {
     
-    NSInteger buttonWidth = [V2NodesViewCell buttonWidthWithTitle:title];
+    NSInteger buttonWidth = [V2NodesViewCell buttonWidthWithTitle:model.nodeTitle];
     
     button.size = (CGSize){buttonWidth, kButtonHeight};
+    button.model = model;
     
-    [button setTitle:title forState:UIControlStateNormal];
+    [button setTitle:model.nodeTitle forState:UIControlStateNormal];
 
     return button;
 }
@@ -209,14 +225,19 @@ static void const *kButtonAssociatedModelKey = @"kButtonAssociatedModelKey";
         return 0;
     }
     
+    id heightCacheObject = frameCacheDict[keyForObject(nodesArray)];
+    if (heightCacheObject) {
+        return [heightCacheObject floatValue];
+    }
+    
     CGFloat originX = 10;
     CGFloat originY = 10;
     
     CGPoint origin;
     
     for (int i = 0; i < nodesArray.count; i ++) {
-        NSString *title = [nodesArray[i] objectForSafeKey:@"name"];
-        CGFloat width = [V2NodesViewCell buttonWidthWithTitle:title];
+        V2NodeModel *model = nodesArray[i];
+        CGFloat width = [V2NodesViewCell buttonWidthWithTitle:model.nodeTitle];
         if (width + 10 + originX < kScreenWidth) {
             origin = (CGPoint){originX, originY};
             originX = origin.x + 10 + width;
@@ -229,8 +250,27 @@ static void const *kButtonAssociatedModelKey = @"kButtonAssociatedModelKey";
     }
     
     CGFloat height = originY + kButtonHeight + 10;
+    frameCacheDict[keyForObject(nodesArray)] = @(height);
+    
     return height;
 
+}
+
+static NSString * keyForObject(id object) {
+    return [NSString stringWithFormat:@"%p", object];
+}
+
+@end
+
+
+@implementation UIButton (V2NodeModel)
+
+- (V2NodeModel *)model {
+    return objc_getAssociatedObject(self, @selector(model));
+}
+
+- (void)setModel:(V2NodeModel *)model {
+    objc_setAssociatedObject(self, @selector(model), model, OBJC_ASSOCIATION_RETAIN);
 }
 
 @end
