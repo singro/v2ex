@@ -16,7 +16,9 @@
 
 @property (nonatomic, strong) NSArray *headerTitleArray;
 @property (nonatomic, strong) NSArray *nodesArray;
+
 @property (nonatomic, strong) NSArray *myNodesArray;
+@property (nonatomic, strong) NSArray *otherNodesArray;
 
 @property (nonatomic, copy) NSURLSessionDataTask* (^getNodeListBlock)();
 @property (nonatomic, copy) NSString *myNodeListPath;
@@ -39,13 +41,11 @@
         if (!self.myNodesArray) {
             self.myNodesArray = [NSArray array];
         }
-        NSMutableArray *nodesArray = [NSMutableArray arrayWithObject:self.myNodesArray];;
-        NSArray *nodes = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"NodesList" ofType:@"plist"]];
-        [nodesArray addObjectsFromArray:nodes];
         
+        self.otherNodesArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"NodesList" ofType:@"plist"]];
         
-        self.nodesArray = [self itemsWithDictArray:nodesArray];
-
+        [self loadData];
+        
     }
     return self;
 }
@@ -75,16 +75,7 @@
         
     self.sc_navigationItem.title = @"节点";
     self.sc_navigationItem.leftBarButtonItem = self.leftBarItem;
-    
-    
-//    if ([V2CheckInManager manager].isExpired && kSetting.checkInNotiticationOn) {
-//        self.leftBarItem.badge = @"";
-//    } else {
-//        self.leftBarItem.badge = nil;
-//    }
-//    
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveUpdateCheckInBadgeNotification) name:kUpdateCheckInBadgeNotification object:nil];
-    
+        
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -120,6 +111,16 @@
 }
 
 #pragma mark - Data
+
+- (void)loadData {
+    
+    NSMutableArray *nodesArray = [NSMutableArray arrayWithObject:self.myNodesArray];;
+    [nodesArray addObjectsFromArray:self.otherNodesArray];
+    
+    self.nodesArray = [self itemsWithDictArray:nodesArray];
+    [self.tableView reloadData];
+    
+}
 
 - (NSArray *)itemsWithDictArray:(NSArray *)nodesArray {
     
@@ -179,6 +180,7 @@
             }
             
             self.myNodesArray = list;
+            [self loadData];
             [self endRefresh];
             
         } failure:^(NSError *error) {
