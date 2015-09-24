@@ -131,7 +131,12 @@
     self.addBarItem = [[SCBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navi_add"] style:SCBarButtonItemStylePlain handler:^(id sender) {
         @strongify(self);
         
-        [self showMenuAnimated:YES];
+        if (self.isMenuShowing) {
+            [self hideMenuAnimated:YES];
+        }
+        else {
+            [self showMenuAnimated:YES];
+        }
         
     }];
 
