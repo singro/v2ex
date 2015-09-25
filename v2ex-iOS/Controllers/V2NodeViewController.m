@@ -161,6 +161,13 @@
     
     self.menuBackgroundButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.menuBackgroundButton.backgroundColor = [UIColor colorWithWhite:0.667 alpha:0];
+    
+    @weakify(self)
+    UIPanGestureRecognizer *menuBGButtonPanGesture = [UIPanGestureRecognizer bk_recognizerWithHandler:^(UIGestureRecognizer *sender, UIGestureRecognizerState state, CGPoint location) {
+        @strongify(self)
+        [self hideMenuAnimated:NO];
+    }];
+    [self.menuBackgroundButton addGestureRecognizer:menuBGButtonPanGesture];
     [self.menuContainView addSubview:self.menuBackgroundButton];
     
     self.menuView = [[UIView alloc] init];
@@ -184,7 +191,6 @@
     NSArray *itemTitleArray = @[@"发帖", @"收藏"];
     NSArray *itemImageArray = @[@"icon_post", @"icon_fav"];
     
-    @weakify(self);
     void (^buttonHandleBlock)(NSInteger index) = ^(NSInteger index) {
         @strongify(self);
         
