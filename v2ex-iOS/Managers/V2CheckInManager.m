@@ -33,6 +33,10 @@ static NSString *const kCheckInCount    = @"checkInCount";
     }
     return self;
 }
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+}
 
 + (instancetype)manager {
     static V2CheckInManager *manager = nil;
