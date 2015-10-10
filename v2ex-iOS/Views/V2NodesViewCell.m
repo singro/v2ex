@@ -226,7 +226,7 @@ static NSMutableDictionary *frameCacheDict;
     }
     
     id heightCacheObject = frameCacheDict[keyForObject(nodesArray)];
-    if (heightCacheObject) {
+    if (heightCacheObject && [heightCacheObject isKindOfClass:[NSNumber class]]) {
         return [heightCacheObject floatValue];
     }
     
