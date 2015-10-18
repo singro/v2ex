@@ -113,7 +113,10 @@ static CGFloat const kMenuWidth = 240.0;
 //    [self setBlurredScreenShoot];
 
 }
-
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

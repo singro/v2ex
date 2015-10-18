@@ -58,6 +58,10 @@ static NSString *const kModel      = @"modelKey";
     }
     return self;
 }
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+}
 
 + (instancetype)manager {
     static V2TopicStateManager *manager = nil;
