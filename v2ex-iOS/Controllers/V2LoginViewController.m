@@ -90,10 +90,11 @@ static CGFloat const kContainViewYEditing = 60.0;
     self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.view addSubview:self.backgroundImageView];
     
-    self.closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.closeButton = [UIButton buttonWithType:UIButtonTypeSystem];
 //    [self.closeButton setTitle:@"Close" forState:UIControlStateNormal];
     [self.closeButton setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
     [self.closeButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.closeButton setTintColor:[UIColor whiteColor]];
     self.closeButton.alpha = 0.5;
     [self.view addSubview:self.closeButton];
     
