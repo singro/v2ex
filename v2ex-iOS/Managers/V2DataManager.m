@@ -420,8 +420,12 @@ typedef NS_ENUM(NSInteger, V2RequestMethod) {
     }
     
     return [self requestWithMethod:V2RequestMethodJSONGET URLString:@"/api/members/show.json" parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
-        V2MemberModel *member = [[V2MemberModel alloc] initWithDictionary:responseObject];
-        success(member);
+        if ([responseObject isKindOfClass:[NSDictionary class]]) {
+            V2MemberModel *member = [[V2MemberModel alloc] initWithDictionary:responseObject];
+            success(member);
+        } else {
+            failure(nil);
+        }
     } failure:^(NSError *error) {
         failure(error);
     }];
