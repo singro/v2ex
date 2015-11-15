@@ -672,12 +672,16 @@
     CGPoint point = [previewingContext.sourceView convertPoint:location toView:self.tableView];
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:point];
     
-    V2TopicViewController *topicVC = [[V2TopicViewController alloc] init];
-    topicVC.model = self.topicList.list[indexPath.row];
-//    topicVC.preferredContentSize = CGSizeMake(self.view.width, self.view.height - 200);
-
-    return topicVC;
-    
+    if ([self.presentedViewController isKindOfClass:[V2TopicViewController class]])
+    {
+        return nil;
+    }
+    else
+    {
+        V2TopicViewController *topicVC = [[V2TopicViewController alloc] init];
+        topicVC.model = self.topicList.list[indexPath.row];
+        return topicVC;
+    }
 }
 
 

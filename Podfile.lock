@@ -48,7 +48,6 @@ PODS:
   - NSString-Hashes (1.2.2)
   - NYXImagesKit (2.3)
   - RegexKitLite (4.0)
-  - SVProgressHUD (2.0-beta)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.2.0)
@@ -60,7 +59,6 @@ DEPENDENCIES:
   - NSString-Hashes (~> 1.2.1)
   - NYXImagesKit (~> 2.3)
   - RegexKitLite (~> 4.0)
-  - SVProgressHUD (~> 2.0-beta)
 
 SPEC CHECKSUMS:
   AFNetworking: caca0799b310f0c3bf1fc1af45145fc96972bcab
@@ -72,6 +70,5 @@ SPEC CHECKSUMS:
   NSString-Hashes: c3848d809e92650e4fb17db5d8cc4bd2aa1eaddd
   NYXImagesKit: 8163e3335a40eaa173ca5bbbf81fafb57d3947eb
   RegexKitLite: c0e4c12e6e7de0769f3a3ed679f0f61604170661
-  SVProgressHUD: c83337f10ed32d701c423d519059a249973c8662
 
 COCOAPODS: 0.39.0

@@ -10,7 +10,6 @@ pod 'FrameAccessor', '~> 1.3.2'
 pod 'MWFeedParser', '~> 1.0.1'
 pod 'RegexKitLite', '~> 4.0'
 pod 'MBProgressHUD', '~> 0.8'
-pod 'SVProgressHUD', '~> 2.0-beta'
 
 post_install do |installer_representation|
     installer_representation.pods_project.targets.each do |target|
