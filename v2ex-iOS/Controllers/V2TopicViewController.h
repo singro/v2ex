@@ -11,6 +11,7 @@
 @interface V2TopicViewController : SCPullRefreshViewController
 
 @property (nonatomic, assign, getter = isCreate) BOOL create;
+@property (nonatomic, assign, getter=isPreview) BOOL preview;
 
 @property (nonatomic, strong) V2TopicModel *model;
 

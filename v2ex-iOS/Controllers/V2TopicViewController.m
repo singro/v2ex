@@ -96,6 +96,7 @@ typedef NS_ENUM(NSInteger, V2ImagePickerSourceType) {
         self.isMenuShowing = NO;
         self.create = NO;
         self.needsCreate = YES;
+        self.preview = NO;
         
     }
     return self;
@@ -118,14 +119,20 @@ typedef NS_ENUM(NSInteger, V2ImagePickerSourceType) {
     
     self.view.backgroundColor = kBackgroundColorWhite;
     
-    self.sc_navigationItem.leftBarButtonItem = self.leftBarItem;
-    self.sc_navigationItem.rightBarButtonItem = self.addBarItem;
-    
-    if (self.model) {
-        self.sc_navigationItem.title = self.model.topicTitle;
-        self.nodeModel = self.model.topicNode;
+    if (self.isPreview) {
+        [self createNavigationBar];
+        self.sc_navigationItem.title = @"预览";
+        self.sc_navigationItem.titleLabel.centerY = 64/2;
     } else {
-        self.sc_navigationItem.title = @"Topic";
+        self.sc_navigationItem.leftBarButtonItem = self.leftBarItem;
+        self.sc_navigationItem.rightBarButtonItem = self.addBarItem;
+        
+        if (self.model) {
+            self.sc_navigationItem.title = self.model.topicTitle;
+            self.nodeModel = self.model.topicNode;
+        } else {
+            self.sc_navigationItem.title = @"Topic";
+        }
     }
     
     [self configureBlocks];

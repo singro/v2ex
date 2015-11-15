@@ -9,7 +9,6 @@
 #import "V2CategoriesViewController.h"
 
 #import "V2TopicViewController.h"
-#import "V2WebViewController.h"
 
 #import "V2TopicListCell.h"
 #import "V2SubMenuSectionView.h"
@@ -628,9 +627,7 @@
     
     // register for 3D Touch (if available)
     if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
-        
-        [self registerForPreviewingWithDelegate:(id)self sourceView:cell];
-        
+        [self registerForPreviewingWithDelegate:self sourceView:cell];
     }
     
     return [self configureTopicCellWithCell:cell IndexPath:indexPath];
@@ -672,14 +669,12 @@
     CGPoint point = [previewingContext.sourceView convertPoint:location toView:self.tableView];
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:point];
     
-    if ([self.presentedViewController isKindOfClass:[V2TopicViewController class]])
-    {
+    if ([self.presentedViewController isKindOfClass:[V2TopicViewController class]]) {
         return nil;
-    }
-    else
-    {
+    } else {
         V2TopicViewController *topicVC = [[V2TopicViewController alloc] init];
         topicVC.model = self.topicList.list[indexPath.row];
+        topicVC.preview = YES;
         return topicVC;
     }
 }
@@ -688,7 +683,7 @@
 - (void)previewingContext:(id <UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
 
 //    UIViewController *popViewController = [[UIViewController alloc] init];
-//    [self showViewController:popViewController sender:self];
+//    [self showViewController:viewControllerToCommit sender:self];
 
 }
 

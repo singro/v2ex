@@ -12,7 +12,7 @@
 
 #import "V2TopicListCell.h"
 
-@interface V2LatestViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface V2LatestViewController () <UITableViewDataSource, UITableViewDelegate, UIViewControllerPreviewingDelegate>
 
 @property (nonatomic, strong) SCBarButtonItem *leftBarItem;
 
@@ -240,6 +240,11 @@
         cell = [[V2TopicListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
+    // register for 3D Touch (if available)
+    if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
+        [self registerForPreviewingWithDelegate:self sourceView:cell];
+    }
+
     return [self configureTopicCellWithCell:cell IndexPath:indexPath];
 }
 
@@ -271,6 +276,23 @@
     cell.isTop = !indexPath.row;
     
     return cell;
+}
+
+#pragma mark - Preview
+
+- (nullable UIViewController *)previewingContext:(id <UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location  {
+    
+    CGPoint point = [previewingContext.sourceView convertPoint:location toView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:point];
+    
+    if ([self.presentedViewController isKindOfClass:[V2TopicViewController class]]) {
+        return nil;
+    } else {
+        V2TopicViewController *topicVC = [[V2TopicViewController alloc] init];
+        topicVC.model = self.topicList.list[indexPath.row];
+        topicVC.preview = YES;
+        return topicVC;
+    }
 }
 
 #pragma mark - Nofitications 

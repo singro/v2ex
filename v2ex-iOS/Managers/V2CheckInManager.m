@@ -128,6 +128,10 @@ static NSString *const kCheckInCount    = @"checkInCount";
         } else {
             self.lastCheckInDate = [NSDate date];
             self.expired = NO;
+            
+            if (0 == self.checkInCount) {
+                [self updateCheckInCount];
+            }
         }
         
     } failure:^(NSError *error) {
@@ -212,9 +216,7 @@ static NSString *const kCheckInCount    = @"checkInCount";
     
     [self updateExpired];
     
-    if (self.isExpired) {
-        [self updateIsCheckIn];
-    }
+    [self updateIsCheckIn];
     
 }
 
