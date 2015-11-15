@@ -90,10 +90,11 @@ static CGFloat const kContainViewYEditing = 60.0;
     self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.view addSubview:self.backgroundImageView];
     
-    self.closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.closeButton = [UIButton buttonWithType:UIButtonTypeSystem];
 //    [self.closeButton setTitle:@"Close" forState:UIControlStateNormal];
     [self.closeButton setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
     [self.closeButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.closeButton setTintColor:[UIColor whiteColor]];
     self.closeButton.alpha = 0.5;
     [self.view addSubview:self.closeButton];
     
@@ -276,7 +277,11 @@ static CGFloat const kContainViewYEditing = 60.0;
     if (!self.isLogining) {
         
         if (self.usernameField.text.length && self.passwordField.text.length) {
-            
+            if ([self isValidEmail:self.usernameField.text]) {
+                //输入邮箱登录 会导致获取profile 信息失败的bug
+                [SVProgressHUD showErrorWithStatus:@"请输入用户名，而非注册邮箱"];
+                return;
+            }
             [self hideKeyboard];
 
             [[V2DataManager manager] UserLoginWithUsername:self.usernameField.text password:self.passwordField.text success:^(NSString *message) {
@@ -362,6 +367,15 @@ static CGFloat const kContainViewYEditing = 60.0;
         }];
     }
 
+}
+
+- (BOOL)isValidEmail:(NSString *)email{
+    if (email == nil) {
+        return NO;
+    }
+    NSString *phoneRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+    NSPredicate *phoneTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",phoneRegex];
+    return [phoneTest evaluateWithObject:email];
 }
 
 @end

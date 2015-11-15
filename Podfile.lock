@@ -34,7 +34,7 @@ PODS:
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
   - FrameAccessor (1.3.2)
-  - FXKeychain (1.5.2)
+  - FXKeychain (1.5.3)
   - MBProgressHUD (0.9.1)
   - MWFeedParser (1.0.1):
     - MWFeedParser/FeedParser (= 1.0.1)
@@ -48,6 +48,7 @@ PODS:
   - NSString-Hashes (1.2.2)
   - NYXImagesKit (2.3)
   - RegexKitLite (4.0)
+  - SVProgressHUD (2.0-beta)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.2.0)
@@ -59,16 +60,18 @@ DEPENDENCIES:
   - NSString-Hashes (~> 1.2.1)
   - NYXImagesKit (~> 2.3)
   - RegexKitLite (~> 4.0)
+  - SVProgressHUD (~> 2.0-beta)
 
 SPEC CHECKSUMS:
   AFNetworking: caca0799b310f0c3bf1fc1af45145fc96972bcab
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   FrameAccessor: 0f7ba6ce37be9a5d0302a27c731dca70af8d438b
-  FXKeychain: 1a711bddc04a2bd69850dcfe297b8a43027a9980
+  FXKeychain: 2fe54573946ffef634f4e2a2851e6c8f4ea15e76
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MWFeedParser: 2cf646014c1baf6ad1b08c480b40a08180079247
   NSString-Hashes: c3848d809e92650e4fb17db5d8cc4bd2aa1eaddd
   NYXImagesKit: 8163e3335a40eaa173ca5bbbf81fafb57d3947eb
   RegexKitLite: c0e4c12e6e7de0769f3a3ed679f0f61604170661
+  SVProgressHUD: c83337f10ed32d701c423d519059a249973c8662
 
 COCOAPODS: 0.39.0
