@@ -260,6 +260,12 @@
 
 - (void)configureNavigationBarForViewController:(UIViewController *)viewController {
     
+    [[self class] createNavigationBarForViewController:viewController];
+
+}
+
++ (void)createNavigationBarForViewController:(UIViewController *)viewController {
+    
     if (!viewController.sc_navigationItem) {
         SCNavigationItem *navigationItem = [[SCNavigationItem alloc] init];
         [navigationItem setValue:viewController forKey:@"_sc_viewController"];
@@ -269,7 +275,8 @@
         viewController.sc_navigationBar = [[V2NavigationBar alloc] init];
         [viewController.view addSubview:viewController.sc_navigationBar];
     }
-
+    
 }
+
 
 @end

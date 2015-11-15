@@ -12,6 +12,8 @@
 
 @property (nonatomic, assign) BOOL enableInnerInactiveGesture;
 
++ (void)createNavigationBarForViewController:(UIViewController *)viewController;
+
 @end
 
 static NSString * const kRootViewControllerResetDelegateNotification = @"RootViewControllerResetDelegateNotification";

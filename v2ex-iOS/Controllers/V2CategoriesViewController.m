@@ -9,6 +9,7 @@
 #import "V2CategoriesViewController.h"
 
 #import "V2TopicViewController.h"
+#import "V2WebViewController.h"
 
 #import "V2TopicListCell.h"
 #import "V2SubMenuSectionView.h"
@@ -16,7 +17,7 @@
 #define keyFromCategoriesType(type) [NSString stringWithFormat:@"categoriesKey%zd", type]
 #define keyFromFavoriteType(type) [NSString stringWithFormat:@"categoriesKey%zd", type]
 
-@interface V2CategoriesViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface V2CategoriesViewController () <UITableViewDataSource, UITableViewDelegate, UIViewControllerPreviewingDelegate>
 
 @property (nonatomic, strong) V2SubMenuSectionView             *sectionView;
 @property (nonatomic, strong) UIScreenEdgePanGestureRecognizer *edgePanRecognizer;
@@ -625,6 +626,13 @@
         cell = [[V2TopicListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
+    // register for 3D Touch (if available)
+    if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
+        
+        [self registerForPreviewingWithDelegate:(id)self sourceView:cell];
+        
+    }
+    
     return [self configureTopicCellWithCell:cell IndexPath:indexPath];
 }
 
@@ -655,6 +663,29 @@
     cell.isTop = !indexPath.row;
     
     return cell;
+}
+
+#pragma mark - Preview
+
+- (nullable UIViewController *)previewingContext:(id <UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location  {
+    
+    CGPoint point = [previewingContext.sourceView convertPoint:location toView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:point];
+    
+    V2TopicViewController *topicVC = [[V2TopicViewController alloc] init];
+    topicVC.model = self.topicList.list[indexPath.row];
+//    topicVC.preferredContentSize = CGSizeMake(self.view.width, self.view.height - 200);
+
+    return topicVC;
+    
+}
+
+
+- (void)previewingContext:(id <UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
+
+//    UIViewController *popViewController = [[UIViewController alloc] init];
+//    [self showViewController:popViewController sender:self];
+
 }
 
 #pragma mark - Nofitications

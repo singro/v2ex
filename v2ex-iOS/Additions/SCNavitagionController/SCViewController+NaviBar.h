@@ -27,4 +27,7 @@
 - (void)naviBeginRefreshing;
 - (void)naviEndRefreshing;
 
+- (void)createNavigationBar;
+
+
 @end

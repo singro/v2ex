@@ -194,5 +194,10 @@ static char const * const kNaviBarView = "kNaviBarView";
     
 }
 
+- (void)createNavigationBar {
+    
+    return [SCNavigationController createNavigationBarForViewController:self];
+    
+}
 
 @end

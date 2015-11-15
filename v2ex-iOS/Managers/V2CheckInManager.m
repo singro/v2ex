@@ -8,6 +8,8 @@
 
 #import "V2CheckInManager.h"
 
+#import "V2QuickActionManager.h"
+
 #define userDefaults [NSUserDefaults standardUserDefaults]
 
 static NSString *const kLastCheckInDate = @"lastCheckInDate";
@@ -99,6 +101,8 @@ static NSString *const kCheckInCount    = @"checkInCount";
     _checkInCount = checkInCount;
     
     [userDefaults setObject:@(checkInCount) forKey:kCheckInCount];
+    
+    [[V2QuickActionManager manager] updateAction];
     
 }
 

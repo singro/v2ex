@@ -10,6 +10,7 @@
 
 #import "V2TopicStateManager.h"
 #import "SCWeixinManager.h"
+#import "V2AppDelegate.h"
 
 #import "V2NodeViewController.h"
 #import "V2WebViewController.h"
@@ -1272,6 +1273,33 @@ typedef NS_ENUM(NSInteger, V2ImagePickerSourceType) {
             block(nil);
         }];
     }
+    
+}
+
+#pragma mark - Peek And Pop
+
+- (NSArray <id <UIPreviewActionItem>> *)previewActionItems {
+    
+    UIPreviewAction *openAction = [UIPreviewAction actionWithTitle:@"打开" style:UIPreviewActionStyleDefault handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
+        V2TopicViewController *vc = (V2TopicViewController *)previewViewController;
+        
+        V2TopicViewController *topicVC = [[V2TopicViewController alloc] init];
+        topicVC.model = vc.model;
+        [AppDelegate.currentNavigationController pushViewController:topicVC animated:YES];
+    }];
+    
+    UIPreviewAction *openWithWebAction = [UIPreviewAction actionWithTitle:@"用 Safari 打开" style:UIPreviewActionStyleDefault handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
+        
+        V2TopicViewController *vc = (V2TopicViewController *)previewViewController;
+        
+        V2WebViewController *webVC = [[V2WebViewController alloc] init];
+        NSString *urlString = [NSString stringWithFormat:@"https://v2ex.com/t/%@", vc.model.topicId];
+        webVC.url = [NSURL URLWithString:urlString];
+        [AppDelegate.currentNavigationController pushViewController:webVC animated:YES];
+        
+    }];
+    
+    return @[openAction, openWithWebAction];
     
 }
 

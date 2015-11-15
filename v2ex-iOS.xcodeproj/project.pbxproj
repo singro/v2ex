@@ -70,7 +70,8 @@
 		294B66C11962EE5400F74D44 /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B66B21962EE5400F74D44 /* UIImage+WebP.m */; };
 		294B66C21962EE5400F74D44 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B66B41962EE5400F74D44 /* UIImageView+WebCache.m */; };
 		294D83F7196FCE9A0086901E /* V2SettingWeiboCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 294D83F6196FCE9A0086901E /* V2SettingWeiboCell.m */; };
-		294F15131BA318070002B44F /* UIImage+Cache..m in Sources */ = {isa = PBXBuildFile; fileRef = 294F15121BA318070002B44F /* UIImage+Cache..m */; settings = {ASSET_TAGS = (); }; };
+		294F15131BA318070002B44F /* UIImage+Cache..m in Sources */ = {isa = PBXBuildFile; fileRef = 294F15121BA318070002B44F /* UIImage+Cache..m */; };
+		294FC8DE1BF82D3600D627F9 /* V2QuickActionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 294FC8DD1BF82D3600D627F9 /* V2QuickActionManager.m */; };
 		2954756718DF49C800B85492 /* UIImage+REFrosted.m in Sources */ = {isa = PBXBuildFile; fileRef = 2954756418DF49C800B85492 /* UIImage+REFrosted.m */; };
 		2954756818DF49C800B85492 /* UIView+REFrosted.m in Sources */ = {isa = PBXBuildFile; fileRef = 2954756618DF49C800B85492 /* UIView+REFrosted.m */; };
 		2956F279191F607B00A62102 /* NodesList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2956F278191F607B00A62102 /* NodesList.plist */; };
@@ -163,7 +164,7 @@
 		29C0BDE61BA3A89E007B110C /* V2NotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2911B83E18EF867C004C757B /* V2NotificationManager.m */; };
 		29C0BDE71BA3A89E007B110C /* V2MemberTopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B28A26191FFB3800642DC6 /* V2MemberTopicsViewController.m */; };
 		29C0BDE81BA3A89E007B110C /* V2NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2911B83B18EF171A004C757B /* V2NotificationViewController.m */; };
-		29C0BDE91BA3A89E007B110C /* UIImage+Cache..m in Sources */ = {isa = PBXBuildFile; fileRef = 294F15121BA318070002B44F /* UIImage+Cache..m */; settings = {ASSET_TAGS = (); }; };
+		29C0BDE91BA3A89E007B110C /* UIImage+Cache..m in Sources */ = {isa = PBXBuildFile; fileRef = 294F15121BA318070002B44F /* UIImage+Cache..m */; };
 		29C0BDEA1BA3A89E007B110C /* V2BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2927F09D18D7463200242167 /* V2BaseModel.m */; };
 		29C0BDEB1BA3A89E007B110C /* SDWebImageDownloaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B66A51962EE5400F74D44 /* SDWebImageDownloaderOperation.m */; };
 		29C0BDEC1BA3A89E007B110C /* SCBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CDF9D01931988900C6B952 /* SCBarButtonItem.m */; };
@@ -401,6 +402,8 @@
 		294F14E81BA305B60002B44F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		294F15111BA318070002B44F /* UIImage+Cache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Cache.h"; sourceTree = "<group>"; };
 		294F15121BA318070002B44F /* UIImage+Cache..m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Cache..m"; sourceTree = "<group>"; };
+		294FC8DC1BF82D3600D627F9 /* V2QuickActionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2QuickActionManager.h; sourceTree = "<group>"; };
+		294FC8DD1BF82D3600D627F9 /* V2QuickActionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2QuickActionManager.m; sourceTree = "<group>"; };
 		2954756318DF49C800B85492 /* UIImage+REFrosted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+REFrosted.h"; sourceTree = "<group>"; };
 		2954756418DF49C800B85492 /* UIImage+REFrosted.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+REFrosted.m"; sourceTree = "<group>"; };
 		2954756518DF49C800B85492 /* UIView+REFrosted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+REFrosted.h"; sourceTree = "<group>"; };
@@ -882,6 +885,8 @@
 				29E5FA1418F6DD7B008B5275 /* V2SettingManager.m */,
 				29B0850B196910B3006A7C02 /* V2CheckInManager.h */,
 				29B0850C196910B3006A7C02 /* V2CheckInManager.m */,
+				294FC8DC1BF82D3600D627F9 /* V2QuickActionManager.h */,
+				294FC8DD1BF82D3600D627F9 /* V2QuickActionManager.m */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1434,6 +1439,7 @@
 				29CB5FD018F1B82200357D5B /* V2CategoriesViewController.m in Sources */,
 				29A281351956955D00B905FF /* UIImage+Tint.m in Sources */,
 				298EAF2318DEDFF3008082AA /* V2TopicToolBarItemView.m in Sources */,
+				294FC8DE1BF82D3600D627F9 /* V2QuickActionManager.m in Sources */,
 				29739A88190DF7AD00464A0E /* V2NodeMenuView.m in Sources */,
 				2968EACB195C1C020000E8BD /* AnimatedGIFImageSerialization.m in Sources */,
 				29334D9318E7738A0081D3B2 /* V2MenuSectionView.m in Sources */,
