@@ -80,6 +80,8 @@
 #define kScreenHeight ([UIScreen mainScreen].bounds.size.height)
 #define kScreenWidth ([UIScreen mainScreen].bounds.size.width)
 
+#define kDeviceOSVersion ([[[UIDevice currentDevice] systemVersion] floatValue])
+
 #define AppDelegate ((V2AppDelegate *)[UIApplication sharedApplication].delegate)
 
 static NSString * const kShowMenuNotification = @"ShowMenuNotificaion";

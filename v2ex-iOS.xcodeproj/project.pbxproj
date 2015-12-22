@@ -1213,7 +1213,7 @@
 				ORGANIZATIONNAME = Singro;
 				TargetAttributes = {
 					2933868618D67B6B00FEC28E = {
-						DevelopmentTeam = 8KZ3G3A2FQ;
+						DevelopmentTeam = 8Q4VNP8YUX;
 					};
 					29C0BDB21BA3A89E007B110C = {
 						DevelopmentTeam = 8KZ3G3A2FQ;
