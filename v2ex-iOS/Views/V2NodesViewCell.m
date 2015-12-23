@@ -99,13 +99,14 @@ static NSMutableDictionary *frameCacheDict;
     CGFloat originX = 10;
     CGFloat originY = 10;
     
+    /* 把frame保存起来的想法很好，但行不通，一旦某node在nodesArray的位置发生改变，则布局就乱套了 */
     for (int i = 0; i < self.nodesArray.count; i ++) {
         UIButton *button = self.buttonArray[i];
         
-        id frameCacheObject = frameCacheDict[keyForObject(button.model)];
-        if (frameCacheObject) {
-            button.frame = [frameCacheObject CGRectValue];
-        } else {
+//        id frameCacheObject = frameCacheDict[keyForObject(button.model)];
+//        if (frameCacheObject) {
+//            button.frame = [frameCacheObject CGRectValue];
+//        } else {
             if (button.width + 10 + originX < kScreenWidth) {
                 button.origin = (CGPoint){originX, originY};
                 originX = button.x + 10 + button.width;
@@ -115,8 +116,8 @@ static NSMutableDictionary *frameCacheDict;
                 originX = button.x + 10 + button.width;
                 originY = button.y;
             }
-            frameCacheDict[keyForObject(button.model)] = [NSValue valueWithCGRect:button.frame];
-        }
+//            frameCacheDict[keyForObject(button.model)] = [NSValue valueWithCGRect:button.frame];
+//        }
 
         
         button.hidden = NO;
@@ -136,6 +137,15 @@ static NSMutableDictionary *frameCacheDict;
         return;
     }
     
+    /* FIX: 要是nodesArray.count < buttonArray.count? */
+    if (self.buttonArray.count > self.nodesArray.count) {
+        NSRange range = (NSRange){self.nodesArray.count, self.buttonArray.count - self.nodesArray.count};
+        [self.buttonArray enumerateObjectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:range] options:NSEnumerationConcurrent usingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [obj removeFromSuperview];
+        }];
+        [self.buttonArray removeObjectsInRange:range];
+    }
+    
     for (int i = 0; i < self.nodesArray.count; i ++) {
         UIButton *button;
         if (i < self.buttonArray.count) {
@@ -151,6 +161,7 @@ static NSMutableDictionary *frameCacheDict;
         
         [self configureButton:button withModel:model];
     }
+    
     [self layoutButtons];
 
 }

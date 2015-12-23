@@ -208,8 +208,10 @@
     }
     
     // register for 3D Touch (if available)
-    if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
-        [self registerForPreviewingWithDelegate:self sourceView:cell];
+    if (kDeviceOSVersion > 9.0) {
+        if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
+            [self registerForPreviewingWithDelegate:self sourceView:cell];
+        }
     }
 
     return [self configureNotificationCellWithCell:cell IndexPath:indexPath];
