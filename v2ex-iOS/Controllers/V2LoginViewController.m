@@ -46,11 +46,15 @@ static CGFloat const kContainViewYEditing = 60.0;
     return self;
 }
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)loadView {
     [super loadView];
     
     [self configureViews];
-    [self configureTextField];
+    [self configureContainerView];
     
 }
 
@@ -59,6 +63,10 @@ static CGFloat const kContainViewYEditing = 60.0;
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    /* iPad有隐藏键盘按钮，没有监听该消息，会导致containView没有恢复 */
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:)
+                          name:UIKeyboardWillHideNotification object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -87,13 +95,12 @@ static CGFloat const kContainViewYEditing = 60.0;
 - (void)configureViews {
     
     self.backgroundImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default-568_blurred"]];
+    self.backgroundImageView.userInteractionEnabled = YES;
     self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.view addSubview:self.backgroundImageView];
     
-    self.closeButton = [UIButton buttonWithType:UIButtonTypeSystem];
-//    [self.closeButton setTitle:@"Close" forState:UIControlStateNormal];
+    self.closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.closeButton setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
-    [self.closeButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self.closeButton setTintColor:[UIColor whiteColor]];
     self.closeButton.alpha = 0.5;
     [self.view addSubview:self.closeButton];
@@ -131,6 +138,11 @@ static CGFloat const kContainViewYEditing = 60.0;
     
     [self.containView bk_whenTapped:^{
         @strongify(self);
+        [self hideKeyboard];
+    }];
+    
+    [self.backgroundImageView bk_whenTapped:^{
+        @strongify(self);
         
         [self hideKeyboard];
         
@@ -138,7 +150,9 @@ static CGFloat const kContainViewYEditing = 60.0;
     
 }
 
-- (void)configureTextField {
+/* 这个方法不止是设置textfield，还有LoginButton，因此这个方法名不合适 */
+- (void)configureContainerView {
+//- (void)configureTextField {
     
     self.usernameField = [[UITextField alloc] init];
     self.usernameField.textAlignment = NSTextAlignmentCenter;
@@ -376,6 +390,11 @@ static CGFloat const kContainViewYEditing = 60.0;
     NSString *phoneRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
     NSPredicate *phoneTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",phoneRegex];
     return [phoneTest evaluateWithObject:email];
+}
+
+#pragma mark - Keyboard Notification
+- (void)keyboardWillHide:(NSNotification *)notification {
+    [self hideKeyboard];
 }
 
 @end
