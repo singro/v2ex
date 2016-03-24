@@ -24,7 +24,7 @@ pod install
 方便自定义下拉刷新和上拉加载动画
 ```
 
-  * [SCNacigation](https://github.com/singro/SCNavigation) 
+  * [SCNavigation](https://github.com/singro/SCNavigation) 
     ```
 自定义 Navigation （NavigationBar相关以及NavigationController）所有元素完全自定义，
 通过 Pan 手势来完成类似 iOS7 的手势返回效果 。

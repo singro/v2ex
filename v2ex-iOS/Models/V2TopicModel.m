@@ -221,6 +221,10 @@
     return self;
 }
 
+- (void)dealloc {
+    _list = nil;
+}
+
 + (V2TopicList *)getTopicListFromResponseObject:(id)responseObject {
     
     NSMutableArray *topicArray = [[NSMutableArray alloc] init];
@@ -235,6 +239,7 @@
         
         if (error) {
             NSLog(@"Error: %@", error);
+            return nil;
         }
         
         HTMLNode *bodyNode = [parser body];

@@ -130,8 +130,9 @@ NSString * V2NotificationQuickAction = @"com.singro.v2ex.notification";
 #pragma mark - Notifications
 
 - (void)didReceiveEnterBackgroundNotification {
-    
-    [self updateAction];
+    if (kDeviceOSVersion > 9.0) {
+        [self updateAction];
+    }
     
 }
 
