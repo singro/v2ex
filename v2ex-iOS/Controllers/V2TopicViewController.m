@@ -198,6 +198,28 @@ typedef NS_ENUM(NSInteger, V2ImagePickerSourceType) {
 
 }
 
+#pragma mark - Setter
+
+- (void)setPreview:(BOOL)preview {
+    _preview = preview;
+    
+    if (self.isPreview) {
+        [self createNavigationBar];
+        self.sc_navigationItem.title = @"预览";
+        self.sc_navigationItem.titleLabel.centerY = 64/2;
+    } else {
+        self.sc_navigationItem.leftBarButtonItem = self.leftBarItem;
+        self.sc_navigationItem.rightBarButtonItem = self.addBarItem;
+        
+        if (self.model) {
+            self.sc_navigationItem.title = self.model.topicTitle;
+            self.nodeModel = self.model.topicNode;
+        } else {
+            self.sc_navigationItem.title = @"Topic";
+        }
+    }
+}
+
 #pragma mark - Layout
 
 - (void)viewWillLayoutSubviews {

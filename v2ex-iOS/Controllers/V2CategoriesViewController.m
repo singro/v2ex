@@ -623,11 +623,11 @@
     V2TopicListCell *cell = (V2TopicListCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (!cell) {
         cell = [[V2TopicListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    
-    // register for 3D Touch (if available)
-    if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
-        [self registerForPreviewingWithDelegate:self sourceView:cell];
+        
+        // register for 3D Touch (if available)
+        if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
+            [self registerForPreviewingWithDelegate:self sourceView:cell];
+        }
     }
     
     return [self configureTopicCellWithCell:cell IndexPath:indexPath];
@@ -682,8 +682,9 @@
 
 - (void)previewingContext:(id <UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
 
-//    UIViewController *popViewController = [[UIViewController alloc] init];
-//    [self showViewController:viewControllerToCommit sender:self];
+    V2TopicViewController *topicVC = (V2TopicViewController *)viewControllerToCommit;
+    topicVC.preview = NO;
+    [self.navigationController pushViewController:viewControllerToCommit animated:YES];
 
 }
 

@@ -205,13 +205,13 @@
     if (!cell) {
         cell = [[V2NotificationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.navi = self.navigationController;
+        
+        // register for 3D Touch (if available)
+        if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
+            [self registerForPreviewingWithDelegate:self sourceView:cell];
+        }
     }
     
-    // register for 3D Touch (if available)
-    if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
-        [self registerForPreviewingWithDelegate:self sourceView:cell];
-    }
-
     return [self configureNotificationCellWithCell:cell IndexPath:indexPath];
 }
 
