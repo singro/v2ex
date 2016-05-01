@@ -240,8 +240,10 @@
         cell = [[V2TopicListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     
         // register for 3D Touch (if available)
-        if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
-            [self registerForPreviewingWithDelegate:self sourceView:cell];
+        if(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_8_4) {
+            if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
+                [self registerForPreviewingWithDelegate:self sourceView:cell];
+            }
         }
     }
     

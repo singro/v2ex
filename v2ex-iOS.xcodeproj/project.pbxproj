@@ -1209,7 +1209,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = V2;
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Singro;
 				TargetAttributes = {
 					2933868618D67B6B00FEC28E = {
@@ -1636,6 +1636,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xingrong Chen (S8A223NWX3)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_BITCODE = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1716,6 +1717,7 @@
 					"$(PROJECT_DIR)/v2ex-iOS/Additions/libWeiboSDK",
 					"$(PROJECT_DIR)/v2ex-iOS/Additions/libWeixinSDK",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = singro.v2ex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1749,6 +1751,7 @@
 					"$(PROJECT_DIR)/v2ex-iOS/Additions/libWeiboSDK",
 					"$(PROJECT_DIR)/v2ex-iOS/Additions/libWeixinSDK",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = singro.v2ex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1782,9 +1785,10 @@
 					"$(PROJECT_DIR)/v2ex-iOS/Additions/libWeiboSDK",
 					"$(PROJECT_DIR)/v2ex-iOS/Additions/libWeixinSDK",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = singro.v2ex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "7853719e-7d97-4121-b7c2-5ec685fc66e3";
-				SDKROOT = iphoneos9.0;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "${SDK_DIR}/usr/include/libxml2";
 				VALID_ARCHS = "armv7 arm64";
@@ -1816,9 +1820,10 @@
 					"$(PROJECT_DIR)/v2ex-iOS/Additions/libWeiboSDK",
 					"$(PROJECT_DIR)/v2ex-iOS/Additions/libWeixinSDK",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = singro.v2ex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "79341f7b-b5d3-4650-9930-b1d407c8a6aa";
-				SDKROOT = iphoneos9.0;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "${SDK_DIR}/usr/include/libxml2";
 				VALID_ARCHS = "armv7 arm64";
