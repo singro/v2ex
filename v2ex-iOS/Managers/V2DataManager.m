@@ -25,6 +25,8 @@ static NSString *const kUserid = @"userid";
 static NSString *const kAvatarURL = @"avatarURL";
 static NSString *const kUserIsLogin = @"userIsLogin";
 
+static NSString *const kLoginPassword = @"p";
+static NSString *const kLoginUsername = @"u";
 
 typedef NS_ENUM(NSInteger, V2RequestMethod) {
     V2RequestMethodJSONGET    = 1,
@@ -78,11 +80,11 @@ typedef NS_ENUM(NSInteger, V2RequestMethod) {
     
     NSURL *baseUrl;
     
-    if (preferHttps) {
+//    if (preferHttps) {
         baseUrl = [NSURL URLWithString:@"https://www.v2ex.com"];
-    } else {
-        baseUrl = [NSURL URLWithString:@"http://www.v2ex.com"];
-    }
+//    } else {
+//        baseUrl = [NSURL URLWithString:@"http://www.v2ex.com"];
+//    }
     
     self.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:baseUrl];
     AFHTTPRequestSerializer* serializer = [AFHTTPRequestSerializer serializer];
@@ -764,7 +766,7 @@ typedef NS_ENUM(NSInteger, V2RequestMethod) {
     NSString *urlString = [NSString stringWithFormat:@"/t/%@", topicId];
     
     [self.manager.requestSerializer setValue:urlString forHTTPHeaderField:@"Referer"];
-    [self requestOnceWithURLString:urlString success:^(NSString *onceString) {
+    [self requestOnceWithURLString:urlString success:^(NSString *onceString, id responseObject) {
         
         NSDictionary *parameters = @{kOnceString: onceString,
                                      @"content": content
@@ -794,7 +796,7 @@ typedef NS_ENUM(NSInteger, V2RequestMethod) {
 //    failure(error1);
 //
 //    return nil;
-    [self requestOnceWithURLString:urlString success:^(NSString *onceString) {
+    [self requestOnceWithURLString:urlString success:^(NSString *onceString, id responseObject) {
         
         NSDictionary *parameters = @{kOnceString: onceString,
                                      @"title": title,
@@ -837,16 +839,18 @@ typedef NS_ENUM(NSInteger, V2RequestMethod) {
         [storage deleteCookie:cookie];
     }
     
-    [self requestOnceWithURLString:@"/signin" success:^(NSString *onceString) {
+    [self requestOnceWithURLString:@"/signin" success:^(NSString *onceString, id respnseObject) {
+        
+        NSDictionary *loginDict =  [self getLoginDictFromHtmlResponseObject:respnseObject];
         
         NSDictionary *parameters = @{
                                      kOnceString: onceString,
                                      kNextString: @"/",
-                                     @"p": password,
-                                     @"u": username,
+                                     loginDict[kLoginPassword] ?: @"p": password,
+                                     loginDict[kLoginUsername] ?: @"u": username,
                                      };
         
-        [self.manager.requestSerializer setValue:@"http://v2ex.com/signin" forHTTPHeaderField:@"Referer"];
+        [self.manager.requestSerializer setValue:@"https://v2ex.com/signin" forHTTPHeaderField:@"Referer"];
         
         [self requestWithMethod:V2RequestMethodHTTPPOST URLString:@"/signin" parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
             
@@ -1028,14 +1032,14 @@ typedef NS_ENUM(NSInteger, V2RequestMethod) {
 
 #pragma mark - Private Methods
 
-- (NSURLSessionDataTask *)requestOnceWithURLString:(NSString *)urlString success:(void (^)(NSString *onceString))success
+- (NSURLSessionDataTask *)requestOnceWithURLString:(NSString *)urlString success:(void (^)(NSString *onceString, id responseObject))success
                                            failure:(void (^)(NSError *error))failure {
     
     return [self requestWithMethod:V2RequestMethodHTTPGET URLString:urlString parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         
         NSString *onceString = [self getOnceStringFromHtmlResponseObject:responseObject];
         if (onceString) {
-            success(onceString);
+            success(onceString, responseObject);
         } else {
             NSError *error = [[NSError alloc] initWithDomain:self.manager.baseURL.absoluteString code:V2ErrorTypeNoOnceAndNext userInfo:nil];
             failure(error);
@@ -1076,6 +1080,52 @@ typedef NS_ENUM(NSInteger, V2RequestMethod) {
     }
     
     return onceString;
+}
+
+/**
+ *  @{
+ *     p: passwordKey
+ *     n: usernameKey
+ *   }
+ */
+- (NSDictionary *)getLoginDictFromHtmlResponseObject:(id)responseObject {
+    
+    __block NSMutableDictionary *loginDict = [NSMutableDictionary new];
+    
+    @autoreleasepool {
+        NSString *htmlString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        
+        NSError *error = nil;
+        HTMLParser *parser = [[HTMLParser alloc] initWithString:htmlString error:&error];
+        
+        if (error) {
+            NSLog(@"Error: %@", error);
+        }
+        
+        HTMLNode *bodyNode = [parser body];
+        
+        NSArray *inputNodes = [bodyNode findChildTags:@"input"];
+        
+        [inputNodes enumerateObjectsUsingBlock:^(HTMLNode *aNode, NSUInteger idx, BOOL *stop) {
+            
+            if ([[aNode getAttributeNamed:@"type"] isEqualToString:@"text"]) {
+                NSString *textName = [aNode getAttributeNamed:@"name"];
+                if (textName) {
+                    loginDict[kLoginUsername] = textName;
+                }
+            }
+            
+            if ([[aNode getAttributeNamed:@"type"] isEqualToString:@"password"]) {
+                NSString *passwordName = [aNode getAttributeNamed:@"name"];
+                if (passwordName) {
+                    loginDict[kLoginPassword] = passwordName;
+                }
+            }
+        }];
+        
+    }
+    
+    return loginDict;
 }
 
 - (NSURLSessionDataTask *)requestIgnoreOnceWithURLString:(NSString *)urlString success:(void (^)(NSString *onceString))success
