@@ -37,10 +37,6 @@
         return;
     }
     
-    if ([title isEqualToString:_titleLabel.text]) {
-        return;
-    }
-    
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
         [_titleLabel setFont:[UIFont systemFontOfSize:17]];
