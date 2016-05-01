@@ -14,6 +14,8 @@
 NSString * V2CheckInQuickAction = @"com.singro.v2ex.checkin";
 NSString * V2NotificationQuickAction = @"com.singro.v2ex.notification";
 
+//#define EnableNotification
+
 @interface V2QuickActionManager ()
 
 @end
@@ -44,6 +46,7 @@ NSString * V2NotificationQuickAction = @"com.singro.v2ex.notification";
 
 - (void)updateAction
 {
+#ifdef EnableNotification
     NSArray <UIApplicationShortcutItem *> *existingShortcutItems = [[UIApplication sharedApplication] shortcutItems];
     if (existingShortcutItems.count != 2) {
         UIApplicationShortcutItem *checkInItem = [self createCheckInItem];
@@ -53,7 +56,15 @@ NSString * V2NotificationQuickAction = @"com.singro.v2ex.notification";
 
     [self updateCheckInItem];
     [self updateNotificationItem];
+#else
+    NSArray <UIApplicationShortcutItem *> *existingShortcutItems = [[UIApplication sharedApplication] shortcutItems];
+    if (existingShortcutItems.count != 1) {
+        UIApplicationShortcutItem *checkInItem = [self createCheckInItem];
+        [[UIApplication sharedApplication] setShortcutItems: @[checkInItem]];
+    }
     
+    [self updateCheckInItem];
+#endif
 }
 
 - (void)updateCheckInItem

@@ -120,6 +120,11 @@
     
 }
 
+- (void)selectIndex:(NSUInteger)index
+{
+    self.sectionView.selectedIndex = index;
+}
+
 #pragma mark - Notifications
 
 - (void)didReceiveThemeChangeNotification {

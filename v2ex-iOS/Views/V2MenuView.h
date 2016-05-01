@@ -13,7 +13,7 @@
 @property (nonatomic, copy) void (^didSelectedIndexBlock)(NSInteger index);
 
 - (void)setDidSelectedIndexBlock:(void (^)(NSInteger index))didSelectedIndexBlock;
-
+- (void)selectIndex:(NSUInteger)index;
 
 
 @property (nonatomic, strong) UIImage *blurredImage;

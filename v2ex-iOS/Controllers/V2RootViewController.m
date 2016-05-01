@@ -245,7 +245,7 @@ static CGFloat const kMenuWidth = 240.0;
 
 #pragma mark - Private Methods
 
-- (void)showViewControllerAtIndex:(NSInteger)index animated:(BOOL)animated {
+- (void)showViewControllerAtIndex:(V2SectionIndex)index animated:(BOOL)animated {
     
     if (self.currentSelectedIndex != index) {
         
@@ -312,32 +312,33 @@ static CGFloat const kMenuWidth = 240.0;
         [UIView animateWithDuration:0.5 animations:^{
             [self setMenuOffset:0.0f];
         }];
-        
+
     }
     
+    [self.menuView selectIndex:index];
 }
 
-- (UIViewController *)viewControllerForIndex:(NSInteger)index {
+- (UIViewController *)viewControllerForIndex:(V2SectionIndex)index {
     
     UIViewController *viewController;
-    
+
     switch (index) {
-        case 0:
+        case V2SectionIndexLatest:
             viewController = self.latestNavigationController;
             break;
-        case 1:
+        case V2SectionIndexCategories:
             viewController = self.categoriesNavigationController;
             break;
-        case 2:
+        case V2SectionIndexNodes:
             viewController = self.nodesNavigationController;
             break;
-        case 3:
+        case V2SectionIndexFavorite:
             viewController = self.favoriteNavigationController;
             break;
-        case 4:
+        case V2SectionIndexNotification:
             viewController = self.nofificationNavigationController;
             break;
-        case 5:
+        case V2SectionIndexProfile:
             viewController = self.profilenavigationController;
             break;
         default:

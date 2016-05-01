@@ -112,39 +112,44 @@
 
 - (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler
 {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(6. * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        if ([shortcutItem.type isEqualToString:V2CheckInQuickAction]) {
-            if ([self checkAndLogin]) {
-                if ([V2CheckInManager manager].isExpired) {
-                    self.HUD = [[MBProgressHUD alloc] initWithView:self.window];
-                    self.HUD.removeFromSuperViewOnHide = YES;
-                    self.HUD.mode = MBProgressHUDModeIndeterminate;
-                    [self.HUD show:YES];
-                    [[V2CheckInManager manager] checkInSuccess:^(NSInteger count) {
-                        self.HUD.mode = MBProgressHUDModeText;
-                        self.HUD.labelText = [NSString stringWithFormat:@"已签到 %zd 天", count];
-                        [self.HUD hide:YES afterDelay:2.];
-                    } failure:^(NSError *error) {
-                        
-                    }];
-                } else {
-                    self.HUD = [[MBProgressHUD alloc] initWithView:self.currentNavigationController.view];
-                    self.HUD.removeFromSuperViewOnHide = YES;
-                    self.HUD.mode = MBProgressHUDModeText;
-                    self.HUD.labelText = @"今天已签到";
-                    [self.HUD show:YES];
-//                    [self.HUD hide:YES afterDelay:2.];
-                }
+    if ([shortcutItem.type isEqualToString:V2CheckInQuickAction]) {
+        if ([self checkAndLogin]) {
+            UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+            if ([V2CheckInManager manager].isExpired) {
+                self.HUD = [[MBProgressHUD alloc] initWithWindow:keyWindow];
+                self.HUD.removeFromSuperViewOnHide = YES;
+                self.HUD.mode = MBProgressHUDModeIndeterminate;
+                [keyWindow addSubview:self.HUD];
+                [self.HUD show:YES];
+                [[V2CheckInManager manager] checkInSuccess:^(NSInteger count) {
+                    UIImage *image = [UIImage imageNamed:@"37x-Checkmark"];
+                    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+                    self.HUD.customView = imageView;
+                    self.HUD.mode = MBProgressHUDModeCustomView;
+                    self.HUD.labelText = [NSString stringWithFormat:@"已连续签到 %zd 天", count];
+                    [self.HUD hide:YES afterDelay:3];
+                } failure:^(NSError *error) {
+                    
+                }];
+            } else {
+                self.HUD = [[MBProgressHUD alloc] initWithWindow:keyWindow];
+                self.HUD.removeFromSuperViewOnHide = YES;
+                self.HUD.mode = MBProgressHUDModeText;
+//                self.HUD.labelText = @"今天已签到";
+                self.HUD.labelText = [NSString stringWithFormat:@"已连续签到 %zd 天", [V2CheckInManager manager].checkInCount];
+//                self.HUD.detailsLabelColor = kFontColorBlackLight;
+                [keyWindow addSubview:self.HUD];
+                [self.HUD show:YES];
+                [self.HUD hide:YES afterDelay:2.5];
             }
         }
-        
-        if ([shortcutItem.type isEqualToString:V2NotificationQuickAction]) {
-            if ([self checkAndLogin]) {
-                
-            }
-        }
-    });
+    }
     
+    if ([shortcutItem.type isEqualToString:V2NotificationQuickAction]) {
+        if ([self checkAndLogin]) {
+            [self.rootViewController showViewControllerAtIndex:V2SectionIndexNotification animated:NO];
+        }
+    }
 }
 
 #pragma mark - Status bar touch tracking
