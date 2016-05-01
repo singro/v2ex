@@ -271,6 +271,7 @@
 		29EC2BA718D8740F00F6E966 /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EC2BA518D8740F00F6E966 /* EXTScope.m */; };
 		29EC2BAA18D883F300F6E966 /* V2TopicListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EC2BA918D883F300F6E966 /* V2TopicListCell.m */; };
 		29F2593E198B8B0A0053FC84 /* V2WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29F2593D198B8B0A0053FC84 /* V2WebViewController.m */; };
+		29FF63E51CD5B064006CC8A2 /* V2QuickActionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 294FC8DD1BF82D3600D627F9 /* V2QuickActionManager.m */; };
 		C5BF11E006564992BA7F1B46 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F82C9E568AED44198657ED64 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -1557,6 +1558,7 @@
 				29C0BDF61BA3A89E007B110C /* V2CategoriesViewController.m in Sources */,
 				29C0BDF71BA3A89E007B110C /* UIImage+Tint.m in Sources */,
 				29C0BDF81BA3A89E007B110C /* V2TopicToolBarItemView.m in Sources */,
+				29FF63E51CD5B064006CC8A2 /* V2QuickActionManager.m in Sources */,
 				29C0BDF91BA3A89E007B110C /* V2NodeMenuView.m in Sources */,
 				29C0BDFA1BA3A89E007B110C /* AnimatedGIFImageSerialization.m in Sources */,
 				29C0BDFB1BA3A89E007B110C /* V2MenuSectionView.m in Sources */,
@@ -1769,7 +1771,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xingrong Chen (S8A223NWX3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1787,7 +1789,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = singro.v2ex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7853719e-7d97-4121-b7c2-5ec685fc66e3";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "${SDK_DIR}/usr/include/libxml2";
@@ -1804,7 +1806,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1822,7 +1824,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = singro.v2ex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "79341f7b-b5d3-4650-9930-b1d407c8a6aa";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "${SDK_DIR}/usr/include/libxml2";

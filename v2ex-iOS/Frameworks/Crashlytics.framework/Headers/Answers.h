@@ -6,10 +6,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CLSAttributes.h"
+#import "ANSCompatibility.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ *  This class exposes the Answers Events API, allowing you to track key 
+ *  user user actions and metrics in your app.
+ */
 @interface Answers : NSObject
 
 /**
@@ -18,11 +22,11 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @param signUpMethodOrNil     The method by which a user logged in, e.g. Twitter or Digits.
  *  @param signUpSucceededOrNil  The ultimate success or failure of the login
- *  @param customAttributesOrNil A dictionary of custom attributes to associate with this purchase.
+ *  @param customAttributesOrNil A dictionary of custom attributes to associate with this event.
  */
 + (void)logSignUpWithMethod:(nullable NSString *)signUpMethodOrNil
                     success:(nullable NSNumber *)signUpSucceededOrNil
-           customAttributes:(nullable CLS_GENERIC_NSDICTIONARY(NSString *, id) *)customAttributesOrNil;
+           customAttributes:(nullable ANS_GENERIC_NSDICTIONARY(NSString *, id) *)customAttributesOrNil;
 
 /**
  *  Log an Log In event to see users logging into your app in real-time, understand how many
@@ -30,11 +34,11 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @param loginMethodOrNil      The method by which a user logged in, e.g. email, Twitter or Digits.
  *  @param loginSucceededOrNil   The ultimate success or failure of the login
- *  @param customAttributesOrNil A dictionary of custom attributes to associate with this purchase.
+ *  @param customAttributesOrNil A dictionary of custom attributes to associate with this event.
  */
 + (void)logLoginWithMethod:(nullable NSString *)loginMethodOrNil
                    success:(nullable NSNumber *)loginSucceededOrNil
-          customAttributes:(nullable CLS_GENERIC_NSDICTIONARY(NSString *, id) *)customAttributesOrNil;
+          customAttributes:(nullable ANS_GENERIC_NSDICTIONARY(NSString *, id) *)customAttributesOrNil;
 
 /**
  *  Log a Share event to see users sharing from your app in real-time, letting you
@@ -50,17 +54,17 @@ NS_ASSUME_NONNULL_BEGIN
                contentName:(nullable NSString *)contentNameOrNil
                contentType:(nullable NSString *)contentTypeOrNil
                  contentId:(nullable NSString *)contentIdOrNil
-          customAttributes:(nullable CLS_GENERIC_NSDICTIONARY(NSString *, id) *)customAttributesOrNil;
+          customAttributes:(nullable ANS_GENERIC_NSDICTIONARY(NSString *, id) *)customAttributesOrNil;
 
 /**
  *  Log an Invite Event to track how users are inviting other users into
  *  your application.
  *
  *  @param inviteMethodOrNil     The method of invitation, e.g. GameCenter, Twitter, email.
- *  @param customAttributesOrNil A dictionary of custom attributes to associate with this purchase.
+ *  @param customAttributesOrNil A dictionary of custom attributes to associate with this event.
  */
 + (void)logInviteWithMethod:(nullable NSString *)inviteMethodOrNil
-           customAttributes:(nullable CLS_GENERIC_NSDICTIONARY(NSString *, id) *)customAttributesOrNil;
+           customAttributes:(nullable ANS_GENERIC_NSDICTIONARY(NSString *, id) *)customAttributesOrNil;
 
 /**
  *  Log a Purchase event to see your revenue in real-time, understand how many users are making purchases, see which
@@ -70,8 +74,8 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param currencyOrNil          The ISO4217 currency code. Example: USD
  *  @param purchaseSucceededOrNil Was the purchase succesful or unsuccesful
  *  @param itemNameOrNil          The human-readable form of the item's name. Example:
- *  @param itemIdOrNil            The machine-readable, unique item identifier Example: SKU
  *  @param itemTypeOrNil          The type, or genre of the item. Example: Song
+ *  @param itemIdOrNil            The machine-readable, unique item identifier Example: SKU
  *  @param customAttributesOrNil  A dictionary of custom attributes to associate with this purchase.
  */
 + (void)logPurchaseWithPrice:(nullable NSDecimalNumber *)itemPriceOrNil
@@ -80,7 +84,7 @@ NS_ASSUME_NONNULL_BEGIN
                     itemName:(nullable NSString *)itemNameOrNil
                     itemType:(nullable NSString *)itemTypeOrNil
                       itemId:(nullable NSString *)itemIdOrNil
-            customAttributes:(nullable CLS_GENERIC_NSDICTIONARY(NSString *, id) *)customAttributesOrNil;
+            customAttributes:(nullable ANS_GENERIC_NSDICTIONARY(NSString *, id) *)customAttributesOrNil;
 
 /**
  *  Log a Level Start Event to track where users are in your game.
@@ -89,7 +93,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param customAttributesOrNil A dictionary of custom attributes to associate with this level start event.
  */
 + (void)logLevelStart:(nullable NSString *)levelNameOrNil
-     customAttributes:(nullable CLS_GENERIC_NSDICTIONARY(NSString *, id) *)customAttributesOrNil;
+     customAttributes:(nullable ANS_GENERIC_NSDICTIONARY(NSString *, id) *)customAttributesOrNil;
 
 /**
  *  Log a Level End event to track how users are completing levels in your game.
@@ -97,12 +101,12 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param levelNameOrNil                 The name of the level completed, E.G. "1" or "Training"
  *  @param scoreOrNil                     The score the user completed the level with.
  *  @param levelCompletedSuccesfullyOrNil A boolean representing whether or not the level was completed succesfully.
- *  @param customAttributesOrNil          A dictionary of custom attributes to associate with this purchase.
+ *  @param customAttributesOrNil          A dictionary of custom attributes to associate with this event.
  */
 + (void)logLevelEnd:(nullable NSString *)levelNameOrNil
               score:(nullable NSNumber *)scoreOrNil
             success:(nullable NSNumber *)levelCompletedSuccesfullyOrNil
-   customAttributes:(nullable CLS_GENERIC_NSDICTIONARY(NSString *, id) *)customAttributesOrNil;
+   customAttributes:(nullable ANS_GENERIC_NSDICTIONARY(NSString *, id) *)customAttributesOrNil;
 
 /**
  *  Log an Add to Cart event to see users adding items to a shopping cart in real-time, understand how
@@ -114,14 +118,14 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param itemNameOrNil          The human-readable form of the item's name. Example:
  *  @param itemTypeOrNil          The type, or genre of the item. Example: Song
  *  @param itemIdOrNil            The machine-readable, unique item identifier Example: SKU
- *  @param customAttributesOrNil  A dictionary of custom attributes to associate with this purchase.
+ *  @param customAttributesOrNil  A dictionary of custom attributes to associate with this event.
  */
 + (void)logAddToCartWithPrice:(nullable NSDecimalNumber *)itemPriceOrNil
                      currency:(nullable NSString *)currencyOrNil
                      itemName:(nullable NSString *)itemNameOrNil
                      itemType:(nullable NSString *)itemTypeOrNil
                        itemId:(nullable NSString *)itemIdOrNil
-             customAttributes:(nullable CLS_GENERIC_NSDICTIONARY(NSString *, id) *)customAttributesOrNil;
+             customAttributes:(nullable ANS_GENERIC_NSDICTIONARY(NSString *, id) *)customAttributesOrNil;
 
 /**
  *  Log a Start Checkout event to see users moving through the purchase funnel in real-time, understand how many
@@ -131,12 +135,12 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param totalPriceOrNil        The total price of the cart.
  *  @param currencyOrNil          The ISO4217 currency code. Example: USD
  *  @param itemCountOrNil         The number of items in the cart.
- *  @param customAttributesOrNil  A dictionary of custom attributes to associate with this purchase.
+ *  @param customAttributesOrNil  A dictionary of custom attributes to associate with this event.
  */
 + (void)logStartCheckoutWithPrice:(nullable NSDecimalNumber *)totalPriceOrNil
                          currency:(nullable NSString *)currencyOrNil
                         itemCount:(nullable NSNumber *)itemCountOrNil
-                 customAttributes:(nullable CLS_GENERIC_NSDICTIONARY(NSString *, id) *)customAttributesOrNil;
+                 customAttributes:(nullable ANS_GENERIC_NSDICTIONARY(NSString *, id) *)customAttributesOrNil;
 
 /**
  *  Log a Rating event to see users rating content within your app in real-time and understand what
@@ -152,7 +156,7 @@ NS_ASSUME_NONNULL_BEGIN
       contentName:(nullable NSString *)contentNameOrNil
       contentType:(nullable NSString *)contentTypeOrNil
         contentId:(nullable NSString *)contentIdOrNil
- customAttributes:(nullable CLS_GENERIC_NSDICTIONARY(NSString *, id) *)customAttributesOrNil;
+ customAttributes:(nullable ANS_GENERIC_NSDICTIONARY(NSString *, id) *)customAttributesOrNil;
 
 /**
  *  Log a Content View event to see users viewing content within your app in real-time and
@@ -166,7 +170,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)logContentViewWithName:(nullable NSString *)contentNameOrNil
                    contentType:(nullable NSString *)contentTypeOrNil
                      contentId:(nullable NSString *)contentIdOrNil
-              customAttributes:(nullable CLS_GENERIC_NSDICTIONARY(NSString *, id) *)customAttributesOrNil;
+              customAttributes:(nullable ANS_GENERIC_NSDICTIONARY(NSString *, id) *)customAttributesOrNil;
 
 /**
  *  Log a Search event allows you to see users searching within your app in real-time and understand
@@ -176,7 +180,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param customAttributesOrNil A dictionary of custom attributes to associate with this event.
  */
 + (void)logSearchWithQuery:(nullable NSString *)queryOrNil
-          customAttributes:(nullable CLS_GENERIC_NSDICTIONARY(NSString *, id) *)customAttributesOrNil;
+          customAttributes:(nullable ANS_GENERIC_NSDICTIONARY(NSString *, id) *)customAttributesOrNil;
 
 /**
  *  Log a Custom Event to see user actions that are uniquely important for your app in real-time, to see how often
@@ -184,7 +188,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  the name of the event, since this is how the event will appear in Answers.
  *
  *  @param eventName             The human-readable name for the event.
- *  @param customAttributesOrNil A dictionary of custom attributes to associate with this purchase. Attribute keys
+ *  @param customAttributesOrNil A dictionary of custom attributes to associate with this event. Attribute keys
  *                               must be <code>NSString</code> and and values must be <code>NSNumber</code> or <code>NSString</code>.
  *  @discussion                  How we treat <code>NSNumbers</code>:
  *                               We will provide information about the distribution of values over time.
@@ -199,7 +203,7 @@ NS_ASSUME_NONNULL_BEGIN
  *                               engagement.
  */
 + (void)logCustomEventWithName:(NSString *)eventName
-              customAttributes:(nullable CLS_GENERIC_NSDICTIONARY(NSString *, id) *)customAttributesOrNil;
+              customAttributes:(nullable ANS_GENERIC_NSDICTIONARY(NSString *, id) *)customAttributesOrNil;
 
 @end
 
