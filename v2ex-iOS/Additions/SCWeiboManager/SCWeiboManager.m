@@ -40,7 +40,7 @@ static NSString *const kWeiboExpirationDate = @"kWeiboExpirationDate";
         manager = [[SCWeiboManager alloc] init];
         
         [WeiboSDK registerApp:kWeiboAppKey];
-
+        
         manager.token = [[FXKeychain defaultKeychain] objectForKey:kWeiboToken];
         manager.expirationDate = [[FXKeychain defaultKeychain] objectForKey:kWeiboExpirationDate];
         
@@ -73,7 +73,7 @@ static NSString *const kWeiboExpirationDate = @"kWeiboExpirationDate";
 }
 
 - (void)clean {
-
+    
     [[FXKeychain defaultKeychain] removeObjectForKey:kWeiboToken];
     [[FXKeychain defaultKeychain] removeObjectForKey:kWeiboExpirationDate];
     _token = nil;
@@ -97,6 +97,15 @@ static NSString *const kWeiboExpirationDate = @"kWeiboExpirationDate";
         [paras setObject:obj forKey:key];
     }];
     
+    if (self.isExpired) {
+        [self authorizeToWeiboSuccess:^(WBBaseResponse *response) {
+            self.token = [(WBAuthorizeResponse *)response accessToken];
+            self.expirationDate = [(WBAuthorizeResponse *)response expirationDate];
+        } failure:^(NSError *error) {
+            //
+        }];
+    }
+    
     WBHttpRequest *request = [WBHttpRequest requestWithAccessToken:self.token
                                                                url:urlString
                                                         httpMethod:httpMethod
@@ -108,6 +117,8 @@ static NSString *const kWeiboExpirationDate = @"kWeiboExpirationDate";
     request.failureBlock = failure;
     
     return request;
+    
+    
 }
 
 #pragma mark - Authorize
@@ -123,7 +134,7 @@ static NSString *const kWeiboExpirationDate = @"kWeiboExpirationDate";
     [WeiboSDK sendRequest:self.authorizeRequest];
     
     return self.authorizeRequest;
-
+    
 }
 
 
@@ -235,7 +246,7 @@ static NSString *const kWeiboExpirationDate = @"kWeiboExpirationDate";
                                 failure(error);
                             }
                         }];
-
+    
     
 }
 
@@ -267,7 +278,7 @@ static NSString *const kWeiboExpirationDate = @"kWeiboExpirationDate";
                                 failure(error);
                             }
                         }];
-
+    
 }
 
 @end
