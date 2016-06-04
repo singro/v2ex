@@ -1,5 +1,6 @@
 language: objective-c
 
 before_install:
+  - rvm use system
   - gem install activesupport
   - gem install cocoapods -v '1.0.0'
