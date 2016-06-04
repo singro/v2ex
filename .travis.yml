@@ -1,4 +1,4 @@
 language: objective-c
 
 before_install:
-  - gem install cocoapods -v '0.38.2'
+  - gem install cocoapods -v '1.0.0'
