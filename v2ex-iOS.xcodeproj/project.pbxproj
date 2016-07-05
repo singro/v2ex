@@ -1219,14 +1219,6 @@
 				CLASSPREFIX = V2;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Singro;
-				TargetAttributes = {
-					2933868618D67B6B00FEC28E = {
-						DevelopmentTeam = 8KZ3G3A2FQ;
-					};
-					29C0BDB21BA3A89E007B110C = {
-						DevelopmentTeam = 8KZ3G3A2FQ;
-					};
-				};
 			};
 			buildConfigurationList = 2933868218D67B6B00FEC28E /* Build configuration list for PBXProject "v2ex-iOS" */;
 			compatibilityVersion = "Xcode 3.2";
