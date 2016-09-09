@@ -305,7 +305,10 @@
         }
         else if (recognizer.state == UIGestureRecognizerStateChanged) {
             
-            [self setMenuOffset: - self.sectionView.width * progress];
+//            [self setMenuOffset: - self.sectionView.width * progress];
+            if (self.aboveTableViewButton.hidden) {
+              [self setMenuOffset: - self.sectionView.width * progress];
+            }
             
         }
         else if (recognizer.state == UIGestureRecognizerStateEnded || recognizer.state == UIGestureRecognizerStateCancelled) {
