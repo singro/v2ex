@@ -2,7 +2,7 @@ platform :ios, '7.0'
 inhibit_all_warnings!
 
 def pods
-  pod 'AFNetworking', '~> 2.2.0'
+  pod 'AFNetworking', '~> 2.2'
   pod 'NYXImagesKit', '~> 2.3'
   pod 'FXKeychain', '~> 1.5'
   pod 'BlocksKit', '~> 2.2.0'
