@@ -11,6 +11,8 @@ def pods
   pod 'MWFeedParser', '~> 1.0.1'
   pod 'RegexKitLite', '~> 4.0'
   pod 'MBProgressHUD', '~> 0.8'
+end
+
   post_install do |installer_representation|
       installer_representation.pods_project.targets.each do |target|
           target.build_configurations.each do |config|
@@ -18,7 +20,6 @@ def pods
           end
       end
   end
-end
 
 target "v2ex-dev" do
   pods
