@@ -53,7 +53,7 @@
 		{
 			CFStringEncoding cfenc = CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding);
 			CFStringRef cfencstr = CFStringConvertEncodingToIANACharSetName(cfenc);
-			const char *enc = CFStringGetCStringPtr(cfencstr, 0);
+			const char *enc = [(__bridge NSString *)cfencstr UTF8String];
 			// _doc = htmlParseDoc((xmlChar*)[string UTF8String], enc);
 			int optionsHtml = HTML_PARSE_RECOVER;
 			optionsHtml = optionsHtml | HTML_PARSE_NOERROR; //Uncomment this to see HTML errors
