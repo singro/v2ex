@@ -1,23 +1,23 @@
 [![Build Status](https://travis-ci.org/singro/v2ex.svg?branch=master)](https://travis-ci.org/singro/v2ex)
 
-####关于
+#### 关于
 V2EX for iOS
 
 
-####下载
+#### 下载
 
 https://itunes.apple.com/us/app/v2ex-chuang-yi-gong-zuo-zhe/id898181535?ls=1&mt=8
 
-####截图
+#### 截图
 ![ScreenShoot 1](http://i.v2ex.co/EwnuC7uf.png)
 
-####运行
+#### 运行
 ```
 pod install
 ```
 若出现 `ld: library not found for -lPods-AFNetworking` 类似的， 设置 `Project` -> `Pods` 的 `Build Active Architecture Only` 为 `NO`
 
-####部分独立组件
+#### 部分独立组件
 
   * [SCPullRefresh](https://github.com/singro/SCPullRefresh)  
     ```
@@ -35,7 +35,7 @@ pod install
 对微博官方 SDK 的 block 封装。 更加易用，配置更简单。
 ```
 
-####说明
+#### 说明
 
 1. `发图功能`
   目前通过绑定微博后，发一条带图片的微博到密友来实现。*（更好的方法有待研究）*
@@ -49,15 +49,15 @@ pod install
 4. `HTTPS` 默认是以 HTTP 访问所有接口，考虑被墙，稍后后更新支持 HTTPS 切换的版本到 App Store
     
 
-####已知的 bug
+#### 已知的 bug
 * ~~话题内容过长时微信分享失败 [1.0.0]~~
 * ~~连续回复时，第二次回复失败 [1.0.0]~~
 * 某几个帖子点开 Crash [1.0.0]
 
-####LICENSE
+#### LICENSE
 MIT
 
-####捐赠
+#### 捐赠
 支付宝（singroapp#gmail.com）：
 
 ![donate](http://i.v2ex.co/2O0eZEc9b.png)
