@@ -122,7 +122,7 @@ typedef NS_ENUM(NSInteger, V2ImagePickerSourceType) {
     if (self.isPreview) {
         [self createNavigationBar];
         self.sc_navigationItem.title = @"预览";
-        self.sc_navigationItem.titleLabel.centerY = 64/2;
+        self.sc_navigationItem.titleLabel.centerY = UIView.sc_statusBarHeight + UIView.sc_navigationBarHeighExcludeStatusBar/2;
     } else {
         self.sc_navigationItem.leftBarButtonItem = self.leftBarItem;
         self.sc_navigationItem.rightBarButtonItem = self.addBarItem;
@@ -206,7 +206,7 @@ typedef NS_ENUM(NSInteger, V2ImagePickerSourceType) {
     if (self.isPreview) {
         [self createNavigationBar];
         self.sc_navigationItem.title = @"预览";
-        self.sc_navigationItem.titleLabel.centerY = 64/2;
+        self.sc_navigationItem.titleLabel.centerY = UIView.sc_statusBarHeight + UIView.sc_navigationBarHeighExcludeStatusBar/2;
     } else {
         self.sc_navigationItem.leftBarButtonItem = self.leftBarItem;
         self.sc_navigationItem.rightBarButtonItem = self.addBarItem;
@@ -229,7 +229,7 @@ typedef NS_ENUM(NSInteger, V2ImagePickerSourceType) {
     self.tableView.backgroundColor = kBackgroundColorWhite;
     self.hiddenEnabled = YES;
     
-    self.tableView.contentInsetTop = 64 - 36;
+    self.tableView.contentInsetTop = UIView.sc_navigationBarHeight - 36;
     self.menuContainView.frame = self.view.bounds;
     self.menuBackgroundButton.frame = self.menuContainView.bounds;
 
@@ -828,20 +828,20 @@ typedef NS_ENUM(NSInteger, V2ImagePickerSourceType) {
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     [super scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
 
-    if (scrollView.contentOffsetY < - 64 + 36) {
+    if (scrollView.contentOffsetY < - UIView.sc_navigationBarHeight + 36) {
         self.isDragging = YES;
         [UIView animateWithDuration:0.3 animations:^{
-            self.tableView.contentInsetTop = 64;
+            self.tableView.contentInsetTop = UIView.sc_navigationBarHeight;
         } completion:^(BOOL finished) {
             if (!decelerate) {
                 [UIView animateWithDuration:0.3 animations:^{
-                    self.tableView.contentInsetTop = 64 - 36;
+                    self.tableView.contentInsetTop = UIView.sc_navigationBarHeight - 36;
                 }];
             }
         }];
     } else {
         self.isDragging = NO;
-        self.tableView.contentInsetTop = 64 - 36;
+        self.tableView.contentInsetTop = UIView.sc_navigationBarHeight - 36;
     }
     
 }
@@ -1350,14 +1350,14 @@ typedef NS_ENUM(NSInteger, V2ImagePickerSourceType) {
         [UIView animateWithDuration:0.3 animations:^{
             self.menuView.alpha = 1.0;
             self.menuView.transform = CGAffineTransformIdentity;
-            self.menuView.frame = (CGRect){200, 64, 130, 118};
+            self.menuView.frame = (CGRect){200, UIView.sc_navigationBarHeight, 130, 118};
         } completion:^(BOOL finished) {
             self.menuContainView.userInteractionEnabled = YES;
         }];
     } else {
         self.menuView.alpha = 1.0;
         self.menuView.transform = CGAffineTransformIdentity;
-        self.menuView.frame = (CGRect){200, 64, 130, 118};
+        self.menuView.frame = (CGRect){200, UIView.sc_navigationBarHeight, 130, 118};
         self.menuContainView.userInteractionEnabled = YES;
     }
     
@@ -1375,11 +1375,11 @@ typedef NS_ENUM(NSInteger, V2ImagePickerSourceType) {
         [UIView animateWithDuration:0.3 animations:^{
             
             self.menuView.transform = CGAffineTransformMakeScale(0.3, 0.3);
-            self.menuView.origin = (CGPoint){260, 64};
+            self.menuView.origin = (CGPoint){260, UIView.sc_navigationBarHeight};
             
         } completion:^(BOOL finished) {
             self.menuView.transform = CGAffineTransformIdentity;
-            self.menuView.frame = (CGRect){200, 64, 130, 118};
+            self.menuView.frame = (CGRect){200, UIView.sc_navigationBarHeight, 130, 118};
             self.isMenuShowing = NO;
             self.edgePanRecognizer.enabled = YES;
         }];

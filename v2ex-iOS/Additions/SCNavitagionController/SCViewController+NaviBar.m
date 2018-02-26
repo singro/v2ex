@@ -80,7 +80,7 @@ static char const * const kNaviBarView = "kNaviBarView";
 - (void)sc_setNavigationBarHidden:(BOOL)hidden animated:(BOOL)animated {
     if (hidden) {
         [UIView animateWithDuration:0.3 animations:^{
-            self.sc_navigationBar.y = -44;
+            self.sc_navigationBar.y = -UIView.sc_navigationBarHeighExcludeStatusBar;
             for (UIView *view in self.sc_navigationBar.subviews) {
                 view.alpha = 0.0;
             }

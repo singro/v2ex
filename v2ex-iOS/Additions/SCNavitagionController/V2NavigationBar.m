@@ -20,11 +20,11 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        self.frame = (CGRect){0, 0, kScreenWidth, 64};
+        self.frame = (CGRect){0, 0, kScreenWidth, UIView.sc_navigationBarHeight};
         
         self.backgroundColor = kNavigationBarColor;
         
-        self.lineView = [[UIView alloc] initWithFrame:(CGRect){0, 64, kScreenWidth, 0.5}];
+        self.lineView = [[UIView alloc] initWithFrame:(CGRect){0, UIView.sc_navigationBarHeight, kScreenWidth, 0.5}];
         self.lineView.backgroundColor = kNavigationBarLineColor;
         [self addSubview:self.lineView];
         

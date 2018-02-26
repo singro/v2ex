@@ -50,7 +50,7 @@
     [_titleLabel sizeToFit];
     NSUInteger otherButtonWidth = self.leftBarButtonItem.view.width + self.rightBarButtonItem.view.width;
     _titleLabel.width = kScreenWidth - otherButtonWidth - 20;
-    _titleLabel.centerY = 42;
+    _titleLabel.centerY = UIView.sc_statusBarHeight + UIView.sc_navigationBarHeighExcludeStatusBar / 2;
     _titleLabel.centerX = kScreenWidth/2;
     
 }
@@ -60,7 +60,7 @@
     if (__sc_viewController) {
         [_leftBarButtonItem.view removeFromSuperview];
         leftBarButtonItem.view.x = 0;
-        leftBarButtonItem.view.centerY = 42;
+        leftBarButtonItem.view.centerY = UIView.sc_statusBarHeight + UIView.sc_navigationBarHeighExcludeStatusBar / 2;
         [__sc_viewController.sc_navigationBar addSubview:leftBarButtonItem.view];
     }
     
@@ -72,7 +72,7 @@
     if (__sc_viewController) {
         [_rightBarButtonItem.view removeFromSuperview];
         rightBarButtonItem.view.x = kScreenWidth - rightBarButtonItem.view.width;
-        rightBarButtonItem.view.centerY = 42;
+        rightBarButtonItem.view.centerY = UIView.sc_statusBarHeight + UIView.sc_navigationBarHeighExcludeStatusBar / 2;
         [__sc_viewController.sc_navigationBar addSubview:rightBarButtonItem.view];
     }
     

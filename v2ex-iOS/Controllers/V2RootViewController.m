@@ -9,6 +9,7 @@
 #import "V2RootViewController.h"
 
 #import "SCNavigationController.h"
+#import "UIView+SafeArea.h"
 
 #import "V2LatestViewController.h"
 #import "V2CategoriesViewController.h"
@@ -92,8 +93,6 @@ static CGFloat const kMenuWidth = 240.0;
 //                                                         NSFontAttributeName:[UIFont systemFontOfSize:17]};
     self.edgesForExtendedLayout = UIRectEdgeAll;
     self.automaticallyAdjustsScrollViewInsets = NO;
-    
-    
 }
 
 #pragma mark - Life Cycle
@@ -111,6 +110,10 @@ static CGFloat const kMenuWidth = 240.0;
     [super viewDidAppear:animated];
     
 //    [self setBlurredScreenShoot];
+    
+    NSLog(@"status: %.f", UIView.sc_statusBarHeight);
+    NSLog(@"navi: %.f", UIView.sc_navigationBarHeight);
+    NSLog(@"naviEx: %.f", UIView.sc_navigationBarHeighExcludeStatusBar);
 
 }
 - (void)dealloc{

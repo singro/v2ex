@@ -247,7 +247,7 @@
     self.tableView                 = [[UITableView alloc] initWithFrame:self.view.frame];
     self.tableView.backgroundColor = kBackgroundColorWhiteDark;
     self.tableView.separatorStyle  = UITableViewCellSeparatorStyleNone;
-    self.tableView.contentInsetTop = 64;  // Notice
+    self.tableView.contentInsetTop = UIView.sc_navigationBarHeight;  // Notice
     self.tableView.delegate        = self;
     self.tableView.dataSource      = self;
     [self.view addSubview:self.tableView];

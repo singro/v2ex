@@ -172,7 +172,7 @@
     
     self.menuView = [[UIView alloc] init];
     self.menuView.alpha = 0.0;
-    self.menuView.frame = (CGRect){200, 64, 130, 118};
+    self.menuView.frame = (CGRect){200, UIView.sc_navigationBarHeight, 130, 118};
     [self.menuContainView addSubview:self.menuView];
     
     UIView *topArrowView = [[UIView alloc] init];

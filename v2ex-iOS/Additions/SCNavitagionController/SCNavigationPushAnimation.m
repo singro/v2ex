@@ -55,11 +55,11 @@
         ;
     } else {
 
-        naviBarView = [[UIView alloc] initWithFrame:(CGRect){0, 0, kScreenWidth, 64}];
+        naviBarView = [[UIView alloc] initWithFrame:(CGRect){0, 0, kScreenWidth, UIView.sc_navigationBarHeight}];
         naviBarView.backgroundColor = kNavigationBarColor;
         [containerView addSubview:naviBarView];
 
-        UIView *lineView = [[UIView alloc] initWithFrame:(CGRect){0, 64, kScreenWidth, 0.5}];
+        UIView *lineView = [[UIView alloc] initWithFrame:(CGRect){0, UIView.sc_navigationBarHeight, kScreenWidth, 0.5}];
         lineView.backgroundColor = kNavigationBarLineColor;
         [naviBarView addSubview:lineView];
 

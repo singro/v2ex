@@ -207,7 +207,7 @@ static CGFloat kTitleHeight           = 55.0f;
     
     // layout
     
-    self.contentPanel.frame = (CGRect){0, 0 + 64, kScreenWidth, kScreenHeight - kKeyboardHeightDefault - 64};
+    self.contentPanel.frame = (CGRect){0, 0 + UIView.sc_navigationBarHeight, kScreenWidth, kScreenHeight - kKeyboardHeightDefault - UIView.sc_navigationBarHeight};
     self.titleTextField.frame = (CGRect){12, 0, kScreenWidth - 24, kTitleHeight};
     self.contentTextView.frame = (CGRect){8, kTitleHeight, kScreenWidth - 16, 0};
     self.contentTextView.height = self.contentPanel.height - kTitleHeight - 10;

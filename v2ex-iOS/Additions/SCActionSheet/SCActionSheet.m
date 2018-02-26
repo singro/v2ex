@@ -204,7 +204,7 @@ static BOOL kActionSheetShowing = NO;
         [buttonContainView addSubview:lineView];
 
         // layout
-        buttonContainView.frame = (CGRect){0, 0, kScreenWidth, kButtonHeight + 10};
+        buttonContainView.frame = (CGRect){0, 0, kScreenWidth, kButtonHeight + 10 + UIView.sc_bottomInset};
         button.y = 5;
         
         [self.contentView addSubview:buttonContainView];

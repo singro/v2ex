@@ -66,8 +66,7 @@ static CGFloat const kAvatarHeight = 70.0f;
     self.tableView.separatorStyle  = UITableViewCellSeparatorStyleNone;
     self.tableView.delegate        = self;
     self.tableView.dataSource      = self;
-//    self.tableView.contentInsetTop = (kScreenHeight - 44 * self.sectionTitleArray.count) / 2;
-    self.tableView.contentInsetTop = 120;
+    self.tableView.contentInsetTop = 100 + UIView.sc_statusBarHeight;
     [self addSubview:self.tableView];
     
 }
@@ -167,11 +166,9 @@ static CGFloat const kAvatarHeight = 70.0f;
 
 - (void)layoutSubviews {
     
-//    CGFloat spaceHeight = (self.tableView.contentInsetTop - kAvatarHeight) / 3.0;
-    self.avatarImageView.frame = (CGRect){30, 30, kAvatarHeight, kAvatarHeight};
+    self.avatarImageView.frame = (CGRect){30, 10 + UIView.sc_statusBarHeight, kAvatarHeight, kAvatarHeight};
     self.avatarButton.frame = self.avatarImageView.frame;
-//    self.divideImageView.frame = (CGRect){80, kAvatarHeight + 50, 80, 0.5};
-    self.divideImageView.frame = (CGRect){-self.width, kAvatarHeight + 50, self.width * 2, 0.5};
+    self.divideImageView.frame = (CGRect){-self.width, kAvatarHeight + 30 + UIView.sc_statusBarHeight, self.width * 2, 0.5};
     self.tableView.frame = (CGRect){0, 0, self.width, self.height};
     
     [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:[V2SettingManager manager].selectedSectionIndex inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];

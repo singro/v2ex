@@ -378,7 +378,7 @@ CGFloat const kCircleHeight     = 28.0;
             
             [UIView animateWithDuration:0.8 delay:0 usingSpringWithDamping:0.75 initialSpringVelocity:0.95 options:UIViewAnimationOptionCurveEaseIn animations:^{
                 //                    self.backgroundImageView.alpha = 1;
-                self.textView.y = 74;
+                self.textView.y = UIView.sc_navigationBarHeight + 10;
             } completion:^(BOOL finished) {
                 self.imageInsertButton.centerY = (kScreenHeight - self.keyboardHeight - self.textView.y - self.textView.height) / 2 + self.textView.y + self.textView.height;
             }];
@@ -400,7 +400,7 @@ CGFloat const kCircleHeight     = 28.0;
         
         [self.textView becomeFirstResponder];
         
-        self.textView.y = 74;
+        self.textView.y = UIView.sc_navigationBarHeight + 10;
         
         self.imageInsertButton.centerY = (kScreenHeight - self.keyboardHeight - self.textView.y - self.textView.height) / 2 + self.textView.y + self.textView.height;
 
@@ -495,7 +495,7 @@ CGFloat const kCircleHeight     = 28.0;
     
     if (self.textView.y > 0) {
         [UIView animateWithDuration:0.1 animations:^{
-            self.textView.y = 84;
+            self.textView.y = UIView.sc_navigationBarHeight + 20;
         } completion:^(BOOL finished) {
             [UIView animateWithDuration:0.7 delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:1.05 options:UIViewAnimationOptionCurveEaseOut animations:^{
                 self.textView.y = -self.textView.height;

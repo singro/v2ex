@@ -94,9 +94,9 @@
     [super viewWillLayoutSubviews];
     
     CGRect rect = self.view.bounds;
-    self.webView.frame = (CGRect){0, 44, kScreenWidth, kScreenHeight - 44};
+    self.webView.frame = (CGRect){0, UIView.sc_navigationBarHeight, kScreenWidth, kScreenHeight - (44 + UIView.sc_bottomInset)};
     
-    self.toolBar.frame = CGRectMake(0, rect.size.height-44, rect.size.width, 44);
+    self.toolBar.frame = CGRectMake(0, rect.size.height - (44 + UIView.sc_bottomInset), rect.size.width, (44 + UIView.sc_bottomInset));
     self.prevButton.frame = CGRectMake(15, 12, 20, 20);
     self.refreshButton.frame = CGRectMake(kScreenWidth/2 - 10, 12, 20, 20);
     self.nextButton.frame = CGRectMake(kScreenWidth - 35, 12, 20, 20);
@@ -234,7 +234,7 @@
     }
     
     if (webScrollView) {
-        webScrollView.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, 44.0f, 0);
+        webScrollView.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, UIView.sc_navigationBarHeight, 0);
     }
 
 }

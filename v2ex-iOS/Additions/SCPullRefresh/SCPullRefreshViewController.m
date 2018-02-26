@@ -42,8 +42,8 @@ static CGFloat const kRefreshHeight = 44.0f;
         _viewShowing = NO;
         _hiddenEnabled = NO;
         
-        self.tableViewInsertTop = 64;
-        self.tableViewInsertBottom = 0;
+        self.tableViewInsertTop = UIView.sc_navigationBarHeight;
+        self.tableViewInsertBottom = UIView.sc_bottomInset;
 
     }
     return self;
@@ -61,7 +61,6 @@ static CGFloat const kRefreshHeight = 44.0f;
     self.loadMoreView = [[SCAnimationView alloc] initWithFrame:(CGRect){0, 0, kScreenWidth, 44}];
     self.loadMoreView.timeOffset = 0.0;
     [self.tableFooterView addSubview:self.loadMoreView];
-    
 }
 
 - (void)viewDidLoad
@@ -69,6 +68,10 @@ static CGFloat const kRefreshHeight = 44.0f;
     [super viewDidLoad];
     
     self.view.backgroundColor = kBackgroundColorWhiteDark;
+    
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveThemeChangeNotification) name:kThemeDidChangeNotification object:nil];
     

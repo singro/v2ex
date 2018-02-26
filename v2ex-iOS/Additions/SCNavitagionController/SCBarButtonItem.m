@@ -43,9 +43,9 @@
         [button.titleLabel setFont:[UIFont systemFontOfSize:15]];
         [button setTitleColor:kNavigationBarTintColor forState:UIControlStateNormal];
         [button sizeToFit];
-        button.height = 44;
+        button.height = UIView.sc_navigationBarHeighExcludeStatusBar;
         button.width += 30;
-        button.centerY = 20 + 22;
+        button.centerY = UIView.sc_statusBarHeight + UIView.sc_navigationBarHeighExcludeStatusBar / 2;
         button.x = 0;
         self.view = button;
         
@@ -83,9 +83,9 @@
         [button setImage:image forState:UIControlStateNormal];
         [button setImage:image forState:UIControlStateHighlighted];
         [button sizeToFit];
-        button.height = 44;
+        button.height = UIView.sc_navigationBarHeighExcludeStatusBar;
         button.width += 30;
-        button.centerY = 20 + 22;
+        button.centerY = UIView.sc_statusBarHeight + UIView.sc_navigationBarHeighExcludeStatusBar / 2;
         button.x = 0;
         self.view = button;
         

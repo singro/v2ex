@@ -38,7 +38,7 @@ static const CGFloat kToBackgroundInitAlpha = 0.08;
         self.maskImageView = [[UIImageView alloc] initWithFrame:(CGRect){0, 20, kScreenWidth, 44}];
         self.maskImageView.image = [UIImage imageNamed:@"navi_mask"];
 
-        self.naviContainView = [[UIView alloc] initWithFrame:(CGRect){0, 0, kScreenWidth, 64}];
+        self.naviContainView = [[UIView alloc] initWithFrame:(CGRect){0, 0, kScreenWidth, UIView.sc_navigationBarHeight}];
         self.naviContainView.backgroundColor = [UIColor colorWithRed:0.774 green:0.368 blue:1.000 alpha:0.810];
 
     }
@@ -83,11 +83,11 @@ static const CGFloat kToBackgroundInitAlpha = 0.08;
         ;
     } else {
         
-        naviBarView = [[UIView alloc] initWithFrame:(CGRect){0, 0, kScreenWidth, 64}];
+        naviBarView = [[UIView alloc] initWithFrame:(CGRect){0, 0, kScreenWidth, UIView.sc_navigationBarHeight}];
         naviBarView.backgroundColor = kNavigationBarColor;
         [containerView addSubview:naviBarView];
 
-        UIView *lineView = [[UIView alloc] initWithFrame:(CGRect){0, 64, kScreenWidth, 0.5}];
+        UIView *lineView = [[UIView alloc] initWithFrame:(CGRect){0, UIView.sc_navigationBarHeight, kScreenWidth, 0.5}];
         lineView.backgroundColor = kNavigationBarLineColor;
         [naviBarView addSubview:lineView];
 

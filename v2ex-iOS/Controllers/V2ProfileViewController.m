@@ -133,7 +133,7 @@ static CGFloat const kAvatarHeight = 60.0f;
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     
-    self.topPanel.frame = (CGRect){0, 64, kAvatarHeight + 10, kAvatarHeight + 10};
+    self.topPanel.frame = (CGRect){0, UIView.sc_navigationBarHeight, kAvatarHeight + 10, kAvatarHeight + 10};
 
 }
 
@@ -423,7 +423,7 @@ static CGFloat const kAvatarHeight = 60.0f;
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [super scrollViewDidScroll:scrollView];
     
-    self.topPanel.y = - (self.tableView.contentInsetTop + scrollView.contentOffsetY) + 64;
+    self.topPanel.y = - (self.tableView.contentInsetTop + scrollView.contentOffsetY) + UIView.sc_navigationBarHeight;
     
 }
 

@@ -262,6 +262,8 @@
 		29DC02411A9B2020004E541B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 29DC02401A9B2020004E541B /* libz.dylib */; };
 		29DC02431A9B2029004E541B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29DC02421A9B2029004E541B /* SystemConfiguration.framework */; };
 		29DC02451A9B2103004E541B /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 29DC02441A9B2103004E541B /* libc++.dylib */; };
+		29DE37541FD2855500D367D8 /* UIView+SafeArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 29DE37531FD2855500D367D8 /* UIView+SafeArea.m */; };
+		29DE379A1FD2896A00D367D8 /* UIView+SafeArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 29DE37531FD2855500D367D8 /* UIView+SafeArea.m */; };
 		29E0C7D018D89D2F00AFB36E /* V2TopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E0C7CF18D89D2F00AFB36E /* V2TopicViewController.m */; };
 		29E374B1191B67B300704F9B /* V2NodesViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E374B0191B67B300704F9B /* V2NodesViewCell.m */; };
 		29E5FA1518F6DD7B008B5275 /* V2SettingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E5FA1418F6DD7B008B5275 /* V2SettingManager.m */; };
@@ -516,6 +518,8 @@
 		29DC02401A9B2020004E541B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		29DC02421A9B2029004E541B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		29DC02441A9B2103004E541B /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		29DE37521FD2855500D367D8 /* UIView+SafeArea.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+SafeArea.h"; sourceTree = "<group>"; };
+		29DE37531FD2855500D367D8 /* UIView+SafeArea.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+SafeArea.m"; sourceTree = "<group>"; };
 		29E0C7CE18D89D2F00AFB36E /* V2TopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2TopicViewController.h; sourceTree = "<group>"; };
 		29E0C7CF18D89D2F00AFB36E /* V2TopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2TopicViewController.m; sourceTree = "<group>"; };
 		29E374AF191B67B300704F9B /* V2NodesViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2NodesViewCell.h; sourceTree = "<group>"; };
@@ -685,6 +689,8 @@
 			children = (
 				2927F0A018D7470800242167 /* NSDictionary+NotNullKey.h */,
 				2927F0A118D7470800242167 /* NSDictionary+NotNullKey.m */,
+				29DE37521FD2855500D367D8 /* UIView+SafeArea.h */,
+				29DE37531FD2855500D367D8 /* UIView+SafeArea.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -1223,6 +1229,9 @@
 					2933868618D67B6B00FEC28E = {
 						DevelopmentTeam = 8KZ3G3A2FQ;
 					};
+					29C0BDB21BA3A89E007B110C = {
+						DevelopmentTeam = 8KZ3G3A2FQ;
+					};
 				};
 			};
 			buildConfigurationList = 2933868218D67B6B00FEC28E /* Build configuration list for PBXProject "v2ex-iOS" */;
@@ -1399,6 +1408,7 @@
 				29CDF9C11931768700C6B952 /* SCNavigationPushAnimation.m in Sources */,
 				2987FFDE194D8ADB00794894 /* IDMPhotoBrowser.m in Sources */,
 				29CB5FCB18F186B700357D5B /* HTMLParser.m in Sources */,
+				29DE37541FD2855500D367D8 /* UIView+SafeArea.m in Sources */,
 				2968EACE195CAA7E0000E8BD /* V2SettingCell.m in Sources */,
 				29964F6818D9F3410039F31C /* V2TopicInfoCell.m in Sources */,
 				29290A8F19339D82002D2950 /* SCActionSheet.m in Sources */,
@@ -1517,6 +1527,7 @@
 				29C0BDBA1BA3A89E007B110C /* SCNavigationPushAnimation.m in Sources */,
 				29C0BDBB1BA3A89E007B110C /* IDMPhotoBrowser.m in Sources */,
 				29C0BDBC1BA3A89E007B110C /* HTMLParser.m in Sources */,
+				29DE379A1FD2896A00D367D8 /* UIView+SafeArea.m in Sources */,
 				29C0BDBD1BA3A89E007B110C /* V2SettingCell.m in Sources */,
 				29C0BDBE1BA3A89E007B110C /* V2TopicInfoCell.m in Sources */,
 				29C0BDBF1BA3A89E007B110C /* SCActionSheet.m in Sources */,
@@ -1805,6 +1816,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 8KZ3G3A2FQ;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1840,6 +1852,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 8KZ3G3A2FQ;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

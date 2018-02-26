@@ -78,7 +78,7 @@
 
 - (void)configureWebView {
     
-    self.webView = [[UIWebView alloc] initWithFrame:(CGRect){0, 44, kScreenWidth, kScreenHeight - 64}];
+    self.webView = [[UIWebView alloc] initWithFrame:(CGRect){0, UIView.sc_navigationBarHeight, kScreenWidth, kScreenHeight - 64}];
     self.webView.delegate = self;
     [self.view addSubview:self.webView];
     

@@ -78,7 +78,7 @@ typedef NS_ENUM(NSInteger, V2SettingSection) {
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     
-    self.tableView.contentInsetTop = 64;
+    self.tableView.contentInsetTop = UIView.sc_navigationBarHeight;
     self.tableView.contentInsetBottom = 15;
 
 }
